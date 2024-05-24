@@ -1,5 +1,5 @@
 # uC_examples
-Microcontroller AVR128을 이용한 예제입니다.
+Microcontroller AVR128(328?)을 이용한 예제입니다.
 강의 자료와 소스 코드는 계속 올리도록 하겠습니다.
 
 ## 강의 개요

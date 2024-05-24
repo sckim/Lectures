@@ -1,0 +1,1 @@
+[TTL level로 만드는 간단한 uC](https://docs.google.com/document/d/10LcdMkWHf8emEp-zFaIYuNcVpxZGNrccro0o35N50XU/edit#heading=h.l2aoa35mp1qn)
