@@ -14,4 +14,12 @@
 + while loop가 있는 경우
 + function call이 있는 경우
 
-### 개발 환경
+### [C 언어 복습](/VS2019)
+
+## 개발 환경
++ Arduino IDE
++ [Visual Studio Code](https://code.visualstudio.com/download) + PlatformIO
++ Visual Studio 2019
++ [Microchip Studio v.7.0.2594](https://www.microchip.com/en-us/tools-resources/develop/microchip-studio#Downloads)
+
+## [참고자료](https://github.com/sckim/Arduino_examples/blob/main/References.md)
