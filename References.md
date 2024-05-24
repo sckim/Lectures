@@ -1,28 +1,4 @@
-### 디지털논리회로 (1학기)
-  + [강의 계획서](https://docs.google.com/document/d/1-Nbt2U4_RxmWI0knJ9PB-1zacaE4BrXKlVAKuqOXOog/edit#heading=h.l577gc53wk1r)
-  + [주교재](https://docs.google.com/document/d/1xKtCGUAV6O_e4hP-qobRmeWclRrB3uHcYEKnHduU8tc/edit#heading=h.r1hokjytc0js)
-  + 실험 교재: 사용 툴에 따라 [Multisim](https://docs.google.com/document/d/1WXezy9JFQiraSLnUy9R7dk9Pz-jLC-JfszJM1WIOl5E/edit), 
-[Quartus](https://docs.google.com/document/d/18SPKDoWC6wiWRv3qgELFiMcgOY7u5xflKEo1A7NmJGI/edit), 
-[Proteus](https://docs.google.com/document/d/1fc-gf7ssCuh3Qt104MFrx15XqotCBZvXcE7OXDTSIRw/edit), 
-[VHDL](https://docs.google.com/document/d/1QnSiASvyjXRI05C4ja5JJ088FYP6Y6HgX1-tDSVPLj0/edit))
-
-### 디지털시스템설계 (2학기)
-  + [강의 계획서]()
-  + [주교재](https://docs.google.com/document/d/1JOVZyL-vZb2duroJXNOtUF97xOte-h8ld19ecXp5KbA/edit#)
-  + 실험 교재: 툴에 따라 [Multisim](https://docs.google.com/document/d/1jX-wdGTK424XunvFu4a4CxtR17Vvwe2NsozZ4Cq2cl0/edit?usp=sharing), 
-[Proteus](https://docs.google.com/document/d/1Bt5hzK4daAi6tXBZO7RS8zhi8J9hEL-TYFtcSkawnpE/edit?usp=sharing), 
-[Quartus](https://docs.google.com/document/d/18B2oY9i0UkC5DJaRiA0vmYNfsSaPw23wI-6OQMqPB7Y/edit#heading=h.ftlyrczeeu2t))
-  
-### 마이크로컨트롤러 (1학기)
-  + [강의 계획서](https://docs.google.com/document/d/1n3KUeXxMnC6K4D472Y-YwuZHPKo5krAnx2WdAsmD2wA/edit#heading=h.g1r703qpvjvj)
-  + [주교재](https://docs.google.com/document/d/1_nhvIe29zZPKCVLIq8FRuj7c0cgaGvQdVK5gxfBbcHs/edit#heading=h.sl4aksowy186)
-  + [소스코드](https://github.com/sckim/Arduino_examples): 아두이노 플랫폼에서 제공하는 기본 함수만을 활용한 예제와 레지스터를 직접 제어하는 예제가 함께 수록되어 있다.
-
-### 임베디드시스템 (2학기)
-  + [강의 계획서](https://docs.google.com/document/d/1DVsG6Le9iVnEqlcv0TA36XSPXYZ1sAhT7xt2vGAz96Q/edit)
-  + [주교재](https://docs.google.com/document/d/1KTYPQfddEAMfp1s0GSFV89OG87tpyU3b9xYL5I2MYJ0/edit#heading=h.3d3t19n2s8b1)
-   
-### 참고자료
+# 참고자료
 #### C-programming Standard 문법
   + [C99](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf) (INTERNATIONAL STANDARD ©ISO/IEC ISO/IEC 9899:TC3)
   + [Syntax and Structure of C](https://mu.microchip.com/syntax-and-structure-of-c) - Microchip 사에서 제공하는 온라인 교육 (136분)
