@@ -1,9 +1,3 @@
-## 수업 관련 자료
-디지털 회로의 기초 원리에서부터 마이크로컨트롤러를 활용한 임베디드 프로그래밍에 이르기까지, 제가 담당하고 있는 교과목 전반에 대한 참고자료를 체계적으로 정리하여 모았습니다. 수업시간에는 한 학기 동안 다루는 특정 교과목의 내용에 집중할 수밖에 없지만, 이 문서는 2학년과 3학년 과정에서 진행되는 전체 교과목의 개념과 실습 내용을 포괄하고 있습니다.  
-
-지속적으로 업데이트하여 학생들의 학습에 도움이 되고자 합니다. 보완이 필요한 부분이나 좋은 참고자료가 있다면 언제든 [여기로](mailto:sckim@hknu.ac.kr) 알려주시기 바랍니다. 
-***
-
 ### 디지털논리회로 (1학기)
   + [강의 계획서](https://docs.google.com/document/d/1-Nbt2U4_RxmWI0knJ9PB-1zacaE4BrXKlVAKuqOXOog/edit#heading=h.l577gc53wk1r)
   + [주교재](https://docs.google.com/document/d/1xKtCGUAV6O_e4hP-qobRmeWclRrB3uHcYEKnHduU8tc/edit#heading=h.r1hokjytc0js)
