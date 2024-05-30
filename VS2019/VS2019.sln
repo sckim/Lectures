@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SerialCommunication", "Seri
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Token", "Token\Token.vcxproj", "{8C8ADDFD-B309-4E9D-9BB0-B8C55471FF82}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QM", "QM\QM.vcxproj", "{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{8C8ADDFD-B309-4E9D-9BB0-B8C55471FF82}.Release|x64.Build.0 = Release|x64
 		{8C8ADDFD-B309-4E9D-9BB0-B8C55471FF82}.Release|x86.ActiveCfg = Release|Win32
 		{8C8ADDFD-B309-4E9D-9BB0-B8C55471FF82}.Release|x86.Build.0 = Release|Win32
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Debug|x64.ActiveCfg = Debug|x64
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Debug|x64.Build.0 = Debug|x64
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Debug|x86.ActiveCfg = Debug|Win32
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Debug|x86.Build.0 = Debug|Win32
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Release|x64.ActiveCfg = Release|x64
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Release|x64.Build.0 = Release|x64
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Release|x86.ActiveCfg = Release|Win32
+		{520F4F1B-9FFD-43C9-AB3B-40AA4F5E572F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

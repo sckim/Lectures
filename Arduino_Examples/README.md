@@ -71,7 +71,3 @@
 ## Python으로 제어하기
 
 ## Register와 혼용한 예제
-
-## [참고자료](https://github.com/sckim/Arduino_examples/blob/main/References.md)
-
-
