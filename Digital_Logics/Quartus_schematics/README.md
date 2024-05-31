@@ -8,6 +8,7 @@ Simulating Logic Circuits in Quartus by using Schematic Design
 
 2.  [2비트 카운터](2bits_Counter/2bits_counter.zip) (2 bits counter)
 ![2bits_counter](2bits_Counter/2bits_counter.png)
+![2bits_counter_SimulationCaptured](2bits_Counter/2bits_counter_SimulationCaptured.JPG)
 
 
 4. bits counter
