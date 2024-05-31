@@ -51,7 +51,7 @@ Simulating Logic Circuits in Quartus by using Schematic Design
         ![_vwf_simulation](_vwf_simulation.png)
 
 
-3. ????n비트 카운터????동기비동기구분? (n-bits counter)
+3. n비트 카운터 (n-bits counter)
 
     + 3.1 [2비트 카운터](2bits_Counter/2bits_counter.zip) (2 bits counter)
         ![2bits_counter](2bits_Counter/2bits_counter.png)
