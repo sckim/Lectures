@@ -1,7 +1,11 @@
-# Multisim 사용하기
-Using Multisim
+# Multisim을 이용한 논리회로 시뮬레이션
 
-[해당하는 강의자료 이름](해당하는_강의자료_링크)
+Simulating Logic Circuit by using Multisim
+
+강의자료
++ [Multisim을 이용한 조합논리회로 실험](https://docs.google.com/document/d/1WXezy9JFQiraSLnUy9R7dk9Pz-jLC-JfszJM1WIOl5E/edit#heading=h.85b5f0p6fkux)
+
++ [Multisim을 이용한 순차논리회로 실험](https://docs.google.com/document/d/1jX-wdGTK424XunvFu4a4CxtR17Vvwe2NsozZ4Cq2cl0/edit#heading=h.cqoc0zbtcqou)
 
 ## 예제
 
