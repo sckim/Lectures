@@ -12,11 +12,16 @@ Simulating Logic Circuit by using Multisim
 1. [반가산기](반가산기.ms14) (Half Adder)
 
     ![반가산기](반가산기.png)
+    ![half adder](https://github.com/sckim/Lectures/assets/169639326/a0c6ec5a-f855-4122-b19a-30b4455e565c)
+
     ![_vwf_simulation]()
+    
 
 2. [3 비트 Ripple counter](3bits ripple cnt.ms14) (3 bits Ripple counter)
 
-  ![](.png)
+ ![3bit Ripple Counter](https://github.com/sckim/Lectures/assets/169639326/ed885940-b632-4f24-80b8-6eb98d602af8)
+
+ ![alt text](image.png)
 
 3. [4 비트 BCD 가산기](4bit BCD 가산기.ms14) (4 bits BCD Adder)
 
@@ -70,13 +75,14 @@ Simulating Logic Circuit by using Multisim
 
   ![](.png)
 
-16. [디코더를 이용한 전가산기](디코더를 이용한 전가산기.ms14) (Full Adder by using Decoder)
+16. [전가산기](전가산기.ms14) (Full Adder)
 
   ![](.png)
 
-17. [전가산기](전가산기.ms14) (Full Adder)
+17. [디코더를 이용한 전가산기](디코더를 이용한 전가산기.ms14) (Full Adder by using Decoder)
 
   ![](.png)
+
 
 18. [전가산기를 이용한 BCD-3초과 코드 변환기](전가산기를 이용한 BCD-3초과 코드 변환기.ms14) (BCD-3초과 코드 변환기 by using Full Adder)
 
