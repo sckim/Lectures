@@ -1,40 +1,47 @@
-# Quartus에서의 논리회로 시뮬레이션 (회로도)
-Simulating Logic Circuits in Quartus by using Schematic Design
+# Quartus를 이용한 논리회로 시뮬레이션
+Simulating Logic Circuit by using Proteus
 
-[2_3_Quartus II(Schematic)를 이용한 순차논리회로 실험](https://docs.google.com/document/d/18B2oY9i0UkC5DJaRiA0vmYNfsSaPw23wI-6OQMqPB7Y/edit#heading=h.754qeavoagw5)
+강의자료  
++ [Quartus를 이용한 조합논리회로 실험(링크삽입필요)]() (Combinational Logic Circuits in Quartus)
 
-## 예제
-1. 기본 FlipFlop 예제 (Basic FlopFlop)
++ [Quartus를 이용한 순차논리회로 실험](https://docs.google.com/document/d/18B2oY9i0UkC5DJaRiA0vmYNfsSaPw23wI-6OQMqPB7Y/edit?usp=sharing) (Sequential Logic Circuits in Quartus)
 
-    + 1.1  [SR Latch](Basic_FilpFlop_ExampleCollection/SR_Latch) (SR Latch)
-        ![SR_Latch](Basic_FilpFlop_ExampleCollection/SR_Latch/SR_Latch.png)
-        ![SR_Latch_vwf_simulation](Basic_FilpFlop_ExampleCollection/SR_Latch/SR_Latch_vwf_simulation.png)
+## 예제 - Quartus를 이용한 순차논리회로 실험
 
-    + 1.2  [기본 FlipFlop](Basic_FilpFlop_ExampleCollection/Total_FF_ExampleCollection(SR,JK,D,T)) (Basic FlipFlop)
-        ![Total_FF_ExampleCollection_schematic](Basic_FilpFlop_ExampleCollection/Total_FF_ExampleCollection(SR,JK,D,T)/Total_FF_ExampleCollection_schematic.png)
-        ![Total_FF_ExampleCollection_vwf_simulation]() 
+## 4. 순차회로 실습 (Basic Sequential Logic Circuits)
 
-    + 1.3  [Master-Slave F/F](Basic_FilpFlop_ExampleCollection/MasterSlave_SR_FF) (Master-Slave F/F)
-        ![MasterSlave_SR_FF_schematic](Basic_FilpFlop_ExampleCollection/MasterSlave_SR_FF/MasterSlave_SR_FF_schematic.png)
-        ![MasterSlave_SR_FF_vwf_simulation]() 
+### 4.1 기본 Flip Flop (Basic Flip Flops) 
 
-    + 1.4  [Master-Slave F/F (Ver.Subblock)](Basic_FilpFlop_ExampleCollection/MasterSlave_SR_FF(Ver.Subblock)) (Master-Slave F/F (Ver.Subblock))
-        ![MasterSlave_SR_FF(Ver.Subblock)_schematic](Basic_FilpFlop_ExampleCollection/MasterSlave_SR_FF(Ver.Subblock)/MasterSlave_SR_FF(Ver.Subblock)_schematic.png)
-        ![MasterSlave_SR_FF(Ver.Subblock)_vwf_simulation]()
+#### 4.1.1  [SR Latch](4_1_1_sr_latch) (SR Latch)
+![SR_Latch](4_1_1_sr_latch/SR_Latch/4_1_1_sr_latch_schematic.png)
+![SR_Latch_vwf_simulation](4_1_1_sr_latch/SR_Latch/4_1_1_sr_latch_vwf_sim.png)
 
-    + 1.5  [F/F 응용- Debounce](Basic_FilpFlop_ExampleCollection/Debounce_Circuit) (Debouncing Circuit)
-        ![Debounce_Circuit_schematic](Basic_FilpFlop_ExampleCollection/Debounce_Circuit/Debounce_Circuit_schematic.png)
-        ![Debounce_Circuit_vwf_simulation]()
+#### 4.1.2, 4, 5, 6   [기본 FlipFlop](4_1_2_basic_flipflops) (Basic Flip Flops)
+
+![4_1_2_basic_flipflops_schematic](4_1_2_basic_flipflops/4_1_2_basic_flipflops_schematic.png) 
+![4_1_2_basic_flipflops_vwf_sim](4_1_2_basic_flipflops/4_1_2_basic_flipflops_vwf_sim.png) 
+
+#### 4.1.3  [Master-Slave F/F](4_1_3_master_slave_ff) (Master-Slave F/F)
+![4_1_3_master_slave_ff_schematic](4_1_3_master_slave_ff/4_1_3_master_slave_ff_schematic.png)
+![4_1_3_master_slave_ff_vwf_sim](4_1_3_master_slave_ff/4_1_3_master_slave_ff_vwf_sim.png) 
+
+##### 4.1.3.1  [Master-Slave F/F (Ver.Subblock)](4_1_3_1_master_slave_ff_subblock) (Master-Slave F/F (Ver.Subblock))
+![4_1_3_1_master_slave_ff_subblock_schematic](4_1_3_1_master_slave_ff_subblock/4_1_3_1_master_slave_ff_subblock_schematic.png)
+![4_1_3_1_master_slave_ff_subblock_vwf_sim](4_1_3_1_master_slave_ff_subblock/4_1_3_1_master_slave_ff_subblock_vwf_sim.png) _schematic.png _vwf_sim.png
+
+#### 4.1.7  [F/F 응용- Debounce](4_1_7_debouncing_circuit) (Debouncing Circuit)
+![4_1_7_debouncing_circuit_schematic](4_1_7_debouncing_circuit/4_1_7_debouncing_circuit_schematic.png)
+![4_1_7_debouncing_circuit_vwf_sim](4_1_7_debouncing_circuit/4_1_7_debouncing_circuit_vwf_sim.png)
     
-2.  레지스터 (Register)
+### 4.2  레지스터 (Register)
 
-    + 2.1 [SISO 레지스터](SISO_Register/SISO_Register.zip) (Serial Input Serial Output Register)
+#### 4.2.1 [SISO 레지스터](SISO_Register/SISO_Register.zip) (Serial Input Serial Output Register)
         ![SISO_Register_schematic](SISO_Register/SISO_Register_schematic.png)
         ![_vwf_simulation](_vwf_simulation.png)
         ![_schematic](_schematic.png)
         ![_vwf_simulation](_vwf_simulation.png)
 
-        + 2.1.1 [8비트 SISO 레지스터](SISO_Register/8-bits_SISO_Register.zip) (8-bits SISO Register)
+#### 4.2.1.1 [8비트 SISO 레지스터](SISO_Register/8-bits_SISO_Register.zip) (8-bits SISO Register)
             ![8-bits_SISO_Register_schematic](SISO_Register/8-bits_SISO_Register_schematic.png)
             ![_vwf_simulation](_vwf_simulation.png)
 
