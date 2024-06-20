@@ -73,7 +73,8 @@ Simulating Logic Circuit by using Proteus
 
 #### 4.3.3 [Ripple up down 카운터](4_3_3_ripple_up_down_counter) (Ripple up down counter)
 ![4_3_3_ripple_up_down_counter_schematic](4_3_3_ripple_up_down_counter/4_3_3_ripple_up_down_counter_schematic.png)
-![4_3_3_ripple_up_down_counter_vwf_simulation](4_3_3_ripple_up_down_counter/4_3_3_ripple_up_down_counter_vwf_simulation.png)
+![4_3_3_ripple_up_down_counter_vwf_simulation_0](4_3_3_ripple_up_down_counter/4_3_3_ripple_up_down_counter_vwf_simulation_0.png)
+![4_3_3_ripple_up_down_counter_vwf_simulation_1](4_3_3_ripple_up_down_counter/4_3_3_ripple_up_down_counter_vwf_simulation_1.png)
 
 #### 4.3.4 [Modulo-m Ripple 카운터](4_3_4_modulom_ripple_counter) (Modulo-m Ripple counter)
 ![4_3_4_modulom_ripple_counter_schematic](4_3_4_modulom_ripple_counter/4_3_4_modulom_ripple_counter_schematic.png)
@@ -81,14 +82,16 @@ Simulating Logic Circuit by using Proteus
 
 
 
-
-
 ## 5. 순차회로 해석 (Analysis of Sequential Logic Circuits)
-
-
+### [순차회로 예제](5_sequential_circuit_analysis) (Sequential Logic circuit example)
+![5_sequential_circuit_analysis_schematic](5_sequential_circuit_analysis/5_sequential_circuit_analysis_schematic.png)
+![5_sequential_circuit_analysis_vwf_simulation](5_sequential_circuit_analysis/5_sequential_circuit_analysis_vwf_simulation.png)
 
 
 ## 6. 순차회로 설계 (Designing Sequential Logic Circuits)
+### [순차회로 설계 예제](6_sequential_circuit_design) (Sequential Logic Circuit Design)
+![6_sequential_circuit_design_schematic](6_sequential_circuit_design/6_sequential_circuit_design_schematic.png)
+![6_sequential_circuit_design_vwf_simulation](6_sequential_circuit_design/6_sequential_circuit_design_vwf_simulation.JPG)
 
 ### 6.1 [2비트 카운터](6_1_2bit_counter) (2 bits counter)
 ![6_1_2bit_counter_schematic](6_1_2bit_counter/6_1_2bit_counter_schematic.png)
@@ -109,21 +112,5 @@ Simulating Logic Circuit by using Proteus
 ### 6.5 [3비트 Up/Down 카운터](6_5_syn_3bit_updown_counter) (3 bits Up/Down counter)
 ![6_5_syn_3bit_updown_counter_schematic](6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_schematic.png)
 ![6_5_syn_3bit_updown_counter_vwf_simulation](6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_vwf_simulation.png)
-
-3. 미분류
-
-    
-    + 3.3 [3비트 Ripple 카운터](3bit_ripple) (3 bits Ripple counter)
-        ![_schematic](_schematic.png)
-        ![_vwf_simulation](_vwf_simulation.png)  
-
-
-    + 4.1 [순차회로 예제](Sequential logic circuit example/Seq_exam.zip) (Sequential Logic circuit example)
-        ![_schematic](_schematic.png)
-        ![_vwf_simulation](_vwf_simulation.png)
-
-    + 5.1 [순차회로 설계](Design_Sequential_Circuit/Design_Sequential_Circuit.zip) (Sequential Logic Circuit Design)
-        ![사진]()
-        ![Simulation_Captured_Pictures](Design_Sequential_Circuit/Simulation_Captured_Pictures.JPG)
-         
+ 
 
