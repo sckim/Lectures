@@ -39,6 +39,7 @@
   + [How a computer works](https://www.youtube.com/watch?v=5f3NJnvnk7k&list=WL&index=64&ab_channel=ImprobableMatter)
   + [How a CPU works](https://www.youtube.com/watch?v=cNN_tTXABUA&ab_channel=InOneLesson)
   + [CPU는 어떻게 작동할까?](https://www.youtube.com/watch?v=Fg00LN30Ezg&list=PLIffQVR0ELU9U4O-Eaft0kJ30HyzOdKXf&index=252&ab_channel=bRd3D)
+  + [Basic VHDL Course](https://vhdlwhiz.com/basic-vhdl-tutorials/) from [vhdlwhiz](https://vhdlwhiz.com/)
   + [진장민 선배가 제작한 동영상](https://www.youtube.com/channel/UCVRy6e_tIgzIkpe5sx_K1Gw/videos)
 
 #### 부품 관련
