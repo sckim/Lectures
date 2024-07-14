@@ -1,7 +1,14 @@
+work
 .vscode
 db
 incremental_db
 simulation
+
+*.mti
+*.mpf
+*.bak
+*.wlf
+*.do
 
 *.rpt
 *.done
