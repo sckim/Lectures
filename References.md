@@ -119,6 +119,7 @@
 + [아두이노, IT인들의 it템](http://www.kmooc.kr/courses/course-v1:SMUCk+SMUC05k+2019_2_C4/about)([강의자료](https://drive.google.com/drive/folders/16nndqxm6_dDawwb7uSf0q7eXxr43SX-d?usp=sharing))
 
 #### 부품 관련
+  + [Analog Engineer's Pocket Refere - Texas Instruments](https://kje012-my.sharepoint.com/:b:/g/personal/sckim_office_hknu_ac_kr/EVanE_dagH5Du75D7iCqiUgBlZ8GVNHiWQq7JKpEu6lBEw?e=lW0Oef)
   + [부품 구매 사이트](http://cafe.daum.net/hknuspal/VwKt/31)
   + [TTL Series](https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits) from Wikipedia: chip 종류
   + [TTL ICs Databook](https://drive.google.com/file/d/11pnTdZR92YLRPxdwI5aEx50hvlMqAryx/view?usp=sharing): 핀 배치 정보
