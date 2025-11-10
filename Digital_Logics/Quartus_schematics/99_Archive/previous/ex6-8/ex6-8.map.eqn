@@ -1,0 +1,97 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is 74280b:inst|25~54
+--operation mode is normal
+
+B1L1 = D[0] $ D[1] $ D[3] $ D[2];
+
+
+--B1L2 is 74280b:inst|25~55
+--operation mode is normal
+
+B1L2 = D[6] $ D[4] $ D[7] $ D[8];
+
+
+--B1L3 is 74280b:inst|25~56
+--operation mode is normal
+
+B1L3 = B1L1 $ B1L2 $ D[5];
+
+
+--D[0] is D[0]
+--operation mode is input
+
+D[0] = INPUT();
+
+
+--D[1] is D[1]
+--operation mode is input
+
+D[1] = INPUT();
+
+
+--D[3] is D[3]
+--operation mode is input
+
+D[3] = INPUT();
+
+
+--D[2] is D[2]
+--operation mode is input
+
+D[2] = INPUT();
+
+
+--D[6] is D[6]
+--operation mode is input
+
+D[6] = INPUT();
+
+
+--D[4] is D[4]
+--operation mode is input
+
+D[4] = INPUT();
+
+
+--D[7] is D[7]
+--operation mode is input
+
+D[7] = INPUT();
+
+
+--D[8] is D[8]
+--operation mode is input
+
+D[8] = INPUT();
+
+
+--D[5] is D[5]
+--operation mode is input
+
+D[5] = INPUT();
+
+
+--Sum_odd is Sum_odd
+--operation mode is output
+
+Sum_odd = OUTPUT(B1L3);
+
+
+--Sum_even is Sum_even
+--operation mode is output
+
+Sum_even = OUTPUT(!B1L3);
+
+

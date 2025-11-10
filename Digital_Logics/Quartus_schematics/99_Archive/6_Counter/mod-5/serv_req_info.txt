@@ -1,0 +1,18 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>unknown</sub_system>
+	<file>unknown</file>
+	<line>0</line>
+	<callstack>
+	0x10046096: GCL_AFC + 0x46096 (?open_document_file@AFC_TEMPLATE_MANAGER@@UAIPAVCDocument@@PBDPBVAFC_DOC_INFO@@PAVAFC_PROJECT_STATE_MAP@@_N33@Z + 0x7b6)
+	</callstack>
+	<error>Current editor: GED, RPW, RPW
+Current dockable window: PJN</error>
+	<date>Wed Oct 14 17:51:34 2009</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>Access Violation at 0X10046096
+Current editor: GED, RPW, RPW
+Current dockable window: PJN
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+

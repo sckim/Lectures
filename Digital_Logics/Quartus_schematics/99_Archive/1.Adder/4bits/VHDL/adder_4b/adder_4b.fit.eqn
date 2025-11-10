@@ -1,0 +1,184 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L1 is add~57 at LC_X52_Y1_N2
+--operation mode is arithmetic
+
+A1L1 = astring[0] $ bstring[0] $ A1L61;
+
+--A1L2 is add~59 at LC_X52_Y1_N2
+--operation mode is arithmetic
+
+A1L2_cout_0 = astring[0] & !bstring[0] & !A1L61 # !astring[0] & (!A1L61 # !bstring[0]);
+A1L2 = CARRY(A1L2_cout_0);
+
+--A1L3 is add~59COUT1_89 at LC_X52_Y1_N2
+--operation mode is arithmetic
+
+A1L3_cout_1 = astring[0] & !bstring[0] & !A1L71 # !astring[0] & (!A1L71 # !bstring[0]);
+A1L3 = CARRY(A1L3_cout_1);
+
+
+--A1L4 is add~62 at LC_X52_Y1_N3
+--operation mode is arithmetic
+
+A1L4 = bstring[1] $ astring[1] $ !A1L2;
+
+--A1L5 is add~64 at LC_X52_Y1_N3
+--operation mode is arithmetic
+
+A1L5_cout_0 = bstring[1] & (astring[1] # !A1L2) # !bstring[1] & astring[1] & !A1L2;
+A1L5 = CARRY(A1L5_cout_0);
+
+--A1L6 is add~64COUT1 at LC_X52_Y1_N3
+--operation mode is arithmetic
+
+A1L6_cout_1 = bstring[1] & (astring[1] # !A1L3) # !bstring[1] & astring[1] & !A1L3;
+A1L6 = CARRY(A1L6_cout_1);
+
+
+--A1L7 is add~67 at LC_X52_Y1_N4
+--operation mode is arithmetic
+
+A1L7 = bstring[2] $ astring[2] $ A1L5;
+
+--A1L8 is add~69 at LC_X52_Y1_N4
+--operation mode is arithmetic
+
+A1L8 = A1L9;
+
+
+--A1L11 is add~72 at LC_X52_Y1_N5
+--operation mode is arithmetic
+
+A1L11_carry_eqn = (!A1L8 & GND) # (A1L8 & VCC);
+A1L11 = astring[3] $ bstring[3] $ !A1L11_carry_eqn;
+
+--A1L21 is add~74 at LC_X52_Y1_N5
+--operation mode is arithmetic
+
+A1L21_cout_0 = astring[3] & (bstring[3] # !A1L8) # !astring[3] & bstring[3] & !A1L8;
+A1L21 = CARRY(A1L21_cout_0);
+
+--A1L31 is add~74COUT1_90 at LC_X52_Y1_N5
+--operation mode is arithmetic
+
+A1L31_cout_1 = astring[3] & (bstring[3] # !A1L8) # !astring[3] & bstring[3] & !A1L8;
+A1L31 = CARRY(A1L31_cout_1);
+
+
+--A1L41 is add~77 at LC_X52_Y1_N6
+--operation mode is normal
+
+A1L41_carry_eqn = (!A1L8 & A1L21) # (A1L8 & A1L31);
+A1L41 = A1L41_carry_eqn;
+
+
+--A1L61 is add~84 at LC_X52_Y1_N1
+--operation mode is arithmetic
+
+A1L61_cout_0 = cin;
+A1L61 = CARRY(A1L61_cout_0);
+
+--A1L71 is add~84COUT1_88 at LC_X52_Y1_N1
+--operation mode is arithmetic
+
+A1L71_cout_1 = cin;
+A1L71 = CARRY(A1L71_cout_1);
+
+
+--bstring[0] is bstring[0] at PIN_V4
+--operation mode is input
+
+bstring[0] = INPUT();
+
+
+--astring[0] is astring[0] at PIN_W4
+--operation mode is input
+
+astring[0] = INPUT();
+
+
+--bstring[1] is bstring[1] at PIN_W2
+--operation mode is input
+
+bstring[1] = INPUT();
+
+
+--astring[1] is astring[1] at PIN_Y3
+--operation mode is input
+
+astring[1] = INPUT();
+
+
+--bstring[2] is bstring[2] at PIN_T5
+--operation mode is input
+
+bstring[2] = INPUT();
+
+
+--astring[2] is astring[2] at PIN_T7
+--operation mode is input
+
+astring[2] = INPUT();
+
+
+--bstring[3] is bstring[3] at PIN_AA4
+--operation mode is input
+
+bstring[3] = INPUT();
+
+
+--astring[3] is astring[3] at PIN_W3
+--operation mode is input
+
+astring[3] = INPUT();
+
+
+--cin is cin at PIN_AA2
+--operation mode is input
+
+cin = INPUT();
+
+
+--sum_string[0] is sum_string[0] at PIN_P7
+--operation mode is output
+
+sum_string[0] = OUTPUT(A1L1);
+
+
+--sum_string[1] is sum_string[1] at PIN_W1
+--operation mode is output
+
+sum_string[1] = OUTPUT(A1L4);
+
+
+--sum_string[2] is sum_string[2] at PIN_U5
+--operation mode is output
+
+sum_string[2] = OUTPUT(A1L7);
+
+
+--sum_string[3] is sum_string[3] at PIN_AA3
+--operation mode is output
+
+sum_string[3] = OUTPUT(A1L11);
+
+
+--sum_string[4] is sum_string[4] at PIN_V3
+--operation mode is output
+
+sum_string[4] = OUTPUT(A1L41);
+
+
+

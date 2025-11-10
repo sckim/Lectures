@@ -1,0 +1,26 @@
+Quartus II Archive log --	D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/4digitsSeg_tmp_archive.qarlog
+
+Archive:	D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/4digitsSeg_tmp_archive.qar
+Date:		Mon Nov 27 16:13:06 2017
+Quartus II		9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+
+	=========== Files Selected: ===========
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/2digitsSeg.qsf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/3digitsSeg.bdf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/3digitsSeg.vwf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/4digitsSeg.qpf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/4digitsSeg.vwf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/Clock1Hz.vhd
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/SixCnt.bdf
+D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/db/2digitsSeg.sim.cvwf
+c:/altera/91sp2/quartus/bin/assignment_defaults.qdf
+	======= Total: 9 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Mon Nov 27 16:13:07 2017
+Source archive file:	D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/4digitsSeg_tmp_archive.qar
+Archive was extracted into	D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447_copy/
+		 - successfully.

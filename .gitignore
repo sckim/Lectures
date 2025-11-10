@@ -36,6 +36,31 @@
 *.x86_64
 *.hex
 
+# quartus generated files
+*.temp
+*.qsf
+*.qws
+*.sdc
+*.bak
+*.psm
+*.dat
+*.rpt
+*.swo
+*.mti
+output_files/
+db/
+red/
+incremental_db/
+*.hif
+*.sof
+*.pof
+transcript
+*.rbf
+*.wlf
+work/
+
+# multisim generated files
+
 # Debug files
 *.dSYM/
 *.su

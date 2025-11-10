@@ -1,0 +1,26 @@
+--inst is inst at LC_X1_Y4_N2
+--operation mode is normal
+
+inst = ClkIn & DIn;
+
+
+--DIn is DIn at PIN_49
+--operation mode is input
+
+DIn = INPUT();
+
+
+--ClkIn is ClkIn at PIN_48
+--operation mode is input
+
+ClkIn = INPUT();
+
+
+--QOut is QOut at PIN_56
+--operation mode is output
+
+QOut = OUTPUT(inst);
+
+
+
+

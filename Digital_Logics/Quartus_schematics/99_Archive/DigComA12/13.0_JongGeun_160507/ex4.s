@@ -1,0 +1,17 @@
+		ORG 100
+		LDA AL
+		ADD BL
+		STA CL
+		CLA	
+		CIL		
+		ADD AH
+		ADD BH
+		STA CH
+		HLT
+AL,		HEX C186
+AH,		HEX 34A7
+BL,		HEX A8B5
+BH,		HEX 5CA2
+CL,
+CH,
+		END

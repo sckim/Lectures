@@ -1,0 +1,365 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--D1_result[7] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[7] at LC_X22_Y20_N8
+--operation mode is arithmetic
+
+add_sub_cell[7]_dataa = b[7] $ add_sub;
+D1_result[7]_carry_eqn = (!D1L51 & D1L32) # (D1L51 & D1L42);
+D1_result[7] = add_sub_cell[7]_dataa $ a[7] $ D1_result[7]_carry_eqn;
+
+--D1L72 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[7]~COUT at LC_X22_Y20_N8
+--operation mode is arithmetic
+
+add_sub_cell[7]_dataa = b[7] $ add_sub;
+D1L72_cout_0 = add_sub_cell[7]_dataa & a[7] & !D1L32 # !add_sub_cell[7]_dataa & (a[7] # !D1L32);
+D1L72 = CARRY(D1L72_cout_0);
+
+--D1L82 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[7]~COUTCOUT1_15 at LC_X22_Y20_N8
+--operation mode is arithmetic
+
+add_sub_cell[7]_dataa = b[7] $ add_sub;
+D1L82_cout_1 = add_sub_cell[7]_dataa & a[7] & !D1L42 # !add_sub_cell[7]_dataa & (a[7] # !D1L42);
+D1L82 = CARRY(D1L82_cout_1);
+
+
+--D1_result[6] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[6] at LC_X22_Y20_N7
+--operation mode is arithmetic
+
+add_sub_cell[6]_dataa = b[6] $ add_sub;
+D1_result[6]_carry_eqn = (!D1L51 & D1L02) # (D1L51 & D1L12);
+D1_result[6] = add_sub_cell[6]_dataa $ a[6] $ !D1_result[6]_carry_eqn;
+
+--D1L32 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[6]~COUT at LC_X22_Y20_N7
+--operation mode is arithmetic
+
+add_sub_cell[6]_dataa = b[6] $ add_sub;
+D1L32_cout_0 = add_sub_cell[6]_dataa & (!D1L02 # !a[6]) # !add_sub_cell[6]_dataa & !a[6] & !D1L02;
+D1L32 = CARRY(D1L32_cout_0);
+
+--D1L42 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[6]~COUTCOUT1_14 at LC_X22_Y20_N7
+--operation mode is arithmetic
+
+add_sub_cell[6]_dataa = b[6] $ add_sub;
+D1L42_cout_1 = add_sub_cell[6]_dataa & (!D1L12 # !a[6]) # !add_sub_cell[6]_dataa & !a[6] & !D1L12;
+D1L42 = CARRY(D1L42_cout_1);
+
+
+--D1_result[5] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[5] at LC_X22_Y20_N6
+--operation mode is arithmetic
+
+add_sub_cell[5]_dataa = b[5] $ add_sub;
+D1_result[5]_carry_eqn = (!D1L51 & D1L71) # (D1L51 & D1L81);
+D1_result[5] = add_sub_cell[5]_dataa $ a[5] $ D1_result[5]_carry_eqn;
+
+--D1L02 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[5]~COUT at LC_X22_Y20_N6
+--operation mode is arithmetic
+
+add_sub_cell[5]_dataa = b[5] $ add_sub;
+D1L02_cout_0 = add_sub_cell[5]_dataa & a[5] & !D1L71 # !add_sub_cell[5]_dataa & (a[5] # !D1L71);
+D1L02 = CARRY(D1L02_cout_0);
+
+--D1L12 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[5]~COUTCOUT1_13 at LC_X22_Y20_N6
+--operation mode is arithmetic
+
+add_sub_cell[5]_dataa = b[5] $ add_sub;
+D1L12_cout_1 = add_sub_cell[5]_dataa & a[5] & !D1L81 # !add_sub_cell[5]_dataa & (a[5] # !D1L81);
+D1L12 = CARRY(D1L12_cout_1);
+
+
+--D1_result[4] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[4] at LC_X22_Y20_N5
+--operation mode is arithmetic
+
+add_sub_cell[4]_dataa = b[4] $ add_sub;
+D1_result[4]_carry_eqn = D1L51;
+D1_result[4] = add_sub_cell[4]_dataa $ a[4] $ !D1_result[4]_carry_eqn;
+
+--D1L71 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[4]~COUT at LC_X22_Y20_N5
+--operation mode is arithmetic
+
+add_sub_cell[4]_dataa = b[4] $ add_sub;
+D1L71_cout_0 = add_sub_cell[4]_dataa & (!D1L51 # !a[4]) # !add_sub_cell[4]_dataa & !a[4] & !D1L51;
+D1L71 = CARRY(D1L71_cout_0);
+
+--D1L81 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[4]~COUTCOUT1_12 at LC_X22_Y20_N5
+--operation mode is arithmetic
+
+add_sub_cell[4]_dataa = b[4] $ add_sub;
+D1L81_cout_1 = add_sub_cell[4]_dataa & (!D1L51 # !a[4]) # !add_sub_cell[4]_dataa & !a[4] & !D1L51;
+D1L81 = CARRY(D1L81_cout_1);
+
+
+--D1_result[3] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[3] at LC_X22_Y20_N4
+--operation mode is arithmetic
+
+add_sub_cell[3]_dataa = b[3] $ add_sub;
+D1_result[3]_carry_eqn = (!add_sub & D1L21) # (add_sub & D1L31);
+D1_result[3] = add_sub_cell[3]_dataa $ a[3] $ D1_result[3]_carry_eqn;
+
+--D1L51 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[3]~COUT at LC_X22_Y20_N4
+--operation mode is arithmetic
+
+add_sub_cell[3]_dataa = b[3] $ add_sub;
+D1L51 = CARRY(add_sub_cell[3]_dataa & a[3] & !D1L31 # !add_sub_cell[3]_dataa & (a[3] # !D1L31));
+
+
+--D1_result[2] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[2] at LC_X22_Y20_N3
+--operation mode is arithmetic
+
+add_sub_cell[2]_dataa = b[2] $ add_sub;
+D1_result[2]_carry_eqn = (!add_sub & D1L9) # (add_sub & D1L01);
+D1_result[2] = add_sub_cell[2]_dataa $ a[2] $ !D1_result[2]_carry_eqn;
+
+--D1L21 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[2]~COUT at LC_X22_Y20_N3
+--operation mode is arithmetic
+
+add_sub_cell[2]_dataa = b[2] $ add_sub;
+D1L21_cout_0 = add_sub_cell[2]_dataa & (!D1L9 # !a[2]) # !add_sub_cell[2]_dataa & !a[2] & !D1L9;
+D1L21 = CARRY(D1L21_cout_0);
+
+--D1L31 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[2]~COUTCOUT1_11 at LC_X22_Y20_N3
+--operation mode is arithmetic
+
+add_sub_cell[2]_dataa = b[2] $ add_sub;
+D1L31_cout_1 = add_sub_cell[2]_dataa & (!D1L01 # !a[2]) # !add_sub_cell[2]_dataa & !a[2] & !D1L01;
+D1L31 = CARRY(D1L31_cout_1);
+
+
+--D1_result[1] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[1] at LC_X22_Y20_N2
+--operation mode is arithmetic
+
+add_sub_cell[1]_dataa = b[1] $ add_sub;
+D1_result[1]_carry_eqn = (!add_sub & D1L6) # (add_sub & D1L7);
+D1_result[1] = add_sub_cell[1]_dataa $ a[1] $ D1_result[1]_carry_eqn;
+
+--D1L9 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[1]~COUT at LC_X22_Y20_N2
+--operation mode is arithmetic
+
+add_sub_cell[1]_dataa = b[1] $ add_sub;
+D1L9_cout_0 = add_sub_cell[1]_dataa & a[1] & !D1L6 # !add_sub_cell[1]_dataa & (a[1] # !D1L6);
+D1L9 = CARRY(D1L9_cout_0);
+
+--D1L01 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[1]~COUTCOUT1_10 at LC_X22_Y20_N2
+--operation mode is arithmetic
+
+add_sub_cell[1]_dataa = b[1] $ add_sub;
+D1L01_cout_1 = add_sub_cell[1]_dataa & a[1] & !D1L7 # !add_sub_cell[1]_dataa & (a[1] # !D1L7);
+D1L01 = CARRY(D1L01_cout_1);
+
+
+--D1_result[0] is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|result[0] at LC_X22_Y20_N1
+--operation mode is arithmetic
+
+add_sub_cell[0]_dataa = b[0] $ add_sub;
+D1_result[0]_carry_eqn = (!add_sub & D1L4) # (add_sub & D1L5);
+D1_result[0] = add_sub_cell[0]_dataa $ a[0] $ !D1_result[0]_carry_eqn;
+
+--D1L6 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[0]~COUT at LC_X22_Y20_N1
+--operation mode is arithmetic
+
+add_sub_cell[0]_dataa = b[0] $ add_sub;
+D1L6_cout_0 = add_sub_cell[0]_dataa & (!D1L4 # !a[0]) # !add_sub_cell[0]_dataa & !a[0] & !D1L4;
+D1L6 = CARRY(D1L6_cout_0);
+
+--D1L7 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[0]~COUTCOUT1_9 at LC_X22_Y20_N1
+--operation mode is arithmetic
+
+add_sub_cell[0]_dataa = b[0] $ add_sub;
+D1L7_cout_1 = add_sub_cell[0]_dataa & (!D1L5 # !a[0]) # !add_sub_cell[0]_dataa & !a[0] & !D1L5;
+D1L7 = CARRY(D1L7_cout_1);
+
+
+--D1L62 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[7]~1 at LC_X22_Y20_N9
+--operation mode is normal
+
+D1L62_carry_eqn = (!D1L51 & D1L72) # (D1L51 & D1L82);
+D1L62 = D1L62_carry_eqn;
+
+
+--D1L4 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[0]~3COUT0_7 at LC_X22_Y20_N0
+--operation mode is arithmetic
+
+D1L4_cout_0 = cin;
+D1L4 = CARRY(D1L4_cout_0);
+
+--D1L5 is lpm_add_sub1:inst|lpm_add_sub:lpm_add_sub_component|alt_stratix_add_sub:stratix_adder|add_sub_cell[0]~3COUT1_8 at LC_X22_Y20_N0
+--operation mode is arithmetic
+
+D1L5_cout_1 = cin;
+D1L5 = CARRY(D1L5_cout_1);
+
+
+--b[7] is b[7] at PIN_201
+--operation mode is input
+
+b[7] = INPUT();
+
+
+--a[7] is a[7] at PIN_218
+--operation mode is input
+
+a[7] = INPUT();
+
+
+--add_sub is add_sub at PIN_199
+--operation mode is input
+
+add_sub = INPUT();
+
+
+--b[6] is b[6] at PIN_198
+--operation mode is input
+
+b[6] = INPUT();
+
+
+--a[6] is a[6] at PIN_213
+--operation mode is input
+
+a[6] = INPUT();
+
+
+--b[5] is b[5] at PIN_205
+--operation mode is input
+
+b[5] = INPUT();
+
+
+--a[5] is a[5] at PIN_195
+--operation mode is input
+
+a[5] = INPUT();
+
+
+--b[4] is b[4] at PIN_215
+--operation mode is input
+
+b[4] = INPUT();
+
+
+--a[4] is a[4] at PIN_216
+--operation mode is input
+
+a[4] = INPUT();
+
+
+--b[3] is b[3] at PIN_203
+--operation mode is input
+
+b[3] = INPUT();
+
+
+--a[3] is a[3] at PIN_197
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--b[2] is b[2] at PIN_202
+--operation mode is input
+
+b[2] = INPUT();
+
+
+--a[2] is a[2] at PIN_193
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--b[1] is b[1] at PIN_221
+--operation mode is input
+
+b[1] = INPUT();
+
+
+--a[1] is a[1] at PIN_28
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--b[0] is b[0] at PIN_29
+--operation mode is input
+
+b[0] = INPUT();
+
+
+--a[0] is a[0] at PIN_187
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--cin is cin at PIN_200
+--operation mode is input
+
+cin = INPUT();
+
+
+--cout is cout at PIN_207
+--operation mode is output
+
+cout = OUTPUT(D1L62);
+
+
+--result[7] is result[7] at PIN_217
+--operation mode is output
+
+result[7] = OUTPUT(D1_result[7]);
+
+
+--result[6] is result[6] at PIN_204
+--operation mode is output
+
+result[6] = OUTPUT(D1_result[6]);
+
+
+--result[5] is result[5] at PIN_194
+--operation mode is output
+
+result[5] = OUTPUT(D1_result[5]);
+
+
+--result[4] is result[4] at PIN_214
+--operation mode is output
+
+result[4] = OUTPUT(D1_result[4]);
+
+
+--result[3] is result[3] at PIN_206
+--operation mode is output
+
+result[3] = OUTPUT(D1_result[3]);
+
+
+--result[2] is result[2] at PIN_188
+--operation mode is output
+
+result[2] = OUTPUT(D1_result[2]);
+
+
+--result[1] is result[1] at PIN_208
+--operation mode is output
+
+result[1] = OUTPUT(D1_result[1]);
+
+
+--result[0] is result[0] at PIN_196
+--operation mode is output
+
+result[0] = OUTPUT(D1_result[0]);
+
+
+
+

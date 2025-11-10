@@ -1,0 +1,507 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 16.0us\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1\
+print_row_height 100";
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 16000.0;
+	SIMULATION_TIME = 16000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+USER_TYPE("__state")
+{
+	VALUES = "Undefined", "state.s0", "state.s1", "state.s2", "state.s3", "state.s4", "state.s5", "state.s6", "state.s7";
+}
+
+SIGNAL("clk")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("state.s0")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s2")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s3")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s4")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s5")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s6")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state.s7")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+}
+
+SIGNAL("state")
+{
+	VALUE_TYPE = ENUM;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = MACHINE;
+	PARENT = "";
+	ENUM_NAME = "__state";
+}
+
+SIGNAL("LEDR[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("LEDR[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("LEDR[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("clk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 16;
+			LEVEL 0 FOR 500.0;
+			LEVEL 1 FOR 500.0;
+		}
+	}
+}
+
+TRANSITION_LIST("state.s0")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 504.764;
+		LEVEL 1 FOR 7000.0;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 7000.0;
+		LEVEL 0 FOR 495.236;
+	}
+}
+
+TRANSITION_LIST("state.s1")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 6495.236;
+	}
+}
+
+TRANSITION_LIST("state.s2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 5495.236;
+	}
+}
+
+TRANSITION_LIST("state.s3")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 2504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 4495.236;
+	}
+}
+
+TRANSITION_LIST("state.s4")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 3504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 3495.236;
+	}
+}
+
+TRANSITION_LIST("state.s5")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 4504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 2495.236;
+	}
+}
+
+TRANSITION_LIST("state.s6")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1495.236;
+	}
+}
+
+TRANSITION_LIST("state.s7")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 6504.764;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 7000.0;
+		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 495.236;
+	}
+}
+
+TRANSITION_LIST("state")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL state.s0 FOR 504.764;
+		LEVEL state.s1 FOR 1000.0;
+		LEVEL state.s2 FOR 1000.0;
+		LEVEL state.s3 FOR 1000.0;
+		LEVEL state.s4 FOR 1000.0;
+		LEVEL state.s5 FOR 1000.0;
+		LEVEL state.s6 FOR 1000.0;
+		LEVEL state.s7 FOR 1000.0;
+		LEVEL state.s0 FOR 1000.0;
+		LEVEL state.s1 FOR 1000.0;
+		LEVEL state.s2 FOR 1000.0;
+		LEVEL state.s3 FOR 1000.0;
+		LEVEL state.s4 FOR 1000.0;
+		LEVEL state.s5 FOR 1000.0;
+		LEVEL state.s6 FOR 1000.0;
+		LEVEL state.s7 FOR 1000.0;
+		LEVEL state.s0 FOR 495.236;
+	}
+}
+
+TRANSITION_LIST("LEDR[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 510.435;
+		LEVEL 1 FOR 1999.309;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 0.265;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 2000.458;
+		LEVEL 0 FOR 1999.968;
+		LEVEL 1 FOR 1999.309;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 0.265;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 2000.458;
+		LEVEL 0 FOR 1489.533;
+	}
+}
+
+TRANSITION_LIST("LEDR[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 510.01;
+		LEVEL 1 FOR 0.418;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 4000.043;
+		LEVEL 0 FOR 1999.274;
+		LEVEL 1 FOR 0.265;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 0.418;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 4000.043;
+		LEVEL 0 FOR 1999.274;
+		LEVEL 1 FOR 0.265;
+		LEVEL 0 FOR 489.99;
+	}
+}
+
+TRANSITION_LIST("LEDR[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 2509.713;
+		LEVEL 1 FOR 0.26;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 4000.76;
+		LEVEL 0 FOR 2998.98;
+		LEVEL 1 FOR 0.26;
+		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 4000.76;
+		LEVEL 0 FOR 489.267;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clk";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s0";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s1";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s2";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s3";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s4";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s5";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s6";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state.s7";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "state";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "LEDR[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "LEDR[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "LEDR[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+}
+
+TIME_BAR
+{
+	TIME = 12125;
+	MASTER = TRUE;
+}
+;

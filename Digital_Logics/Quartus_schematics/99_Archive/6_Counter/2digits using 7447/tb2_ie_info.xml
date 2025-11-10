@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--Created by Liquid XML 2008 (www.liquid-technologies.com) for Altera-->
+<ProgramExecution xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+	<QuartusExecution>
+		<AddressBits>64</AddressBits>
+		<ApplicationError>
+		<Bits>64</Bits>
+		<CommandLine>quartus_sh -t c:/altera/13.0sp1/quartus/common/tcl/apps/qsim/qsim_script_modified.tcl "C:/Users/Soochan Kim/Dropbox/6_SampleCode/FPGA/Schematics/Counter/2digits using 7447/2digitsSeg.vwf" "C:/Users/Soochan Kim/Dropbox/6_SampleCode/FPGA/Schematics/Counter/2digits using 7447/" 2digitsSeg functional modelsim</CommandLine>
+		<ErrorMessage>Access Violation at 0X0000000054DBE93F</ErrorMessage>
+		<Line>0</Line>
+		<Platform>windows</Platform>
+		<SourceFile>unknown</SourceFile>
+		<StackTrace>
+	 0x54dbe93e: (Tcl_GetAssocData + 0xe)
+	 0x544db6ad: (Ttk_SetThemeEnabledProc + 0xdd)
+	 0x544dc3d0: (Ttk_GetTheme + 0x20)
+	 0x5450094e: (TtkWinTheme_Init + 0x133e)
+	0x7ffd54ee1c23: (CallWindowProcW + 0x4f3)
+	0x7ffd54ee1916: (CallWindowProcW + 0x1e6)
+	0x7ffd54ef2562: (MapWindowPoints + 0x532)
+	0x7ffd574389d3: (KiUserCallbackDispatcher + 0x23)
+	0x7ffd54731183: (NtUserMessageCall + 0x13)
+	0x7ffd54eef6ee: (SendMessageTimeoutW + 0x11e)
+	0x7ffd51fe2c4b: (GetThemeRect + 0x34b)
+	0x7ffd51fe2bff: (GetThemeRect + 0x2ff)
+	0x7ffd51fe2ba6: (GetThemeRect + 0x2a6)
+	0x7ffd51fe2af9: (GetThemeRect + 0x1f9)
+	0x7ffd54ee8e6a: (EnumChildWindows + 0x19a)
+	0x7ffd54ee94f2: (EnumDesktopWindows + 0x22)
+	0x7ffd51fe2fba: (GetThemeRect + 0x6ba)
+	0x7ffd54ef2d1b: (EnumDesktopsW + 0xcb)
+	0x7ffd51fe2d42: (GetThemeRect + 0x442)
+	0x7ffd51fe2cd1: (GetThemeRect + 0x3d1)
+	0x7ffd54ee97b8: (SendNotifyMessageW + 0x288)
+	0x7ffd574389d3: (KiUserCallbackDispatcher + 0x23)
+	0x7ffd547310c3: (NtUserPeekMessage + 0x13)
+	0x7ffd54eee5bc: (PeekMessageW + 0x18c)
+	0x7ffd54eee3a2: (PeekMessageA + 0xa2)
+	 0x54e8126c: (Tcl_WaitForEvent + 0x18c)
+	 0x54e41822: (Tcl_DoOneEvent + 0x162)
+	 0x54e044c0: (Tcl_VwaitObjCmd + 0x100)
+	 0x54dc12a8: (TclEvalObjvInternal + 0x328)
+	 0x54e06917: (TclExecuteByteCode + 0xe47)
+	 0x54e52376: (TclObjInterpProcCore + 0x76)
+	 0x54dc12a8: (TclEvalObjvInternal + 0x328)
+	 0x54dc21b5: (TclEvalEx + 0x8d5)
+	 0x54e2c117: (Tcl_FSEvalFileEx + 0x1d7)
+	 0x54e2a626: (Tcl_EvalFile + 0x36)
+	0x7ffd3374bd5f: (?qexe_ipc_progress_bar_name@@YAPEBDXZ + 0xf3f)
+	0x7ffd33751498: (?qexe_get_command_line@@YAPEBDXZ + 0x1068)
+	0x7ffd33754d34: (?qexe_process_cmdline_arguments@@YA_NPEAVQEXE_CMDLINE@@HPEAPEBD@Z + 0x4c4)
+	0x7ffd33754f21: (?qexe_standard_main@@YAHPEAVQEXE_FRAMEWORK@@PEAPEBUQEXE_OPTION_DEFINITION@@HPEAPEBD@Z + 0xa1)
+	0x7ff7aab817e2:
+	0x7ffd2ab74c78: (?msg_exe_fini@@YAXXZ + 0x58)
+	0x7ffd2ab753bc: (?msg_exe_fini@@YAXXZ + 0x79c)
+	0x7ffd27041584: (??1MEM_SEGMENT_INTERNAL@@UEAA@XZ + 0x194)
+	0x7ffd2ab75f9f: (?msg_exe_main@@YAHHPEAPEBDP6AHH0@Z@Z + 0x8f)
+	0x7ff7aab84df1:
+	0x7ffd54918363: (BaseThreadInitThunk + 0x13)
+	0x7ffd573f5e90: (RtlUserThreadStart + 0x20)
+		</StackTrace>
+		<Subsystem>unknown</Subsystem>
+	</ApplicationError>
+	<Compilation>
+			<CompileID>0</CompileID>
+			<DeviceFamily/>
+			<IncrementalCompilation/>
+			<TopLevelEntityName/>
+		</Compilation>
+		<DateInvoked>2016/10/16 01:47:13</DateInvoked>
+		<ElapsedTime>32361</ElapsedTime>
+		<IP>220.68.242.111</IP>
+		<IsInternal>false</IsInternal>
+		<IsQt>false</IsQt>
+		<License>
+			<Edition>Web Edition</Edition>
+			<LicenseHostID/>
+		</License>
+		<Machine>
+			<CPUCountLogical>8</CPUCountLogical>
+			<CPUCountPhysical>1</CPUCountPhysical>
+			<CPUSpeed>3392</CPUSpeed>
+			<Hostname>SoochanKim-PC</Hostname>
+			<NIC>
+				<Address>bc5ff42c1c0f</Address>
+			</NIC>
+			<OS>Windows 7</OS>
+			<OSAddressBits>64</OSAddressBits>
+			<OSVersion>6.2</OSVersion>
+			<Platform>windows</Platform>
+			<ScreenResolution>unknown</ScreenResolution>
+			<TotalPhysicalRAM>16278</TotalPhysicalRAM>
+			<TotalVirtualRAM>16384</TotalVirtualRAM>
+		</Machine>
+		<Name>quartus_sh</Name>
+		<PeakMemoryUsed>0</PeakMemoryUsed>
+		<ProjectRevision>
+			<ProjectName/>
+			<Revision/>
+		</ProjectRevision>
+		<QuartusInstallation>
+			<InstallationID>207120304446479.14765461351813</InstallationID>
+			<Version>
+				<Build>232</Build>
+				<BuildSite>SJ</BuildSite>
+				<BuildSuffix/>
+				<Edition>Web Edition</Edition>
+				<ServicePack>0</ServicePack>
+				<VersionNumber>13</VersionNumber>
+			</Version>
+		</QuartusInstallation>
+		<QuartusUser>
+			<AlteraUserName/>
+			<FAEContactName/>
+			<TalkbackStatus>
+				<DateSet/>
+				<TalkbackOn>true</TalkbackOn>
+			</TalkbackStatus>
+			<UserID>207120304446479.146951726615344</UserID>
+			<UserName>Soochan Kim</UserName>
+		</QuartusUser>
+	</QuartusExecution>
+	<SchemaVersion>schema_2013-01-18</SchemaVersion>
+</ProgramExecution>
+

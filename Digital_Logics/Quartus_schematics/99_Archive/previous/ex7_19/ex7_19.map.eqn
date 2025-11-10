@@ -1,0 +1,51 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L7 is sum1~15
+A1L7 = cin $ b1 $ a1;
+
+
+--A1L5 is cout~72
+A1L5 = cin & (b1 # a1) # !cin & b1 & a1;
+
+
+--cin is cin
+--operation mode is input
+
+cin = INPUT();
+
+
+--b1 is b1
+--operation mode is input
+
+b1 = INPUT();
+
+
+--a1 is a1
+--operation mode is input
+
+a1 = INPUT();
+
+
+--sum1 is sum1
+--operation mode is output
+
+sum1 = OUTPUT(A1L7);
+
+
+--cout is cout
+--operation mode is output
+
+cout = OUTPUT(A1L5);
+
+

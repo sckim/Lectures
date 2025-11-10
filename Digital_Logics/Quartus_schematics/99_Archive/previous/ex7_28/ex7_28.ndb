@@ -1,0 +1,229 @@
+NDB006
+The number of symbol table entries is: 3
+The length of the symbol table is: 59
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+.	|LPM_ADD_SUB:1|
+>	|LPM_ADD_SUB:1|addcore:adder|
+
+The number of name info structs is : 215
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	Ky&|	!	10	4	"F	5	6	7	8	9	:	;	<	a0	""
+#	Ky&|	!	9	4	"F	6	7	8	9	:	;	<	a1	"!
+$	Ky&|	!	8	4	"F	7	8	9	:	;	<	a2	~
+%	Ky&|	!	7	4	"F	8	9	:	;	<	a3	}
+&	Ky&|	!	6	4	"D	9	:	;	<	a4	|
+'	Ky&|	!	5	4	"D	:	;	<	a5	{
+(	Ky&|	!	4	4	"D	;	<	a6	z
+)	Ky&|	!	2	4	<	a7	y
+*	Ky&|	!	8	#5	#6	#7	#8	#9	#:	#;	#<	add_sub	o
++	Ky&|	!	1	#5	b0	w
+,	Ky&|	!	1	#6	b1	v
+-	Ky&|	!	1	#7	b2	u
+.	Ky&|	!	1	#8	b3	t
+/	Ky&|	!	1	#9	b4	s
+0	Ky&|	!	1	#:	b5	r
+1	Ky&|	!	1	#;	b6	q
+2	Ky&|	!	1	#<	b7	p
+3	Ky&|	!	9	4	5	6	7	8	9	:	;	<	cin	x
+4	SQ)C	!	9	8	9	1	2	3	4	5	6	7	cout	"+
+5	IGdq	!	results0	"*
+6	XUi[	!	1	2	7	6	results1	")
+7	XUi[	!	1	3	6	7	5	results2	"(
+8	XUi[	!	2	4	5	6	7	4	results3	"'
+9	XUi[	!	1	5	4	5	6	7	3	results4	"&
+:	XUi[	!	1	6	3	4	5	6	7	2	results5	"%
+;	XUi[	!	2	7	2	3	4	5	6	7	1	results6	"$
+<	SQ)C	!	9	1	2	3	4	5	6	7	8	9	results7	"#
+=	IeEA	.	310	27	:145	#n
+>	IeEA	.	310	27	:146	#o
+?	IeEA	.	310	27	:147	#p
+@	IeEA	.	310	27	:148	#q
+A	IeEA	.	310	27	:149	#r
+B	IeEA	.	310	27	:150	#s
+C	IeEA	.	310	27	:151	#t
+D	IeEA	.	310	27	:152	#u
+E	IeEA	.	310	27	:153	#v
+F	IeEA	.	310	27	:154	#w
+G	IeEA	.	310	27	:155	#x
+H	IeEA	.	310	27	:156	#y
+I	IeEA	.	310	27	:157	#z
+J	IeEA	.	310	27	:158	#{
+K	IeEA	.	310	27	:159	#|
+L	IeEA	.	310	27	:160	#}
+M	IeEA	.	704	78	:161	#~
+N	IeEA	.	704	78	:162	$!
+O	IeEA	.	704	56	:163	$"
+P	IeEA	.	705	35	:164	$#
+Q	IeEA	.	704	91	:165	$$
+R	IeEA	.	704	91	:166	$%
+S	IeEA	>	196	33	:141	%D
+T	IeEA	>	196	63	:142	%E
+U	IeEA	>	196	49	:143	%F
+V	IeEA	>	197	33	:144	%G
+W	IeEA	>	197	65	:145	%H
+X	IeEA	>	198	22	:146	%I
+Y	IeEA	>	197	81	:147	%J
+Z	IeEA	>	197	49	:148	%K
+[	IeEA	>	196	33	:149	%L
+\	IeEA	>	196	63	:150	%M
+]	IeEA	>	196	49	:151	%N
+^	IeEA	>	197	33	:152	%O
+_	IeEA	>	197	65	:153	%P
+`	IeEA	>	198	22	:154	%Q
+a	IeEA	>	197	81	:155	%R
+b	IeEA	>	197	49	:156	%S
+c	IeEA	>	196	33	:157	%T
+d	IeEA	>	196	63	:158	%U
+e	IeEA	>	196	49	:159	%V
+f	IeEA	>	197	33	:160	%W
+g	IeEA	>	197	65	:161	%X
+h	IeEA	>	198	22	:162	%Y
+i	IeEA	>	197	81	:163	%Z
+j	IeEA	>	197	49	:164	%[
+k	IeEA	>	196	33	:165	%\
+l	IeEA	>	196	63	:166	%]
+m	IeEA	>	196	49	:167	%^
+n	IeEA	>	197	33	:168	%_
+o	IeEA	>	197	65	:169	%`
+p	IeEA	>	198	22	:170	%a
+q	IeEA	>	197	81	:171	%b
+r	IeEA	>	197	49	:172	%c
+s	IeEA	>	201	53	:173	%d
+t	IeEA	>	201	38	:174	%e
+u	IeEA	>	202	56	:176	%g
+v	IeEA	>	202	40	:177	%h
+w	IeEA	>	202	25	:178	%i
+x	IeEA	>	203	25	:179	%j
+y	IeEA	>	203	40	:180	%k
+z	IeEA	>	203	55	:181	%l
+{	IeEA	>	348	17	:213	&.
+|	IeEA	>	350	25	:215	&0
+}	IeEA	>	350	16	:216	&1
+~	IeEA	>	360	28	:220	&5
+"!	IeEA	>	361	28	:222	&7
+""	IeEA	>	366	29	:224	&9
+"#	IeEA	>	367	29	:226	&;
+"$	IeEA	>	378	30	:232	&A
+"%	IeEA	>	379	31	:234	&C
+"&	IeEA	>	380	31	:236	&E
+"'	IeEA	>	387	29	:238	&G
+"(	IeEA	>	387	38	:239	&H
+")	IeEA	>	392	32	:240	&I
+"*	IeEA	>	392	32	:241	&J
+"+	IeEA	>	392	42	:242	&K
+",	IeEA	>	392	32	:243	&L
+"-	IeEA	>	392	32	:244	&M
+".	IeEA	>	392	42	:245	&N
+"/	IeEA	>	390	27	:246	&O
+"0	IeEA	>	392	32	:247	&P
+"1	IeEA	>	392	32	:248	&Q
+"2	IeEA	>	392	42	:249	&R
+"3	IeEA	>	392	32	:250	&S
+"4	IeEA	>	392	32	:251	&T
+"5	IeEA	>	392	42	:252	&U
+"6	IeEA	>	392	32	:253	&V
+"7	IeEA	>	392	32	:254	&W
+"8	IeEA	>	392	42	:255	&X
+"9	IeEA	>	392	32	:256	&Y
+":	IeEA	>	392	32	:257	&Z
+";	IeEA	>	392	42	:258	&[
+"<	IeEA	>	397	34	:259	&\
+"=	IeEA	>	397	34	:260	&]
+">	IeEA	>	397	43	:261	&^
+"?	IeEA	>	397	24	:262	&_
+"@	IeEA	>	165	5	cout_node	%:
+"A	IeEA	>	366	20	g2c1	&:
+"B	IeEA	>	367	20	g2c2	&<
+"C	IeEA	>	159	9	g2cp1	%(
+"D	VB*_	>	159	9	2	4	<	2	1	2	g2cp2	%'
+"E	IeEA	>	348	17	g3	&/
+"F	VB*_	>	158	5	5	4	9	:	;	<	3	4	5	6	g4	%&
+"G	IeEA	>	360	19	gc1	&6
+"H	IeEA	>	361	19	gc2	&8
+"I	IeEA	>	160	8	gcp2	%)
+"J	IeEA	>	168	14	genr_node0	%B
+"K	IeEA	>	168	14	genr_node1	%A
+"L	IeEA	>	168	14	genr_node2	%@
+"M	IeEA	>	168	14	genr_node3	%?
+"N	IeEA	>	331	22	gn0	%o
+"O	IeEA	>	338	23	gn1	%r
+"P	IeEA	>	338	23	gn2	%u
+"Q	IeEA	>	338	23	gn3	%x
+"R	IeEA	>	338	23	gn4	%{
+"S	IeEA	>	338	23	gn5	%~
+"T	IeEA	>	338	23	gn6	&#
+"U	IeEA	>	338	23	gn7	&&
+"V	IeEA	>	201	22	gp0	%f
+"W	IeEA	>	148	7	gs1	$Z
+"X	IeEA	>	148	7	gs2	$Y
+"Y	IeEA	>	148	7	gs3	$X
+"Z	IeEA	>	148	7	gs4	$W
+"[	IeEA	>	148	7	gs5	$V
+"\	IeEA	>	148	7	gs6	$U
+"]	IeEA	>	148	7	gs7	$T
+"^	IeEA	>	354	17	p2c0	&2
+"_	IeEA	>	355	21	p2c1	&3
+"`	IeEA	>	356	21	p2c2	&4
+"a	IeEA	>	343	20	pc0	&'
+"b	IeEA	>	345	21	pc1	&(
+"c	IeEA	>	345	21	pc2	&)
+"d	IeEA	>	345	21	pc3	&*
+"e	IeEA	>	345	21	pc4	&+
+"f	IeEA	>	345	21	pc5	&,
+"g	IeEA	>	345	21	pc6	&-
+"h	IeEA	>	328	22	pp0	%m
+"i	IeEA	>	335	23	pp1	%p
+"j	IeEA	>	335	23	pp2	%s
+"k	IeEA	>	335	23	pp3	%v
+"l	IeEA	>	335	23	pp4	%y
+"m	IeEA	>	335	23	pp5	%|
+"n	IeEA	>	335	23	pp6	&!
+"o	IeEA	>	335	23	pp7	&$
+"p	IeEA	>	167	15	prop_node0	%>
+"q	IeEA	>	167	15	prop_node1	%=
+"r	IeEA	>	167	15	prop_node2	%<
+"s	IeEA	>	167	15	prop_node3	%;
+"t	IeEA	>	150	7	ps0	$j
+"u	IeEA	>	150	7	ps1	$i
+"v	IeEA	>	150	7	ps2	$h
+"w	IeEA	>	150	7	ps3	$g
+"x	IeEA	>	150	7	ps4	$f
+"y	IeEA	>	150	7	ps5	$e
+"z	IeEA	>	150	7	ps6	$d
+"{	IeEA	>	150	7	ps7	$c
+"|	IeEA	>	330	12	psi0	%n
+"}	IeEA	>	337	13	psi1	%q
+"~	IeEA	>	337	13	psi2	%t
+#!	IeEA	>	337	13	psi3	%w
+#"	IeEA	>	337	13	psi4	%z
+##	IeEA	>	337	13	psi5	%}
+#$	IeEA	>	337	13	psi6	&"
+#%	IeEA	>	337	13	psi7	&%
+#&	IeEA	>	164	16	result_node0	%9
+#'	IeEA	>	164	16	result_node1	%8
+#(	IeEA	>	164	16	result_node2	%7
+#)	IeEA	>	164	16	result_node3	%6
+#*	IeEA	>	164	16	result_node4	%5
+#+	IeEA	>	164	16	result_node5	%4
+#,	IeEA	>	164	16	result_node6	%3
+#-	IeEA	>	164	16	result_node7	%2
+#.	IeEA	>	374	29	tot_cin_node0	&=
+#/	IeEA	>	375	29	tot_cin_node1	&>
+#0	IeEA	>	376	30	tot_cin_node2	&?
+#1	IeEA	>	377	26	tot_cin_node3	&@
+#2	IeEA	>	378	38	tot_cin_node4	&B
+#3	IeEA	>	379	39	tot_cin_node5	&D
+#4	IeEA	>	380	39	tot_cin_node6	&F
+#5	L8f/	.	112	14	10	4	"F	5	6	7	8	9	:	;	<	datab_node0	#c
+#6	L8f/	.	112	14	9	4	"F	6	7	8	9	:	;	<	datab_node1	#b
+#7	L8f/	.	112	14	8	4	"F	7	8	9	:	;	<	datab_node2	#a
+#8	L8f/	.	112	14	7	4	"F	8	9	:	;	<	datab_node3	#`
+#9	L8f/	.	112	14	6	4	"D	9	:	;	<	datab_node4	#_
+#:	L8f/	.	112	14	5	4	"D	:	;	<	datab_node5	#^
+#;	L8f/	.	112	14	4	4	"D	;	<	datab_node6	#]
+#<	L8f/	.	112	14	2	4	<	datab_node7	#\

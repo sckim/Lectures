@@ -1,0 +1,5 @@
+Info: Saving your IP search path in C:\Users\drsoo\AppData\Roaming\SPB_Data\.altera.quartus\ip\9.1sp2\ip_search_path\user_components.ipx
+Info: Using factories: CuspFactory, ImportFactory, DSPBuilderFactory, EmbeddedSwTclDriverFactory, JarFactory, TclModuleFactory, SopcXmlFactory, MegaVariationFactory, BeanElementFactory, LegacyFactory, DDRLegacyFactory, PresetFactory
+Progress: (0) searching D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/9.1sp2 (command line switch)
+Info: D:/Dropbox/5_Schematics/Quartus/6_Counter/4digits using 7447/9.1sp2 matched 1 files in 0.00 seconds
+Info: Found 0 components

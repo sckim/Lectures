@@ -1,0 +1,24 @@
+--inst is inst
+--operation mode is normal
+
+inst = DIn & ClkIn;
+
+
+--DIn is DIn
+--operation mode is input
+
+DIn = INPUT();
+
+
+--ClkIn is ClkIn
+--operation mode is input
+
+ClkIn = INPUT();
+
+
+--QOut is QOut
+--operation mode is output
+
+QOut = OUTPUT(inst);
+
+

@@ -1,0 +1,64 @@
+-- MAX+plus II Compiler Fit File      
+-- Version 10.2 07/10/2002            
+-- Compiled: 11/15/2006 11:31:44      
+
+-- Copyright (C) 1988-2002 Altera Corporation
+-- Any megafunction design, and related net list (encrypted or decrypted),
+-- support information, device programming or simulation file, and any other
+-- associated documentation or information provided by Altera or a partner
+-- under Altera's Megafunction Partnership Program may be used only to
+-- program PLD devices (but not masked PLD devices) from Altera.  Any other
+-- use of such megafunction design, net list, support information, device
+-- programming or simulation file, or any other related documentation or
+-- information is prohibited for any other purpose, including, but not
+-- limited to modification, reverse engineering, de-compiling, or use with
+-- any other silicon devices, unless such use is explicitly licensed under
+-- a separate agreement with Altera or a megafunction partner.  Title to
+-- the intellectual property, including patents, copyrights, trademarks,
+-- trade secrets, or maskworks, embodied in any such megafunction design,
+-- net list, support information, device programming or simulation file, or
+-- any other related documentation or information provided by Altera or a
+-- megafunction partner, remains with Altera, the megafunction partner, or
+-- their respective licensors.  No other licenses, including any licenses
+-- needed under any third party's intellectual property, are provided herein.
+
+CHIP "ex6_8"
+BEGIN
+
+    DEVICE = "EPM7032SLC44-5";
+
+    "D0"                           : INPUT_PIN  = 4      ; -- LC1
+    "D1"                           : INPUT_PIN  = 12     ; -- LC8
+    "D2"                           : INPUT_PIN  = 14     ; -- LC10
+    "D3"                           : INPUT_PIN  = 16     ; -- LC11
+    "D4"                           : INPUT_PIN  = 11     ; -- LC7
+    "D5"                           : INPUT_PIN  = 9      ; -- LC6
+    "D6"                           : INPUT_PIN  = 8      ; -- LC5
+    "D7"                           : INPUT_PIN  = 6      ; -- LC3
+    "D8"                           : INPUT_PIN  = 5      ; -- LC2
+    "Sum_even"                     : OUTPUT_PIN = 36     ; -- LC22
+    "Sum_odd"                      : OUTPUT_PIN = 37     ; -- LC21
+    "|74280b:2|:72"                : LOCATION   = LC19   ; -- PIN 39
+    "|74280b:2|:73"                : LOCATION   = LC18   ; -- PIN 40
+    "|74280b:2|:74"                : LOCATION   = LC17   ; -- PIN 41
+
+END;
+
+INTERNAL_INFO "ex6_8"
+BEGIN
+	DEVICE = EPM7032SLC44-5;
+	LC21    : LORAX = "G30R0";
+	LC22    : LORAX = "G31R0";
+	LC18    : LORAX = "G14R0,PA6R0C1";
+	OH5R0P9 : LORAX = "G61R0,PA28R0C1";
+	OH10R0P16 : LORAX = "G2R0,PA0R0C1";
+	OH6R0P11 : LORAX = "G62R0,PA31R0C1";
+	LC17    : LORAX = "G13R0,PA8R0C1";
+	OH9R0P14 : LORAX = "G1R0,PA4R0C1";
+	OH0R0P4 : LORAX = "G43R0,PA20R0C1";
+	OH7R0P12 : LORAX = "G63R0,PA33R0C1";
+	LC19    : LORAX = "G15R0,PA3R0C1";
+	OH1R0P5 : LORAX = "G44R0,PA19R0C1";
+	OH4R0P8 : LORAX = "G60R0,PA29R0C1";
+	OH2R0P6 : LORAX = "G45R0,PA22R0C1";
+END;

@@ -1,0 +1,11 @@
+	ORG 100	
+CIF,	SKI
+	BUN CIF	
+	INP	
+COF,	SKO	
+	BUN COF	
+	OUT	
+	STA CHR	
+	HLT	
+CHR,
+	END
