@@ -59,6 +59,11 @@ transcript
 *.wlf
 work/
 
+#simulink
+hdl_*/
+slprj/
+*.xml
+
 # multisim generated files
 
 # Debug files
