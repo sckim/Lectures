@@ -63,6 +63,7 @@ work/
 hdl_*/
 slprj/
 *.xml
+*_ert_rtw/
 
 # multisim generated files
 
