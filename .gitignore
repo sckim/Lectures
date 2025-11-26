@@ -37,6 +37,10 @@
 *.hex
 
 # quartus generated files
+output_files/
+db/
+incremental_db/
+simulation/
 *.temp
 *.qsf
 *.qws
@@ -47,10 +51,7 @@
 *.rpt
 *.swo
 *.mti
-output_files/
-db/
 red/
-incremental_db/
 *.hif
 *.sof
 *.pof
@@ -58,12 +59,23 @@ transcript
 *.rbf
 *.wlf
 work/
+*.mpf
+*.echo
+*_map.txt
+*_report.html
+*_dump.txt
+Demo*/
+*.sld
 
 #simulink
+hdlsrc/
+*_prj/
 hdl_*/
 slprj/
 *.xml
 *_ert_rtw/
+*.autosave
+*.slxc
 
 # multisim generated files
 
@@ -81,3 +93,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.zip
+
+Digital_Logics/VHDL/
