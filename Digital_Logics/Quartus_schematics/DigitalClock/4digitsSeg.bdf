@@ -1721,6 +1721,23 @@ refer to the applicable agreement for further details.
 		(circle (rect 104 116 112 124))
 	)
 )
+(symbol
+	(rect 432 1024 464 1056)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst1" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
 (connector
 	(pt 584 160)
 	(pt 608 160)
@@ -1860,14 +1877,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 600 752)
 	(pt 584 752)
-)
-(connector
-	(pt 424 720)
-	(pt 464 720)
-)
-(connector
-	(pt 424 704)
-	(pt 424 720)
 )
 (connector
 	(pt 600 320)
@@ -2171,19 +2180,11 @@ refer to the applicable agreement for further details.
 )
 (connector
 	(pt 424 936)
-	(pt 424 952)
-)
-(connector
-	(pt 424 936)
 	(pt 464 936)
 )
 (connector
 	(pt 384 920)
 	(pt 464 920)
-)
-(connector
-	(pt 424 952)
-	(pt 464 952)
 )
 (connector
 	(pt 424 968)
@@ -2194,16 +2195,8 @@ refer to the applicable agreement for further details.
 	(pt 464 872)
 )
 (connector
-	(pt 424 952)
-	(pt 424 968)
-)
-(connector
 	(pt 424 968)
 	(pt 424 984)
-)
-(connector
-	(pt 424 720)
-	(pt 424 736)
 )
 (connector
 	(pt 424 736)
@@ -2236,10 +2229,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 408 904)
 	(pt 464 904)
-)
-(connector
-	(pt 584 984)
-	(pt 592 984)
 )
 (connector
 	(pt 584 872)
@@ -2414,11 +2403,6 @@ refer to the applicable agreement for further details.
 	(pt 8 256)
 )
 (connector
-	(pt 120 256)
-	(pt 192 256)
-	(bus)
-)
-(connector
 	(pt -64 296)
 	(pt -64 312)
 )
@@ -2427,10 +2411,51 @@ refer to the applicable agreement for further details.
 	(pt 192 256)
 	(pt 240 256)
 )
+(connector
+	(text "Q[25..0]" (rect 130 240 167 257)(font "Intel Clear" ))
+	(pt 120 256)
+	(pt 192 256)
+	(bus)
+)
+(connector
+	(pt 424 936)
+	(pt 424 968)
+)
+(connector
+	(pt 464 952)
+	(pt 448 952)
+)
+(connector
+	(pt 448 952)
+	(pt 448 1024)
+)
+(connector
+	(pt 424 704)
+	(pt 424 736)
+)
+(connector
+	(pt 464 720)
+	(pt 448 720)
+)
+(connector
+	(pt 448 720)
+	(pt 448 832)
+)
+(connector
+	(pt 600 984)
+	(pt 584 984)
+)
+(connector
+	(pt 600 984)
+	(pt 600 832)
+)
+(connector
+	(pt 600 832)
+	(pt 448 832)
+)
 (junction (pt 424 256))
 (junction (pt 424 488))
 (junction (pt 424 736))
-(junction (pt 424 720))
 (junction (pt 232 224))
 (junction (pt 256 456))
 (junction (pt 232 176))
@@ -2449,7 +2474,6 @@ refer to the applicable agreement for further details.
 (junction (pt 256 904))
 (junction (pt 256 920))
 (junction (pt 256 936))
-(junction (pt 424 952))
 (junction (pt 424 968))
 (junction (pt 392 888))
 (junction (pt 408 904))

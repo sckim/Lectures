@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/6_Counter/Timer/") File("2digitsSeg.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/DigitalClock/") File("2digitsSeg.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
