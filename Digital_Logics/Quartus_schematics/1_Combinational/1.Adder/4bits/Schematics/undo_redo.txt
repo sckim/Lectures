@@ -1,6 +1,0 @@
-RPW
-
-	Undo Commands
-	     1.	||Simulation Report||Simulator||Simulation Waveforms
-
-
