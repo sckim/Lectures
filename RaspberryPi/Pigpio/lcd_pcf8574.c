@@ -1,6 +1,5 @@
 /*
  * Project: RPi 4 I2C LCD Control using pigpio
- * Author: Embedded System Expert
  * Date: 2024
  * Hardware: Raspberry Pi 4 Model B, PCF8574 I2C Backpack + 16x2 LCD
  */
