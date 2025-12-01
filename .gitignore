@@ -37,6 +37,18 @@
 *.hex
 
 # quartus generated files
+*.rpt
+*.done
+*.smsg
+*.summary
+*.jdi
+*.qws
+*.qdf
+*.qsf
+*.temp
+*.pin
+
+*.ini
 output_files/
 db/
 incremental_db/
@@ -53,8 +65,6 @@ simulation/
 *.mti
 red/
 *.hif
-*.sof
-*.pof
 transcript
 *.rbf
 *.wlf
