@@ -36,6 +36,48 @@
 *.x86_64
 *.hex
 
+# AVR studio files
+*.xml
+*.pdsbak
+*.workspace
+
+Thumbs.db
+*.aps
+*.aws
+*.pdsbak
+*.atsuo
+*.xml
+*.workspace
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.sln.docstates
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+*.vssscc
+$tf*/
+
+
 # quartus generated files
 *.rpt
 *.done
@@ -112,6 +154,9 @@ Demo*/
 Demo*
 
 .vscode/
+.pio/
+.cproject
+.project
 
 # WiringPi build files
 *.o
