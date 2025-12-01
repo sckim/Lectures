@@ -1,4 +1,46 @@
-/* Simulator = Quartus II Simulator */
+/*<simulation_settings>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off JK_FlipFlop_jkff -c JK_FlipFlop --vector_source="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/JK_FlipFlop_jkff.vwf" --testbench_file="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/simulation/qsim/JK_FlipFlop_jkff.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off JK_FlipFlop_jkff -c JK_FlipFlop --vector_source="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/JK_FlipFlop_jkff.vwf" --testbench_file="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/simulation/qsim/JK_FlipFlop_jkff.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/simulation/qsim/" JK_FlipFlop_jkff -c JK_FlipFlop</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="D:/Github/0_Lectures/Digital_Logics/Quartus_schematics/4_Flipflop/JK_FlipFlop/simulation/qsim/" JK_FlipFlop_jkff -c JK_FlipFlop</tnetlist_cmd>
+<modelsim_script>onerror {exit -code 1}
+vlib work
+vcom -work work JK_FlipFlop.vho
+vcom -work work JK_FlipFlop_jkff.vwf.vht
+vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.JK_FlipFlop_jkff_vhd_vec_tst
+vcd file -direction JK_FlipFlop_jkff.msim.vcd
+vcd add -internal JK_FlipFlop_jkff_vhd_vec_tst/*
+vcd add -internal JK_FlipFlop_jkff_vhd_vec_tst/i1/*
+proc simTimestamp {} {
+    echo "Simulation time: $::now ps"
+    if { [string equal running [runStatus]] } {
+        after 2500 simTimestamp
+    }
+}
+after 2500 simTimestamp
+run -all
+quit -f
+</modelsim_script>
+<modelsim_script_timing>onerror {exit -code 1}
+vlib work
+vcom -work work JK_FlipFlop.vho
+vcom -work work JK_FlipFlop_jkff.vwf.vht
+vsim -novopt -c -t 1ps -sdfmax JK_FlipFlop_jkff_vhd_vec_tst/i1=JK_FlipFlop_vhd.sdo -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.JK_FlipFlop_jkff_vhd_vec_tst
+vcd file -direction JK_FlipFlop_jkff.msim.vcd
+vcd add -internal JK_FlipFlop_jkff_vhd_vec_tst/*
+vcd add -internal JK_FlipFlop_jkff_vhd_vec_tst/i1/*
+proc simTimestamp {} {
+    echo "Simulation time: $::now ps"
+    if { [string equal running [runStatus]] } {
+        after 2500 simTimestamp
+    }
+}
+after 2500 simTimestamp
+run -all
+quit -f
+</modelsim_script_timing>
+<hdl_lang>vhdl</hdl_lang>
+</simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -6,19 +48,19 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 1991-2013 Altera Corporation
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 */
 
 HEADER
@@ -43,7 +85,7 @@ SIGNAL("/Clr")
 	PARENT = "";
 }
 
-SIGNAL("J")
+SIGNAL("CP")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -73,17 +115,27 @@ SIGNAL("Q")
 	PARENT = "";
 }
 
+SIGNAL("J")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("/Clr")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1280.0;
-		LEVEL 1 FOR 14720.0;
+		LEVEL 0 FOR 160.0;
+		LEVEL 1 FOR 15840.0;
 	}
 }
 
-TRANSITION_LIST("J")
+TRANSITION_LIST("CP")
 {
 	NODE
 	{
@@ -120,6 +172,20 @@ TRANSITION_LIST("Q")
 	}
 }
 
+TRANSITION_LIST("J")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 4;
+			LEVEL 0 FOR 2000.0;
+			LEVEL 1 FOR 2000.0;
+		}
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "/Clr";
@@ -131,7 +197,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "J";
+	CHANNEL = "CP";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -140,7 +206,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "K";
+	CHANNEL = "J";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -149,10 +215,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Q";
+	CHANNEL = "K";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Q";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
 	TREE_LEVEL = 0;
 }
 
