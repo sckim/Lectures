@@ -102,3 +102,12 @@ Demo*/
 Demo*
 
 .vscode/
+
+# WiringPi build files
+*.o
+*.so
+lib*.so.*
+*~
+debian-template/wiringPi
+debian-template/wiringpi-*.deb
+gpio/gpio
