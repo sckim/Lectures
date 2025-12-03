@@ -192,7 +192,7 @@ int main() {
     // ensure_clock_running();
 
     // [설정 시 주석 해제]
-    // set_time(0, 48, 12, 1, 12, 1, 2025); 
+    // set_time(0, 57, 16, 3, 12, 1, 2025); 
 
     printf("Starting DS1302 Read Loop...\n");
     while (1) {
