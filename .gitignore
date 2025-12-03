@@ -169,3 +169,5 @@ debian-template/wiringpi-*.deb
 gpio/gpio
 
 tasks.json
+
+PDF/
