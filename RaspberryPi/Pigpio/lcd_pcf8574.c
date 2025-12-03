@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
     printf("Text displayed. Press Ctrl+C to exit.\n");
 
     // 데모용으로 유지하다가 종료 (실제 어플리케이션에서는 루프 등 활용)
-    sleep(10);
+    sleep(5);
 
     // 4. 종료 처리
     lcd_clear();
