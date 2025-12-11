@@ -113,7 +113,7 @@ int main(int argc, char *argv[]) {
     lcd_print("Hello, Pi 4!");
     
     lcd_set_cursor(1, 0);
-    lcd_print("pigpio & C Code");
+    lcd_print("pigpio & C Code.....");
 
     printf("Text displayed. Press Ctrl+C to exit.\n");
 
