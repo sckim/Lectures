@@ -76,6 +76,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.vssscc
 $tf*/
+Debug/
 
 
 # quartus generated files

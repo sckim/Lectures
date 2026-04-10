@@ -91,7 +91,8 @@
     + [How to simulate a NOT gate using Multisim](http://www.youtube.com/watch?feature=player_detailpage&v=sueAaUWJ11s)  
     + PCB [Footprint](https://docs.google.com/presentation/d/1cFTRgU7HPyO8E8_AEFxPmhaDBpH7rjXNzSyugOGxeLs/edit?usp=sharing)  
     + [Ultiboard를 이용한 PCB 제작](https://docs.google.com/presentation/d/1nMXwixssLBOqzYLduVgtSWrC-6_WYUgyuecne449a7Y/edit?usp=sharing)  
-  + [Proteus](https://www.labcenter.com/vsmstudio/) (Analog & Digital simulation, AVR uC simulator)
+  + [Proteus](https://www.labcenter.com/vsmstudio/) - Analog & Digital simulation, AVR uC simulator
+  + [KiCAD](https://github.com/sckim/KiCAD) - Free Schematic Editor and Simulator 
   + [Logisim](http://www.cburch.com/logisim/)  
   + [Circuit Simulator and Editor](https://thumbsdb.herokuapp.com/circuit/) (Web 기반) - Proteus와 같이 전류 흐름을 보여줌
   + [123D Circuits](https://123d.circuits.io)
