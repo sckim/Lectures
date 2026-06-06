@@ -7,18 +7,20 @@
 
 #include <avr/io.h>
 
-int add(int a, int b)
-{
-	return a+b;
-}
+//int add(int a, int b)
+//{
+//	return a+b;
+//}
 
 int main(void)
 {
-	int a = 10;
-	int b = 2;
+	int i = 0;
+	char a[80] = "Hankyong National University";
 	
-	b = add(a, b);
+	for(i=0; i<80; i++) {
+		a[i]= a[i]+i;
+	}	
 	
-	return b;
+	return 1;
 }
 

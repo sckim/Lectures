@@ -8,5 +8,5 @@
 
 ; Replace with your application code
 start:
-    inc r16
+	inc r16
     rjmp start

@@ -77,7 +77,10 @@ _ReSharper*/
 *.vssscc
 $tf*/
 Debug/
-
+build/
+WiringPi-master/
+Wokwi/
+Pigpio-master/
 
 # quartus generated files
 *.rpt
