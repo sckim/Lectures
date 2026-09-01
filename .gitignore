@@ -1,3 +1,4 @@
+# ===== C/C++ build artifacts =====
 # Prerequisites
 *.d
 
@@ -11,8 +12,9 @@
 *.ilk
 *.map
 *.exp
+*.sbr
 
-# Precompiled Headers
+# Precompiled headers
 *.gch
 *.pch
 
@@ -26,6 +28,7 @@
 *.dll
 *.so
 *.so.*
+lib*.so.*
 *.dylib
 
 # Executables
@@ -36,53 +39,54 @@
 *.x86_64
 *.hex
 
-# AVR studio files
-*.xml
-*.pdsbak
-*.workspace
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.bak
+*.cache
+*.log
 
+# ===== Visual Studio / MSVC =====
 Thumbs.db
 *.aps
 *.aws
-*.pdsbak
 *.atsuo
-*.xml
 *.workspace
-*.obj
-*.exe
-*.pdb
 *.user
-*.aps
-*.pch
 *.vspscc
-*_i.c
-*_p.c
+*.vssscc
 *.ncb
 *.suo
 *.sln.docstates
 *.tlb
 *.tlh
-*.bak
-*.cache
-*.ilk
-*.log
+*_i.c
+*_p.c
+*.vcxproj
+*.vcxproj.filters
+CMakeLists.txt
+tasks.json
 [Bb]in
 [Dd]ebug*/
-*.lib
-*.sbr
-obj/
 [Rr]elease*/
-_ReSharper*/
-[Tt]est[Rr]esult*
-*.vssscc
-$tf*/
 Debug/
 build/
-WiringPi-master/
-Wokwi/
-Pigpio-master/
+obj/
+_ReSharper*/
+[Tt]est[Rr]esult*
+$tf*/
+.vs/
+.vscode
+.cproject
+.project
+.pio/
 
-# quartus generated files
+# ===== AVR Studio =====
+*.pdsbak
+
+# ===== Quartus (FPGA) generated files =====
 *.rpt
 *.done
 *.smsg
@@ -93,20 +97,14 @@ Pigpio-master/
 *.qsf
 *.temp
 *.pin
-
 *.ini
 output_files/
 db/
 incremental_db/
 simulation/
-*.temp
-*.qsf
-*.qws
 *.sdc
-*.bak
 *.psm
 *.dat
-*.rpt
 *.swo
 *.mti
 red/
@@ -120,28 +118,19 @@ work/
 *_map.txt
 *_report.html
 *_dump.txt
-Demo*/
 *.sld
 
-#simulink
+# ===== Simulink =====
 hdlsrc/
 *_prj/
 hdl_*/
 slprj/
-*.xml
 *_ert_rtw/
 *.autosave
 *.slxc
+*.xml
 
-# multisim generated files
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
+# ===== Kernel module compile results =====
 *.mod*
 *.cmd
 .tmp_versions/
@@ -150,29 +139,21 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-*.zip
-
-Digital_Logics/VHDL/
-99_Archive/
-Demo*/
-Demo*
-
-.vscode
-.vs/
-.pio/
-.cproject
-.project
-
-# WiringPi build files
-*.o
-*.so
-lib*.so.*
+# ===== WiringPi build files =====
 *~
 debian-template/wiringPi
 debian-template/wiringpi-*.deb
 gpio/gpio
+WiringPi-master/
+Pigpio-master/
 
-tasks.json
-*.vcxproj
+# ===== Archives =====
+*.zip
 
+# ===== Project-specific =====
+Digital_Logics/VHDL/
+99_Archive/
+Demo*/
+Demo*
+Wokwi/
 PDF/
