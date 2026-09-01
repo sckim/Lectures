@@ -8,5 +8,6 @@ add_executable(LogicConverter
     LogicConverter.cpp
     converter_boolean.cpp
     converter_minterm.cpp
+    converter_simplify.cpp
     converter.h
 )
