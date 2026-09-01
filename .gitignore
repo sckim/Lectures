@@ -173,5 +173,6 @@ debian-template/wiringpi-*.deb
 gpio/gpio
 
 tasks.json
+*.vcxproj
 
 PDF/
