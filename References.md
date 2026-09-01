@@ -19,6 +19,7 @@
 #### VHDL/Verilog 문법
  + Quartus (FPGA 합성 및 시뮬레이션)  
     + [Quick start for Quartus II beginner](https://docs.google.com/presentation/d/18j-begNOharpEPKI-R-xWbx-M1LuCpvNgQpCkMd4DR0/edit#slide=id.p199)  
+    + [Verilog](https://hdlbits.01xz.net/wiki/Main_Page)
     + [VHDL 조합회로](https://docs.google.com/presentation/d/1BjD-H9moOcMvb1zwggAXlGYAI9Yd7QU3QTlWK2AHvaI/edit?usp=sharing) - 디지털시스템 설계 및 실습 교재, 전가산기 디코더 등, [먹스 등](https://docs.google.com/presentation/d/1SizlKxc0lWXqiBEI4zicchqBCxuHmQEosjqPHeoGdX4/edit?usp=sharing)  
     + [Testbench 활용](https://ftp.intel.com/Public/Pub/fpgaup/pub/Teaching_Materials/current/Tutorials/VHDL/ModelSim_Tutorial.pdf)  
  + [HDL_참고자료](https://docs.google.com/document/d/1-BsSWZ0jUiByqO8aIykDkd2YqG6qTr4t7QHiIuCGmmo/edit#heading=h.qm1mmt3jvnqu)
