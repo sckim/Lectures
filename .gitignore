@@ -64,10 +64,6 @@ Thumbs.db
 *.tlh
 *_i.c
 *_p.c
-*.vcxproj
-*.vcxproj.filters
-CMakeLists.txt
-tasks.json
 [Bb]in
 [Dd]ebug*/
 [Rr]elease*/
@@ -79,8 +75,6 @@ _ReSharper*/
 $tf*/
 .vs/
 .vscode
-.cproject
-.project
 .pio/
 
 # ===== AVR Studio =====
@@ -94,17 +88,13 @@ $tf*/
 *.jdi
 *.qws
 *.qdf
-*.qsf
 *.temp
 *.pin
-*.ini
 output_files/
 db/
 incremental_db/
 simulation/
-*.sdc
 *.psm
-*.dat
 *.swo
 *.mti
 red/
@@ -113,7 +103,6 @@ transcript
 *.rbf
 *.wlf
 work/
-*.mpf
 *.echo
 *_map.txt
 *_report.html
@@ -128,7 +117,6 @@ slprj/
 *_ert_rtw/
 *.autosave
 *.slxc
-*.xml
 
 # ===== Kernel module compile results =====
 *.mod*
@@ -157,3 +145,42 @@ Demo*/
 Demo*
 Wokwi/
 PDF/
+
+# ===== 2026-10-01 정리: 자동생성 파일 추가 =====
+# (*.sof, *.pof 는 학생 배포용으로 의도적으로 추적함)
+# Quartus (추가)
+*.qmsg
+*.qarlog
+greybox_tmp/
+.qsys_edit/
+qsim/
+# ModelSim
+*.vstf
+*.cr.mti
+# Visual Studio (추가)
+x64/
+ipch/
+*.tlog
+*.lastbuildstate
+*.recipe
+*.VC.db
+*.VC.opendb
+# MATLAB/Simulink (추가)
+*.asv
+*_grt_rtw/
+# Python
+__pycache__/
+*.pyc
+
+# ===== 2026-10-01: 학생이 받아서 바로 열 수 있도록 프로젝트 파일은 추적 =====
+# (*.qsf, *.sdc, *.vcxproj(.filters), CMakeLists.txt, *.mpf, *.ini, *.xml 전체 무시 규칙을 제거하고 좁힌 규칙으로 대체)
+desktop.ini
+modelsim.ini
+*_ie_info.xml
+cmp_state.ini
+.sopc_builder/
+# KiCad 자동 백업/개인 설정
+.history/
+*-backups/
+*.kicad_prl
+fp-info-cache

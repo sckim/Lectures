@@ -1,0 +1,6 @@
+.pio/
+*.o
+*.elf
+*.bin
+.history/
+.git_broken_20260920/
