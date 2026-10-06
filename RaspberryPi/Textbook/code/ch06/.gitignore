@@ -1,0 +1,38 @@
+# 6장 실습 빌드 산출물 (소스·Makefile만 저장소에 둔다)
+# 목적 파일·라이브러리(*.o, *.a, *.so, *.d)는 저장소 루트의 .gitignore가 이미 제외한다.
+*.i
+*.s
+*.elf
+hello/hello
+hello/hello_sleep
+numeric/calculate_pi
+numeric/calculate_pi2
+numeric/triangle
+numeric/logic
+errors/no_unistd
+errors/led_blink
+errors/triangle
+errors/counter
+mylib/main_static
+mylib/main_shared
+mylib/main_rpath
+sections/sections_base
+sections/sections_data
+sections/sections_bss
+project/templog
+gdblab/scores
+optimize/opt_O0
+optimize/opt_O2
+# 본문의 "따라 해 보기"에서 추가로 만드는 파일
+hello/hello_x
+hello/hello_stripped
+numeric/calculate_pi_O2
+tri_O2
+errors/x
+mylib/bad
+mylib/main
+mylib/v2/
+pi_test
+
+# 저장소 루트의 .gitignore는 .vscode를 제외하지만, 이 장의 설정 파일은 교재 자료이므로 포함한다
+!.vscode/

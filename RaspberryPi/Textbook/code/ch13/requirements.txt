@@ -1,0 +1,6 @@
+# requirements.txt : 13장 가상 환경에 설치할 패키지 (pip install -r requirements.txt)
+# bleak 3.0.0, 3.0.1은 Linux에서 AcquireNotify를 기본으로 써서 일부 장치에서 문제가 있었다 -> 3.0.2 이상
+bleak>=3.0.2,<4
+# report.py plot에만 필요(선택). 설치가 오래 걸리면 sudo apt install python3-matplotlib 후
+# venv를 --system-site-packages로 만들어도 된다.
+matplotlib
