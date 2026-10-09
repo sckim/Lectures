@@ -74,7 +74,7 @@ Simulating Logic Circuit by using Proteus
     ### 1.1 [NOR로 구성한 SR Latch](1_1_sr_latch_nor.pdsprj) (SR Latch using NOR) 
       ![1_1_sr_latch_nor_schematic](1_1_sr_latch_nor_schematic.png)
 
-    ### 1.2 [NAND로 구성한 SR Latch](1_1_sr_latch_nand.pdsprj) (SR Latch using NAND) 
+    ### 1.2 [NAND로 구성한 SR Latch](1_2_sr_latch_nand.pdsprj) (SR Latch using NAND) 
 
       ![1_1_sr_latch_nand_schematic](1_1_sr_latch_nand_schematic.png)
 

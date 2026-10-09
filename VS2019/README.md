@@ -17,8 +17,10 @@ This folder contains Visual Studio 2019 projects for learning C language basics,
 | **Array_test / Bounds** | 배열의 활용 및 인덱스 범위 초과(Boundary check) 관련 실습 |
 | **DataFormat** | 데이터 포맷 변환 및 서식화된 입출력 실습 |
 | **Token** | `strtok` 함수를 이용한 문자열 파싱(Tokenizing) 실습 |
-| **Listing10_xx** | 'C Primer Plus' 교재의 주요 예제 코드 실습 |
-| **QM** | 상태 머신(State Machine) 또는 특정 알고리즘 테스트 |
+| **Listing10_12 / Listing10_13** | 'C Primer Plus' 교재의 주요 예제 코드 실습 |
+| **QM** | Quine–McCluskey 알고리즘을 이용한 논리식 간소화 |
+| **LogicConverter** | 민텀(minterm) ↔ 불 대수식 변환 및 간소화 (CMake 프로젝트) |
+| **Test** | `sprintf` 서식 지정(0 채우기) 간단 테스트 |
 
 ---
 

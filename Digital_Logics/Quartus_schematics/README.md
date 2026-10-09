@@ -17,8 +17,8 @@ This folder contains digital logic circuit examples designed using Intel (Altera
 | **5_Shift registers** | SISO, SIPO, PISO, PIPO 등 다양한 쉬프트 레지스터 |
 | **6_Counter** | 동기식 카운터 및 Modulo-N 카운터 설계 |
 | **7.State machine** | 상태도(State Diagram)를 이용한 순차회로 설계 |
+| **Clock** | 디지털 시계 구성 블록: 1Hz 클럭 분주기·10진 카운터(VHDL)와 상위 스키매틱 |
 | **DigitalClock** | 디지털 시계 시스템 전체 설계 예제 |
-| **Digital_StrongBox** | 비밀번호 입력 기반의 디지털 금고 제어 회로 |
 | **Tutorial** | Quartus Prime 사용법을 위한 튜토리얼 프로젝트 |
 
 ---
