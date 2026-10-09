@@ -12,7 +12,7 @@ This repository systematically organizes reference materials and practical examp
 .
 ├── 📗 Digital_Logics/      # 디지털 논리회로 및 시스템 설계 (Multisim, Proteus, Quartus, Simulink)
 ├── 📘 MicrochipStudio/     # 마이크로컨트롤러 실습 (AVR, ATmega328P, C/Assembly CPU 동작 이해)
-├── 📙 RaspberryPi/         # 임베디드 시스템 (교재, C, 다중 스레드, GPIO, BLE IoT, Simulink)
+├── 📙 RaspberryPi/         # 임베디드 시스템 (C, 다중 스레드, GPIO, BLE IoT, Simulink)
 ├── 🛰️ Adafruit feather.../ # nRF52840 기반 BLE 및 시리얼 통신 예제
 ├── 💻 VS2019/              # C 언어 기초 및 데이터 처리 실습
 ├── 🔌 Schematics/          # KiCad 회로도/PCB (Analog Discovery 2 실습 확장 키트, 온보드 레벨 시프터)
@@ -47,7 +47,7 @@ This repository systematically organizes reference materials and practical examp
 ### 4️⃣ [임베디드시스템 (2학기)](https://docs.google.com/document/d/1DVsG6Le9iVnEqlcv0TA36XSPXYZ1sAhT7xt2vGAz96Q/edit)
 *   **목표**: 고성능 프로세서 환경에서의 임베디드 운영체제 및 응용 프로그래밍
 *   **주요 플랫폼**:
-    *   [교재: 라즈베리파이로 배우는 임베디드 시스템](/RaspberryPi/Textbook) : Raspberry Pi 4B 기반 13장 + 부록 3편, 장별 예제 코드
+    *   교재 「라즈베리파이로 배우는 임베디드 시스템」 : 원고와 장별 예제 코드는 별도 저장소(`RaspberryPi_Textbook`, 비공개)에서 관리
     *   [Raspberry Pi 실습](/RaspberryPi) : Linux 기반 C 프로그래밍, 멀티스레드(Semaphore), 성능 측정
     *   [GPIO 제어](/RaspberryPi/Pigpio) : WiringPi / pigpio 라이브러리, RTC(DS1302), I2C LCD(PCF8574)
     *   [BLE IoT 프로젝트 (TS100)](/RaspberryPi/TS100/Gitbook) : BLE 체온계 → Raspberry Pi(Python) → AWS 클라우드 연동
