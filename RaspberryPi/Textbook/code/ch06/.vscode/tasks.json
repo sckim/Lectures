@@ -1,0 +1,85 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gcc: build active file (pigpio)",
+            "type": "cppbuild",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-g",
+                "-O0",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lpigpio",
+                "-lrt",
+                "-pthread"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "열린 C 파일 하나를 -lpigpio로 빌드 (실행은 sudo)"
+        },
+        {
+            "label": "gcc: build active file (pigpiod_if2)",
+            "type": "cppbuild",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-g",
+                "-O0",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-lpigpiod_if2",
+                "-lrt",
+                "-pthread"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "데몬 클라이언트로 빌드 (pigpiod 실행 필요, sudo 불필요)"
+        },
+        {
+            "label": "make: active file folder",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "${fileDirname}"],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "열린 파일이 있는 폴더의 Makefile로 빌드"
+        },
+        {
+            "label": "make clean: active file folder",
+            "type": "shell",
+            "command": "make",
+            "args": ["-C", "${fileDirname}", "clean"],
+            "problemMatcher": []
+        },
+        {
+            "label": "ch08: build LED examples for debugging",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-B",
+                "-C", "${workspaceFolder}/../ch08",
+                "CFLAGS=-Wall -O0 -g",
+                "led_blink",
+                "led_blink_if2"
+            ],
+            "problemMatcher": ["$gcc"],
+            "group": "build",
+            "detail": "8장 Makefile을 -g -O0으로 다시 빌드 (실습 6-7)"
+        }
+    ]
+}

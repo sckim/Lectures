@@ -1,0 +1,11 @@
+# 부록 A 산출물 (소스·Makefile·.m만 저장소에 둔다)
+# MATLAB Coder / Simulink 코드 생성 폴더
+codegen/
+slprj/
+*_ert_rtw/
+*.slxc
+# 실행 파일과 결과
+filter_demo
+bio_signal_processor
+filter_out.csv
+signal_output.log

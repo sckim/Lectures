@@ -1,0 +1,7 @@
+# 13장 실습 중에 Pi에서 생기는 파일: 측정 데이터와 비밀 설정은 저장소에 올리지 않는다
+.venv/
+__pycache__/
+*.db
+*.csv
+*.png
+gateway.env

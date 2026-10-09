@@ -1,0 +1,18 @@
+# uploader.service : 실습 13-6(선택)  uploader.py --once를 한 번 실행한다(uploader.timer가 주기적으로 부른다)
+# 설치 : sed "s/@USER@/$USER/g" uploader.service | sudo tee /etc/systemd/system/uploader.service
+#        sudo cp uploader.timer /etc/systemd/system/
+#        sudo systemctl daemon-reload && sudo systemctl enable --now uploader.timer
+# 비밀 정보는 이 파일이 아니라 EnvironmentFile(권한 600)에 둔다.
+
+[Unit]
+Description=Upload pending temperature rows over HTTPS (textbook ch13)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=@USER@
+WorkingDirectory=/home/@USER@/ch13
+EnvironmentFile=/home/@USER@/ch13/gateway.env
+ExecStart=/home/@USER@/ch13/.venv/bin/python /home/@USER@/ch13/uploader.py --once --db /home/@USER@/ch13/temperature.db
+Environment=PYTHONUNBUFFERED=1

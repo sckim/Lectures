@@ -1,0 +1,12 @@
+# uploader.timer : 실습 13-6(선택)  부팅 2분 뒤부터 1분마다 uploader.service를 실행한다
+# 확인 : systemctl list-timers uploader.timer
+
+[Unit]
+Description=Run uploader.service every minute (textbook ch13)
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=1min
+
+[Install]
+WantedBy=timers.target

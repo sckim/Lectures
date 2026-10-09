@@ -1,0 +1,27 @@
+# blink.service : 5.5.8절(심화)  8장의 led_blink_if2(pigpiod 클라이언트)를 서비스로 실행
+# 전제 : 8장 실습 8-5에서 만든 led_blink_if2 실행 파일, LED는 GPIO17 (물리 핀 11)
+# 설치 : sudo install -m 755 ~/ch08/led_blink_if2 /usr/local/bin/led_blink_if2
+#        sudo cp blink.service /etc/systemd/system/
+#        sudo systemctl daemon-reload
+#        sudo systemctl start blink
+# 정리 : sudo systemctl disable --now blink pigpiod   (방식 A 실습 전에 반드시 끈다)
+
+[Unit]
+Description=LED blink on GPIO17 through pigpiod (textbook ch05)
+Requires=pigpiod.service
+After=pigpiod.service
+
+[Service]
+Type=simple
+# printf 출력이 바로 journal에 보이도록 줄 단위 버퍼(stdbuf -oL)로 실행한다
+ExecStart=/usr/bin/stdbuf -oL /usr/local/bin/led_blink_if2
+# led_blink_if2는 SIGINT(Ctrl+C)만 처리하므로 stop할 때 SIGTERM 대신 SIGINT를 보낸다
+KillSignal=SIGINT
+# root가 필요 없으므로 실행할 때만 쓰는 임시 사용자로 돌린다(최소 권한)
+DynamicUser=yes
+# 데몬의 포트(8888)가 아직 열리지 않아 접속에 실패하면 2초 뒤 다시 시도한다
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

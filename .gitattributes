@@ -1,0 +1,5 @@
+# Raspberry Pi(Linux)에서 실행할 파일은 Windows에서 받아도 LF를 유지한다.
+*.sh       text eol=lf
+Makefile   text eol=lf
+*.mk       text eol=lf
+*.service  text eol=lf

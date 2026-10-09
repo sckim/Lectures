@@ -1,0 +1,29 @@
+# gateway.service : 실습 13-5  logger.py(BLE 체온 게이트웨이)를 부팅 때 자동 실행하는 systemd 서비스
+# @USER@ 를 자기 사용자 이름으로 바꿔 설치한다(가상 환경과 DB가 그 사용자의 홈에 있기 때문).
+# 설치 : sed "s/@USER@/$USER/g" gateway.service | sudo tee /etc/systemd/system/gateway.service
+#        sudo systemctl daemon-reload
+#        sudo systemctl enable --now gateway
+# 로그 : journalctl -u gateway -f
+
+[Unit]
+Description=BLE thermometer gateway logger (textbook ch13)
+# bluetoothd가 먼저 떠 있어야 D-Bus로 BlueZ를 부를 수 있다
+Wants=bluetooth.service
+After=bluetooth.service
+
+[Service]
+Type=simple
+# DynamicUser는 쓰지 않는다: 홈의 venv·DB를 써야 하기 때문이다
+# (BlueZ 접근은 D-Bus 기본 정책이 모든 사용자에게 허용하므로 bluetooth 그룹은 필요 없다)
+User=@USER@
+WorkingDirectory=/home/@USER@/ch13
+# venv 안의 python을 절대 경로로 부른다(activate가 필요 없다)
+ExecStart=/home/@USER@/ch13/.venv/bin/python /home/@USER@/ch13/logger.py --name TS100 --db /home/@USER@/ch13/temperature.db
+# print가 버퍼에 쌓이지 않고 바로 journal에 보이게 한다(5장 stdbuf와 같은 이유)
+Environment=PYTHONUNBUFFERED=1
+# logger.py는 SIGTERM을 받으면 구독을 끊고 스스로 끝낸다
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target
