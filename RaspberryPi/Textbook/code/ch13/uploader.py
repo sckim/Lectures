@@ -7,7 +7,7 @@
   GATEWAY_UPLOAD_METHOD (선택) POST(기본, JSON 본문) 또는 GET(TS100-Gitbook 5.10절 API 형식)
 사용법 : python uploader.py --once          # 한 번 올리고 끝(systemd 타이머용)
          python uploader.py --interval 60   # 60초마다 반복
-원본 : TS100/main_cloud.py send_cloud() (주소를 코드에 적던 방식을 환경 변수로 바꾸고,
+원본 : TS100/python/main_cloud.py send_cloud() (주소를 코드에 적던 방식을 환경 변수로 바꾸고,
        실패한 건은 DB에 남겨 두었다가 다음에 다시 보내도록 고침)
 """
 

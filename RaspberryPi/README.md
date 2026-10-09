@@ -10,10 +10,11 @@ This folder contains Raspberry Pi projects for Linux-based programming, GPIO con
 
 | 폴더/파일명 (Folder/File) | 주요 내용 (Description) |
 | :--- | :--- |
+| **Textbook** | 교재 「라즈베리파이로 배우는 임베디드 시스템」(1~13장, 부록 A~C) 및 장별 예제 코드(`code/`) — [목차 보기](Textbook/README.md) |
 | **Codes** | `calculate_pi`, `hello`, `semaphore_led`, `sharedCounter` 등 기본적인 C 프로그래밍 및 멀티프로세스 예제 |
 | **WiringPi** | `WiringPi` 라이브러리를 사용한 기본적인 LED 제어(`led_onoff.c`) 예제 |
 | **Pigpio** | `Pigpio` 라이브러리를 사용한 RTC(`DS1302`), LCD 제어 및 실시간 GPIO 입출력 예제 |
-| **TS100** | Python 기반의 BLE(Bluetooth Low Energy) 통신 예제 (`nRF52_BLE_test.py` 등) |
+| **TS100** | BLE 바나나 체온계 IoT 실습 묶음: `Gitbook/`(교재 「BLE 바나나 체온계를 활용한 IoT 따라잡기」), `python/`(Raspberry Pi BLE 게이트웨이 예제, `nRF52_BLE_test.py` 등), `firmware/`(Arduino BLE 시뮬레이터, PlatformIO) |
 | **Simulink** | MATLAB/Simulink에서 Raspberry Pi로 자동 코드 생성된 프로젝트 |
 | **Docs** | 라즈베리 파이 기초 학습을 위한 초보자 가이드(PDF) |
 

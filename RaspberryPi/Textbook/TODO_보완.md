@@ -69,9 +69,9 @@ Pi 4 Model B Rev 1.5(2 GB), Bookworm, 커널 `6.12.58-v8+`(rpi-update), 한국�
 - [ ] 6장 `sudo-gdb.sh` 실행 비트(`git update-index --chmod=+x`) 기록 여부
 - [ ] 8장 Makefile에 `LDFLAGS` 변수 추가(교차 컴파일 예시용)
 - [ ] 10장 AD2 DIO 배선: 워크스페이스 파일 기준(DIO0↔GPIO17, DIO1↔GPIO18, DIO2↔GPIO26, I2C SCL DIO14/SDA DIO15) vs 2025 강의 배선(GPIO17↔DIO7, GPIO18↔DIO6, I2C DIO0/1) vs 2024 강의(DIO14=SDA) — 실습 키트 표준 결정
-- [ ] 13장: TS100 시뮬레이터 펌웨어를 code/ch13에 복사할지(현재 ../TS100_firmware 링크)
+- [ ] 13장: TS100 시뮬레이터 펌웨어를 code/ch13에 복사할지(현재 ../TS100/firmware 링크)
 - [ ] 13장: TS100-Gitbook 원문 정정(BLE/Classic 비교표, DA14583 사양, Date Time UUID 오타, 디코더 부호확장)을 GitBook에도 반영할지
-- [ ] 보안: `TS100/main_cloud.py`(및 `TS100_firmware/main_cloud.py`)에 실제 AWS API Gateway invoke URL 하드코딩 — 저장소에서 제거/교체할지
+- [ ] 보안: `TS100/python/main_cloud.py`(및 `TS100/firmware/main_cloud.py`)에 실제 AWS API Gateway invoke URL 하드코딩 — 저장소에서 제거/교체할지
 - [ ] 장별 `.gitignore`(code/ch06, code/ch13) 유지 vs 루트 통합
 - [x] (레벨 시프터 사용으로 결정) 실습 키트: BSS138 양방향 I2C 레벨 시프터 추가 여부(12-3 LCD 실습에 필요), DS3231 모듈 종류(EEPROM 0x57), BMP280/BME280, MCP3008+가변저항 보유 여부
 - [ ] DS1302 핀: 강의 GPIO9/10/11 → 교재 GPIO12/19/16으로 변경. Codes 문서·슬라이드도 맞출지

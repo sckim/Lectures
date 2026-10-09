@@ -1191,7 +1191,7 @@ C.5.1에는 1·2장의 CPU·메모리 확인 실습 오류를, C.5.3에는 7장�
 
 | 자료 | 장 |
 |---|---|
-| 「BLE 바나나 체온계를 활용한 IoT 따라잡기」 GitBook: <https://lstgrp.gitbook.io/banana-thermometer> (저장소의 [`../TS100-Gitbook`](../TS100-Gitbook)) | [13장](13_ble_iot.md) |
+| 「BLE 바나나 체온계를 활용한 IoT 따라잡기」 GitBook: <https://lstgrp.gitbook.io/banana-thermometer> (저장소의 [`../TS100/Gitbook`](../TS100/Gitbook)) | [13장](13_ble_iot.md) |
 | 강의 예제 저장소: <https://github.com/sckim/Lectures>, <https://github.com/sckim/Embedded_System> | [6장](06_c_build.md), [머리말](00_preface.md) |
 | 이 책의 예제 코드: [`code/`](code/) | 전체 |
 

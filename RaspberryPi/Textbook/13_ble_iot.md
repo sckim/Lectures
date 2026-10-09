@@ -13,7 +13,7 @@
 
 지금까지 Raspberry Pi는 선으로 연결된 장치와만 이야기했다. [8장](08_gpio_pigpio.md)·[9장](09_pigpio_advanced.md)의 GPIO는 전선 한 가닥, [12장](12_communication.md)의 UART·I2C·SPI는 전선 몇 가닥이었다. 이 장에서는 **전선 없이** 데이터를 받는다. 주인공은 수업에서 써 온 **바나나 체온계**(TS100)이다. 겨드랑이에 붙이는 작은 체온 패치가 BLE(Bluetooth Low Energy)로 온도를 보내면, Raspberry Pi가 받아서 저장하고 그래프로 그리고, 원하면 인터넷 너머의 클라우드 데이터베이스로 올린다. 이것이 바로 [1장](01_embedded_system.md) 1.1.4절에서 용어로만 만났던 **사물인터넷**(IoT, Internet of Things)의 실제 모습이다.
 
-이 장의 내용은 세 가지 자료를 바탕으로 한다. 첫째, 2023년과 2025년(14주차)의 바나나 체온계 실습 강의, 둘째, 수업용으로 따로 만든 「BLE 바나나 체온계를 활용한 IoT 따라잡기」 GitBook(저장소의 [`../TS100-Gitbook`](../TS100-Gitbook), 온라인판 <https://lstgrp.gitbook.io/banana-thermometer>), 셋째, 그 Python 예제 저장소([`../TS100`](../TS100))이다. GitBook의 BLE 이론과 Raspberry Pi 부분은 이 장에서 요약하고 다듬었으며, AWS 클라우드 설정(5장)은 화면 캡처가 많은 GitBook 쪽이 낫기 때문에 **링크로 안내**한다.
+이 장의 내용은 세 가지 자료를 바탕으로 한다. 첫째, 2023년과 2025년(14주차)의 바나나 체온계 실습 강의, 둘째, 수업용으로 따로 만든 「BLE 바나나 체온계를 활용한 IoT 따라잡기」 GitBook(저장소의 [`../TS100/Gitbook`](../TS100/Gitbook), 온라인판 <https://lstgrp.gitbook.io/banana-thermometer>), 셋째, 그 Python 예제 저장소([`../TS100/python`](../TS100/python))이다. GitBook의 BLE 이론과 Raspberry Pi 부분은 이 장에서 요약하고 다듬었으며, AWS 클라우드 설정(5장)은 화면 캡처가 많은 GitBook 쪽이 낫기 때문에 **링크로 안내**한다.
 
 ### 이 장에서만 C 대신 Python을 쓰는 이유
 
@@ -741,7 +741,7 @@ bleak의 `start_notify()`가 바로 이 일을 한다. 특성의 속성을 보�
 
 **음수는 어떻게 되나?** −1.5 °C라면 가수 −15, 지수 −1이다. 24비트 2의 보수로 −15는 `0xFFFFF1`, 8비트 −1은 `0xFF`이므로 바이트는 `F1 FF FF FF`이다. 이것을 "부호 없는 24비트"로 잘못 읽으면 가수가 16,777,201이 되어 1,677,720.1 °C라는 말도 안 되는 값이 나온다. 체온계에서 음수가 나올 일은 드물지만, 같은 형식을 쓰는 다른 센서(실외 온도 등)에서는 바로 문제가 된다.
 
-> **원본 자료 정정:** TS100-Gitbook 4.1.3절과 `TS100/main.py`의 `temperature_calculate(data[1], data[2], data[3], data[4])`는 ① Flags(`data[0]`)를 읽지 않아 화씨·Time Stamp·Temperature Type 여부를 모르고, ② 24비트 가수를 부호 없는 수로 더해 음수를 잘못 계산하며, ③ `data[5:]`를 무조건 날짜로 읽어 Flags에 Time Stamp가 없는 장치에서는 엉뚱한 날짜가 되거나 예외가 난다. 지수(`d`)의 부호 처리는 맞다. 이 장의 `hts.py`는 Flags부터 읽고 두 값 모두 부호를 처리하도록 고쳤다. 또 GitBook의 "날짜정보 수정" 절에는 Date Time UUID가 `00002a08-0000-1000-8000-00805f9634fb`로 한 글자 틀리게 적힌 곳이 있다. 올바른 값은 `…-00805f9b34fb`이다.
+> **원본 자료 정정:** TS100-Gitbook 4.1.3절과 `TS100/python/main.py`의 `temperature_calculate(data[1], data[2], data[3], data[4])`는 ① Flags(`data[0]`)를 읽지 않아 화씨·Time Stamp·Temperature Type 여부를 모르고, ② 24비트 가수를 부호 없는 수로 더해 음수를 잘못 계산하며, ③ `data[5:]`를 무조건 날짜로 읽어 Flags에 Time Stamp가 없는 장치에서는 엉뚱한 날짜가 되거나 예외가 난다. 지수(`d`)의 부호 처리는 맞다. 이 장의 `hts.py`는 Flags부터 읽고 두 값 모두 부호를 처리하도록 고쳤다. 또 GitBook의 "날짜정보 수정" 절에는 Date Time UUID가 `00002a08-0000-1000-8000-00805f9634fb`로 한 글자 틀리게 적힌 곳이 있다. 올바른 값은 `…-00805f9b34fb`이다.
 
 이 해석 규칙을 그대로 코드로 옮긴 것이 `hts.py`이다. bleak를 쓰지 않는 순수 계산 코드라서 **PC(WSL)에서도 장치 없이 시험할 수 있다**(실습 13-3 단계 1).
 
@@ -925,7 +925,7 @@ GitBook은 Raspberry Pi **데스크톱**에서 예제를 실행했기 때문에,
 
 ### 13.10.3 장치가 없을 때: Arduino 시뮬레이터 (선택)
 
-체온계가 모자라거나 배터리가 떨어졌을 때를 위해 Arduino 보드로 **같은 서비스·같은 UUID를 흉내 내는 시뮬레이터** 펌웨어가 있다([`../TS100_firmware`](../TS100_firmware), GitBook의 `2.hardware/src`와 같은 코드).
+체온계가 모자라거나 배터리가 떨어졌을 때를 위해 Arduino 보드로 **같은 서비스·같은 UUID를 흉내 내는 시뮬레이터** 펌웨어가 있다([`../TS100/firmware`](../TS100/firmware), GitBook의 `2.hardware/src`와 같은 코드).
 
 | 항목 | 내용 |
 |---|---|
@@ -1304,12 +1304,12 @@ flowchart LR
 
 | 단계 | 내용 | GitBook |
 |---|---|---|
-| 1 | AWS 계정 만들기, 로그인, 리전을 서울로 | [5.2](../TS100-Gitbook/5.cloud/5.2.sign-up.md)~[5.4](../TS100-Gitbook/5.cloud/5.4.aws-ui.md) |
-| 2 | RDS에서 PostgreSQL 데이터베이스 만들기(프리 티어) | [5.5](../TS100-Gitbook/5.cloud/5.5.create-cloud-database.md) |
-| 3 | PC에 PostgreSQL·pgAdmin 설치, 보안 그룹 인바운드 규칙, 연결 | [5.6](../TS100-Gitbook/5.cloud/5.6.install-postgresql.md), [5.7](../TS100-Gitbook/5.cloud/5.7.aws-database-connection.md) |
-| 4 | 표 `TemperatureInformation(name text, temperature double precision, date timestamp)` 만들기 | [5.8](../TS100-Gitbook/5.cloud/5.8.create-database-table.md) |
-| 5 | Lambda 함수 + psycopg2 계층, API Gateway REST API(GET, 쿼리 문자열 name·temperature·date) | [5.9](../TS100-Gitbook/5.cloud/5.9.create-aws-server.md) |
-| 6 | Lambda에서 INSERT, Pi에서 API 호출, pgAdmin에서 확인 | [5.10](../TS100-Gitbook/5.cloud/5.10.save-cloud-database.md) |
+| 1 | AWS 계정 만들기, 로그인, 리전을 서울로 | [5.2](../TS100/Gitbook/5.cloud/5.2.sign-up.md)~[5.4](../TS100/Gitbook/5.cloud/5.4.aws-ui.md) |
+| 2 | RDS에서 PostgreSQL 데이터베이스 만들기(프리 티어) | [5.5](../TS100/Gitbook/5.cloud/5.5.create-cloud-database.md) |
+| 3 | PC에 PostgreSQL·pgAdmin 설치, 보안 그룹 인바운드 규칙, 연결 | [5.6](../TS100/Gitbook/5.cloud/5.6.install-postgresql.md), [5.7](../TS100/Gitbook/5.cloud/5.7.aws-database-connection.md) |
+| 4 | 표 `TemperatureInformation(name text, temperature double precision, date timestamp)` 만들기 | [5.8](../TS100/Gitbook/5.cloud/5.8.create-database-table.md) |
+| 5 | Lambda 함수 + psycopg2 계층, API Gateway REST API(GET, 쿼리 문자열 name·temperature·date) | [5.9](../TS100/Gitbook/5.cloud/5.9.create-aws-server.md) |
+| 6 | Lambda에서 INSERT, Pi에서 API 호출, pgAdmin에서 확인 | [5.10](../TS100/Gitbook/5.cloud/5.10.save-cloud-database.md) |
 
 온라인판: <https://lstgrp.gitbook.io/banana-thermometer>
 
@@ -1319,7 +1319,7 @@ flowchart LR
 
 **① 게이트웨이에 먼저 저장하고(store), 나중에 보낸다(forward).** 인터넷은 끊긴다. `logger.py`는 받는 즉시 SQLite에 저장하고, `uploader.py`는 `uploaded = 0`인 줄만 골라 보낸 뒤 성공한 줄만 1로 바꾼다. 네트워크가 끊겨도 데이터는 Pi에 남아 있다가 다시 연결되면 올라간다. 수신(실시간)과 업로드(네트워크 대기)를 **다른 프로그램**으로 나누었기 때문에 업로드가 느려도 BLE 수신이 막히지 않는다(13.14절의 "블로킹 금지").
 
-**② 비밀 정보를 코드에 적지 않는다.** 원본 `TS100/main_cloud.py`에는 실제 API Gateway 주소가 소스에 그대로 적혀 있었다. 코드를 Git에 올리거나 학생끼리 공유하는 순간 주소가 퍼지고, 누구나 그 주소로 가짜 데이터를 넣을 수 있다. 이 교재의 코드는 주소와 토큰을 **환경 변수**로만 받는다.
+**② 비밀 정보를 코드에 적지 않는다.** 원본 `TS100/python/main_cloud.py`에는 실제 API Gateway 주소가 소스에 그대로 적혀 있었다. 코드를 Git에 올리거나 학생끼리 공유하는 순간 주소가 퍼지고, 누구나 그 주소로 가짜 데이터를 넣을 수 있다. 이 교재의 코드는 주소와 토큰을 **환경 변수**로만 받는다.
 
 | 어디에 | 무엇을 |
 |---|---|
@@ -1558,7 +1558,7 @@ sudo btmon -w ~/ch13/ts100.btsnoop      # 화면 출력 + 파일 저장(Wireshar
          python scan.py --name TS100         # 이름이 TS100으로 시작하는 장치만
          python scan.py --hts                # Health Thermometer(0x1809)를 광고하는 장치만
          python scan.py --time 10            # 10초 동안 스캔
-원본 : TS100-Gitbook 4.1.3절 scan(), TS100/Bleaktest/discover.py
+원본 : TS100-Gitbook 4.1.3절 scan(), TS100/python/Bleaktest/discover.py
        (bleak 3.x에서 BLEDevice.rssi가 없어졌으므로 AdvertisementData.rssi를 쓰도록 고침)
 """
 
@@ -2404,7 +2404,7 @@ sudo systemctl daemon-reload
   GATEWAY_UPLOAD_METHOD (선택) POST(기본, JSON 본문) 또는 GET(TS100-Gitbook 5.10절 API 형식)
 사용법 : python uploader.py --once          # 한 번 올리고 끝(systemd 타이머용)
          python uploader.py --interval 60   # 60초마다 반복
-원본 : TS100/main_cloud.py send_cloud() (주소를 코드에 적던 방식을 환경 변수로 바꾸고,
+원본 : TS100/python/main_cloud.py send_cloud() (주소를 코드에 적던 방식을 환경 변수로 바꾸고,
        실패한 건은 DB에 남겨 두었다가 다음에 다시 보내도록 고침)
 """
 
@@ -2693,7 +2693,7 @@ Raspberry Pi와 체온계 없이 PC에서 확인할 수 있는 것은 모두 확
 2. 수집 중에 ① 체온계 전원을 1분 끄기 ② `sudo kill -9`로 서비스 죽이기를 각각 한 번씩 하고, `journalctl -u gateway`에서 해당 부분을 찾아 무슨 일이 일어났는지 설명한다. 그래프에 빈 구간이 생겼다면 표시한다.
 3. 다음 중 **하나**를 골라 코드를 고치고, 바꾼 부분(diff)과 실행 결과를 붙인다.
    - (가) `logger.py`에 "37.5 °C 이상이 3번 연속이면 경고를 출력하고 [8장](08_gpio_pigpio.md)의 LED(GPIO17, 물리 핀 11)를 켠다"를 추가한다(pigpio Python 클라이언트, `pigpiod` 필요).
-   - (나) 시뮬레이터 펌웨어(`TS100_firmware/src/main.cpp`)의 Flags를 `0x02`로 바꾸고 온도 변환을 반올림(`lroundf`)으로 고친 뒤, `read_temp.py`가 장치 시각을 읽는지 확인한다. 고치기 전후의 `raw=` 바이트를 비교한다.
+   - (나) 시뮬레이터 펌웨어(`TS100/firmware/src/main.cpp`)의 Flags를 `0x02`로 바꾸고 온도 변환을 반올림(`lroundf`)으로 고친 뒤, `read_temp.py`가 장치 시각을 읽는지 확인한다. 고치기 전후의 `raw=` 바이트를 비교한다.
    - (다) `report.py`에 `hourly` 명령(시간대별 평균, SQL의 `substr(received_at, 1, 13)`으로 묶기)을 추가한다.
 
 **과제 13-3. (선택) 클라우드 연동과 보안 점검**

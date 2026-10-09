@@ -39,5 +39,5 @@
 ## 관련 자료
 
 - 예제 원본: [`../Codes`](../Codes), [`../Pigpio`](../Pigpio)
-- BLE 체온계 교재: [`../TS100-Gitbook`](../TS100-Gitbook)
+- BLE 체온계 교재: [`../TS100/Gitbook`](../TS100/Gitbook)
 - 집필 출처와 정정 목록: [sources.md](sources.md)

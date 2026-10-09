@@ -5,7 +5,7 @@
          python scan.py --name TS100         # 이름이 TS100으로 시작하는 장치만
          python scan.py --hts                # Health Thermometer(0x1809)를 광고하는 장치만
          python scan.py --time 10            # 10초 동안 스캔
-원본 : TS100-Gitbook 4.1.3절 scan(), TS100/Bleaktest/discover.py
+원본 : TS100-Gitbook 4.1.3절 scan(), TS100/python/Bleaktest/discover.py
        (bleak 3.x에서 BLEDevice.rssi가 없어졌으므로 AdvertisementData.rssi를 쓰도록 고침)
 """
 
