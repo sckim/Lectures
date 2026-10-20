@@ -1,0 +1,61 @@
+# 폴더 내부 중복 회로도 목록 (2026-10-10)
+
+내용(MD5)이 완전히 같은 `.bdf` 묶음 16개다. 프로젝트 단위 중복(0_Basic↔4_Flipflop, 5_Ripplecounter↔6_Counter, 1_Combinational/Graycode↔6_Counter/Gray_counter)과 한 프로젝트 안의 사본이 섞여 있다. 아직 아무것도 지우지 않았다.
+
+- **2개 동일**
+  - `1_Combinational/Graycode/graycode.bdf`
+  - `6_Counter/Gray_counter/graycode.bdf`
+- **2개 동일**
+  - `4_Flipflop/T_FlipFlop/jkff_test.bdf`
+  - `4_Flipflop/T_FlipFlop/tff.bdf`
+- **2개 동일**
+  - `1_Combinational/FA4_adder/Schematics/fulladder.bdf`
+  - `1_Combinational/FA4_adder/fulladder.bdf`
+- **2개 동일**
+  - `5_Ripplecounter/3.Counter/2bits_Counter/2bits_counter/2bits_counter.bdf`
+  - `6_Counter/2bits_Counter/2bits_counter/2bits_counter.bdf`
+- **2개 동일**
+  - `6_Counter/3bits counter with t syn/3bit counter.bdf`
+  - `6_Counter/3bits counter with t syn/3bit_counter.bdf`
+- **2개 동일**
+  - `0_Basic/MasterSlave_SR_FF/MasterSlave_SRFF/MasterSlave_SR_FF.bdf`
+  - `4_Flipflop/4_1_3_master_slave_ff/MasterSlave_SR_FF/MasterSlave_SRFF/MasterSlave_SR_FF.bdf`
+- **2개 동일**
+  - `0_Basic/Debounce_Circuit/Debounce_Circuit/Debouce.bdf`
+  - `4_Flipflop/4_1_7_debouncing_circuit/Debounce_Circuit/Debouce.bdf`
+- **2개 동일**
+  - `6_Counter/GrayCounter_NAND/GrayCounter.bdf`
+  - `6_Counter/GrayCounter_NOT/GreyCounter.bdf`
+- **2개 동일**
+  - `1_Combinational/Graycode/graycode/graycode.bdf`
+  - `6_Counter/Gray_counter/graycode/graycode.bdf`
+- **2개 동일**
+  - `1_Combinational/FA4_adder/Schematics/halfadder.bdf`
+  - `1_Combinational/FA4_adder/halfadder.bdf`
+- **6개 동일**
+  - `5_Ripplecounter/RippleCounter/3bit ripple/3bit_ripple.bdf`
+  - `5_Ripplecounter/RippleCounter/3bit_ripple/3bit_ripple.bdf`
+  - `6_Counter/0.3bit ripple up cnt/3bit_ripple.bdf`
+  - `6_Counter/1.3bit ripple down cnt/3bit_ripple.bdf`
+  - `6_Counter/3bit ripple/3bit_ripple.bdf`
+  - `Tutorial/Tutorial.bdf`
+- **2개 동일**
+  - `5_Shift registers/74194/piso.bdf`
+  - `5_Shift registers/PISO_74165/piso.bdf`
+- **5개 동일**
+  - `6_Counter/0.3digits using 7447/SixCnt.bdf`
+  - `6_Counter/1.3digits with VHDL/SixCnt.bdf`
+  - `6_Counter/1.3digits with decoder/SixCnt.bdf`
+  - `6_Counter/2. 3digits with VHDL/SixCnt.bdf`
+  - `6_Counter/4digits using 7447/SixCnt.bdf`
+- **2개 동일**
+  - `0_Basic/Total_FF_ExampleCollection(SR,JK,D,T)/Total_FF_ExampleCollection/ExampleCollection.bdf`
+  - `4_Flipflop/4_1_2_basic_flipflops/Total_FF_ExampleCollection(SR,JK,D,T)/Total_FF_ExampleCollection/ExampleCollection.bdf`
+- **3개 동일**
+  - `6_Counter/2. 3digits with VHDL/Counter.bdf`
+  - `6_Counter/4digits using 7447/Counter.bdf`
+  - `DigitalClock/Counter.bdf`
+- **3개 동일**
+  - `5_Ripplecounter/RippleCounter/3bit ripple/3bit_ripple_down.bdf`
+  - `5_Ripplecounter/RippleCounter/3bit_ripple/3bit_ripple_down.bdf`
+  - `6_Counter/3bit ripple/3bit_ripple_down.bdf`

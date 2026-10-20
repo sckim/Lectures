@@ -1,0 +1,52 @@
+# lab08_univ_sch : 4-bit universal shift register with 74194 macro (Part C, schematic), Quartus Prime Lite 18.1, DE1-SoC (5CSEMA5F31C6)
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY univ74194_sch
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name BDF_FILE univ74194_sch.bdf
+# ---- DE1-SoC pins (DE1-SoC User Manual rev.F, Tables 3-6, 3-7, 3-8) ----
+# Clk = KEY[0]
+set_location_assignment PIN_AA14 -to Clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Clk
+# ClrN = KEY[1]
+set_location_assignment PIN_AA15 -to ClrN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ClrN
+# In[0] = SW[0]
+set_location_assignment PIN_AB12 -to In[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to In[0]
+# In[1] = SW[1]
+set_location_assignment PIN_AC12 -to In[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to In[1]
+# In[2] = SW[2]
+set_location_assignment PIN_AF9 -to In[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to In[2]
+# In[3] = SW[3]
+set_location_assignment PIN_AF10 -to In[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to In[3]
+# SLSI = SW[6]
+set_location_assignment PIN_AE11 -to SLSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SLSI
+# SRSI = SW[7]
+set_location_assignment PIN_AC9 -to SRSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SRSI
+# S0 = SW[8]
+set_location_assignment PIN_AD10 -to S0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S0
+# S1 = SW[9]
+set_location_assignment PIN_AE12 -to S1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to S1
+# QA = LEDR[3]
+set_location_assignment PIN_V18 -to QA
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to QA
+# QB = LEDR[2]
+set_location_assignment PIN_V17 -to QB
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to QB
+# QC = LEDR[1]
+set_location_assignment PIN_W16 -to QC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to QC
+# QD = LEDR[0]
+set_location_assignment PIN_V16 -to QD
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to QD
