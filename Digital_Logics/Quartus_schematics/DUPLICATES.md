@@ -1,4 +1,43 @@
-# 폴더 내부 중복 회로도 목록 (2026-10-10)
+# Quartus_schematics 중복 목록
+
+## A. 폴더 단위 중복 (2026-10-29 재조사)
+
+설계 소스(.bdf/.v/.vhd/.vwf/.bsf 등)를 MD5로 비교한 결과다. db·output_files·desktop.ini는 비교에서 뺐다. 아직 아무것도 지우거나 옮기지 않았다.
+
+| # | 남길 폴더 (권장) | 정리 후보 | 차이 | 크기 |
+|---|---|---|---|---|
+| 1 | `1_Combinational/Graycode` | `6_Counter/Gray_counter` | 완전히 같다 | 13.5 MB |
+| 2 | `5_Ripplecounter/RippleCounter/4_3_1_ripple_up_counter/Ripple up counter` | `6_Counter/Ripple up counter` | desktop.ini만 다르다 | 0.3 MB |
+| 3 | `5_Ripplecounter/RippleCounter/4_3_2_ripple_down_counter/Ripple down counter` | `6_Counter/Ripple down counter` | desktop.ini만 다르다 | 0.3 MB |
+| 4 | `5_Ripplecounter/RippleCounter/4_3_3_ripple_up_down_counter/Ripple up down counter` | `6_Counter/Ripple up down counter` | desktop.ini만 다르다 | 0.3 MB |
+| 5 | `5_Ripplecounter/RippleCounter/4_3_4_modulom_ripple_counter/Modulo-m ripple counter` | `6_Counter/Modulo-m ripple counter` | desktop.ini만 다르다 | 0.3 MB |
+| 6 | `5_Ripplecounter/RippleCounter/3bit ripple` | `6_Counter/3bit ripple` | 완전히 같다 | 3.0 MB |
+| 7 | `5_Ripplecounter/3.Counter/4bits_Counter` | `6_Counter/4bits_Counter` | 완전히 같다 | 0.4 MB |
+| 8 | `5_Ripplecounter/3.Counter/2bits_Counter` (Quartus 18.1) | `6_Counter/2bits_Counter` (Quartus 9.1) | qsf의 버전 줄만 다르다 | 3.0 MB |
+| 9 | `4_Flipflop/4_1_7_debouncing_circuit` | `0_Basic/Debounce_Circuit` | ※ | 2.9 MB |
+| 10 | `4_Flipflop/4_1_3_master_slave_ff` | `0_Basic/MasterSlave_SR_FF` | ※ | 2.9 MB |
+| 11 | `4_Flipflop/4_1_3_1_master_slave_ff_subblock` | `0_Basic/MasterSlave_SR_FF(Ver.Subblock)` | ※ | 36 KB |
+| 12 | `4_Flipflop/4_1_2_basic_flipflops` | `0_Basic/Total_FF_ExampleCollection(SR,JK,D,T)` | ※ | 3.0 MB |
+| 13 | `5_Shift registers/4_2_6_digital_locker_reg` | 최상위 `Digital_StrongBox` (zip만 있음) | 압축본이다 | 0.4 MB |
+| 14 | `5_Shift registers/4_2_7_random_num_gen_reg` | `7.State machine/RandomNumber_Generator` (zip만 있음) | 압축본이다 | 0.3 MB |
+
+※ `4_x_x` 번호 폴더는 교재 절 번호로 다시 만든 사본이다. 회로도·파형 캡처 `.png`가 있지만 `.qsf`(핀 할당)와 `.sof`/`.pof`가 없다. 정리하기 전에 `0_Basic` 쪽 `.qsf`/`.sof`를 번호 폴더로 옮겨야 한다.
+
+표의 정리 후보를 모두 치우면 약 30 MB가 줄어든다.
+
+## B. 확인이 필요한 항목 (자동 정리 대상 아님)
+
+| 항목 | 상태 | 판단 |
+|---|---|---|
+| `6_Counter/0.3bit ripple up cnt` ↔ `6_Counter/1.3bit ripple down cnt` | 두 폴더가 완전히 같다 | down 폴더에 up 회로가 복사된 것으로 보인다. 다운 카운터 원본을 잃었을 수 있다 |
+| `5_Ripplecounter/RippleCounter/3bit ripple` ↔ `3bit_ripple` | 주 회로도만 같다. vwf·qsf가 다르고 `3bit_ripple`에는 `ripple_counter.bdf`가 더 있다 | 별개 판이므로 둘 다 남긴다 |
+| `6_Counter/GrayCounter_NAND` ↔ `6_Counter/GrayCounter_NOT` | 회로도가 같다 | NOT판에 NAND 회로가 들어간 것으로 보인다 |
+| `4_Flipflop/T_FlipFlop`의 `jkff_test.bdf` = `tff.bdf` | 한 프로젝트 안의 사본이다 | 파일 하나만 정리하면 된다 |
+| `1_Combinational/FA4_adder` ↔ 그 안의 `Schematics/` | 반가산기·전가산기 bdf가 겹친다 | 프로젝트 구조상 필요할 수 있다 |
+| `SixCnt.bdf`(5곳), `Counter.bdf`(3곳) | 여러 프로젝트가 같은 하위 블록을 쓴다 | 각 프로젝트에 필요하므로 그대로 둔다 |
+| Nios II `*_bsp/HAL`(7곳), `drivers` | 자동 생성 BSP이다 | 프로젝트마다 필요하므로 그대로 둔다 |
+
+## C. 파일 단위 중복 .bdf 목록 (2026-10-10 조사)
 
 내용(MD5)이 완전히 같은 `.bdf` 묶음 16개다. 프로젝트 단위 중복(0_Basic↔4_Flipflop, 5_Ripplecounter↔6_Counter, 1_Combinational/Graycode↔6_Counter/Gray_counter)과 한 프로젝트 안의 사본이 섞여 있다. 아직 아무것도 지우지 않았다.
 

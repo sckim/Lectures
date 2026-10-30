@@ -154,6 +154,11 @@ PDF/
 greybox_tmp/
 .qsys_edit/
 qsim/
+Quartus_labs/
+Quartus_legacy_devices/
+Quartus_sim_examples/
+Quartus_schematics/
+
 # ModelSim
 *.vstf
 *.cr.mti
