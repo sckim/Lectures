@@ -15,7 +15,7 @@ This repository systematically organizes reference materials and practical examp
 ├── 📙 RaspberryPi/         # 임베디드 시스템 (C, 다중 스레드, GPIO, BLE IoT, Simulink)
 ├── 🛰️ Adafruit feather.../ # nRF52840 기반 BLE 및 시리얼 통신 예제
 ├── 💻 VS2019/              # C 언어 기초 및 데이터 처리 실습
-├── 🔌 Schematics/          # KiCad 회로도/PCB (Analog Discovery 2 실습 확장 키트, 온보드 레벨 시프터)
+├── 🔌 Schematics/          # (이동) AD2 확장 키트 → Stm32NucleoF103RB 저장소 Schematics/AD2_extension
 ├── 📄 References.md        # 상세 학습 참고자료 및 교재 목록
 └── 📄 LICENSE              # GNU GPL v3.0
 ```
@@ -42,7 +42,7 @@ This repository systematically organizes reference materials and practical examp
 *   **실습 구성**:
     *   [C/Assembly 분석](/MicrochipStudio) : Disassembler와 디버거를 통한 CPU 동작 원리 이해 (`asmStart`, `asmBlink`, `add`, `return`, `while`)
     *   [C 언어 복습](/VS2019) : 임베디드 C 기초 다지기 (구조체, 파일 입출력, 디지털 필터, 시리얼 통신)
-    *   [AD2 확장 키트](/Schematics/AD2_extension) : Analog Discovery 2 연동 실습 보드 (KiCad, UNO/Nucleo/Feather 지원, I2C·PWM·SPI 레벨 시프터 온보드)
+    *   [AD2 확장 키트](https://github.com/sckim/Stm32NucleoF103RB/tree/main/Schematics/AD2_extension) : Analog Discovery 2 연동 실습 보드 (KiCad, UNO/Nucleo/Feather 지원, I2C·PWM·SPI 레벨 시프터 온보드) — 2026-10 [Stm32NucleoF103RB](https://github.com/sckim/Stm32NucleoF103RB) 저장소로 이동
 
 ### 4️⃣ [임베디드시스템 (2학기)](https://docs.google.com/document/d/1DVsG6Le9iVnEqlcv0TA36XSPXYZ1sAhT7xt2vGAz96Q/edit)
 *   **목표**: 고성능 프로세서 환경에서의 임베디드 운영체제 및 응용 프로그래밍
