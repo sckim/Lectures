@@ -1,8 +1,8 @@
 # Quartus 예제 — 강의 슬라이드별 정리
 
-디지털논리회로 강의08~11 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름은 `슬라이드 제목_페이지번호`이고, 폴더 안 파일 이름은 원본 그대로이다. 원본은 `Quartus_schematics`에 있으며, db·incremental_db·simulation 폴더는 재생성되므로 제외했다.
+디지털논리회로 강의08~11 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름은 `슬라이드 제목_페이지번호`이다. 같은 프로젝트는 [`../Quartus_schematics`](../Quartus_schematics/README.md)에도 주제별로 정리되어 있다.
 
-이 문서는 폴더 구성과 함께, 예제마다 회로 구성·동작 원리·시뮬레이션에서 확인할 점을 정리한 것이다.
+예제마다 회로 구성·동작 원리·시뮬레이션에서 확인할 점을 정리했다.
 
 | 강의 | 주제 | 예제 수 | 핵심 소자 |
 |---|---|---|---|
@@ -12,10 +12,8 @@
 | 강의11 | 동기 순서논리회로 | 5 | DFF, JKFF, 74112, 74138 |
 | 슬라이드 미대응 | 동기식 카운터 | 5 | JKFF, AND/OR 게이트 |
 
-자료 구분:
-- **슬라이드 화면**: 슬라이드에 실린 Quartus 화면과 창 제목·핀 이름으로 대조해 찾은 프로젝트이다.
-- **회로도·시뮬레이션**: 회로도 이미지(`*schematic*`)와 시뮬레이션 결과 이미지가 모두 있는 예제를 슬라이드 주제에 맞춰 배정한 것이다.
-- `*_schematic.png` 가운데 원본 캡처가 없던 것은 .bdf를 직접 읽어 그린 그림이다(Quartus 화면 캡처 아님).
+참고:
+- `*_schematic.png` 가운데 일부는 .bdf를 읽어 그린 그림이다(Quartus 화면 캡처 아님).
 - 일부 예제는 프로젝트가 .zip으로만 들어 있다. 압축을 풀고 .qpf를 열면 된다.
 - 시뮬레이션 설명의 시각(예: "약 3 µs")은 캡처 화면에서 읽은 대략값이다.
 
@@ -23,13 +21,13 @@
 
 ## 강의08_플립플롭
 
-| 폴더 | 내용 | 구분 | 원본 (Quartus_schematics) |
-|---|---|---|---|
-| `01. 기본적인 플립플롭_22` | NOR S-R 래치 | 회로도·시뮬레이션 | `4_Flipflop/SR_Latch` |
-| `Switch Debouncing with an S-R Latch_34` | NAND 래치 디바운스 회로 | 회로도·시뮬레이션 | `4_Flipflop/4_1_7_debouncing_circuit` |
-| `3. 주종형 S-R 플립플롭_59` | NAND 게이트 주종형 S-R FF | 회로도·시뮬레이션 | `4_Flipflop/4_1_3_master_slave_ff` |
-| `3. 주종형 S-R 플립플롭_60` | SR_FF 블록 2개로 만든 주종형 FF | 회로도·시뮬레이션 | `4_Flipflop/4_1_3_1_master_slave_ff_subblock` |
-| `11.9 Summary_135` | SR·JK·D·T 플립플롭 모음 | 회로도·시뮬레이션 | `4_Flipflop/4_1_2_basic_flipflops` |
+| 폴더 | 내용 | Quartus_schematics 폴더 |
+|---|---|---|
+| `01. 기본적인 플립플롭_22` | NOR S-R 래치 | `04_Flipflop/sr_latch` |
+| `Switch Debouncing with an S-R Latch_34` | NAND 래치 디바운스 회로 | `04_Flipflop/debouncing_circuit` |
+| `3. 주종형 S-R 플립플롭_59` | NAND 게이트 주종형 S-R FF | `04_Flipflop/master_slave_ff` |
+| `3. 주종형 S-R 플립플롭_60` | SR_FF 블록 2개로 만든 주종형 FF | `04_Flipflop/master_slave_ff_subblock` |
+| `11.9 Summary_135` | SR·JK·D·T 플립플롭 모음 | `04_Flipflop/basic_flipflops` |
 
 두 게이트의 출력을 서로의 입력으로 되먹임하면 1비트를 기억하는 래치가 되고, 여기에 클럭 제어를 더하면 플립플롭이 된다. 강의08 예제 5개는 이 과정을 래치 → 디바운스 응용 → 주종형 FF → FF 4종 순서로 보여 준다.
 
@@ -116,13 +114,13 @@
 
 ## 강의09_레지스터
 
-| 폴더 | 내용 | 구분 | 원본 (Quartus_schematics) |
-|---|---|---|---|
-| `1. 4비트 직렬입력-직렬출력 레지스터 구조_18` | 4비트 SISO(DFFE), 8비트 7491 | 회로도·시뮬레이션 | `5_Shift registers/4_2_1_siso_reg` |
-| `Right-Shift Register_23` | 4비트 우측 시프트 레지스터(DFFE) | 슬라이드 화면 (창 제목 `rightshift.sim.vwf`) | `5_Shift registers/RightShift` |
-| `74LS164(8-Bit Parallel Output Serial Shift Registers)_31` | 74164 SIPO | 회로도·시뮬레이션 | `5_Shift registers/4_2_2_sipo_reg` |
-| `1. 디지털 금고_76` | 디지털 금고 | 회로도·시뮬레이션 | `5_Shift registers/4_2_6_digital_locker_reg` |
-| `3. 난수발생회로_79` | 난수 발생 회로 | 회로도·시뮬레이션 | `5_Shift registers/4_2_7_random_num_gen_reg` |
+| 폴더 | 내용 | Quartus_schematics 폴더 |
+|---|---|---|
+| `1. 4비트 직렬입력-직렬출력 레지스터 구조_18` | 4비트 SISO(DFFE), 8비트 7491 | `05_ShiftRegister/shiftreg_siso` |
+| `Right-Shift Register_23` | 4비트 우측 시프트 레지스터(DFFE) | `05_ShiftRegister/shiftreg_right_4bit` |
+| `74LS164(8-Bit Parallel Output Serial Shift Registers)_31` | 74164 SIPO | `05_ShiftRegister/shiftreg_sipo_74164` |
+| `1. 디지털 금고_76` | 디지털 금고 | `05_ShiftRegister/shiftreg_digital_locker` |
+| `3. 난수발생회로_79` | 난수 발생 회로 | `05_ShiftRegister/shiftreg_random_number` |
 
 레지스터는 같은 클럭을 받는 플립플롭을 줄지어 놓은 것이다. 앞 단 Q를 뒤 단 D에 이으면 클럭마다 데이터가 한 칸씩 이동하는 시프트 레지스터가 되고, 금고와 난수 발생기는 이 구조를 응용한 것이다.
 
@@ -204,14 +202,14 @@ XNOR 귀환에서는 1111이 빠지는데, 1111에 들어가면 XNOR(1,1)=1이 �
 
 ## 강의10_비동기식_카운터
 
-| 폴더 | 내용 | 구분 | 원본 (Quartus_schematics) |
-|---|---|---|---|
-| `12.3 Design of Binary Counters_7` | 3비트 리플 상향 카운터 | 회로도·시뮬레이션 | `5_Ripplecounter/RippleCounter/4_3_1_ripple_up_counter` |
-| `12.3 Design of Binary Counters_7_14` | 3비트 리플 상향(`3bit_ripple.bdf`, p.7)·MOD-8 하향(`3bit_ripple_down.bdf`, p.14) | 슬라이드 화면 (핀 n_cp, ClrN, Q[2..0]) | `5_Ripplecounter/RippleCounter/3bit ripple` |
-| `MOD-8 리플 다운 카운터_14` | 리플 하향 카운터 | 회로도·시뮬레이션 | `5_Ripplecounter/RippleCounter/4_3_2_ripple_down_counter` |
-| `3. 비동기 상향-하향 카운터_24` | 리플 상향/하향 카운터 | 회로도·시뮬레이션 | `5_Ripplecounter/RippleCounter/4_3_3_ripple_up_down_counter` |
-| `4. modulo-m 비동기 카운터_26` | modulo-m 리플 카운터 | 회로도·시뮬레이션 | `5_Ripplecounter/RippleCounter/4_3_4_modulom_ripple_counter` |
-| `0, 1, 2, …,8,9, 0, 1, 2, … 카운터_29` | 0~9 카운터(74112×4, 7400) | 슬라이드 화면 (창 제목 `eightcounter.sim.vwf`) | `6_Counter/eightcounter` |
+| 폴더 | 내용 | Quartus_schematics 폴더 |
+|---|---|---|
+| `12.3 Design of Binary Counters_7` | 3비트 리플 상향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down` |
+| `12.3 Design of Binary Counters_7_14` | 3비트 리플 상향(`3bit_ripple.bdf`, p.7)·MOD-8 하향(`3bit_ripple_down.bdf`, p.14) | `06_RippleCounter/ripple_counter_3bit_up_down` |
+| `MOD-8 리플 다운 카운터_14` | 리플 하향 카운터 | `06_RippleCounter/ripple_counter_3bit_down` |
+| `3. 비동기 상향-하향 카운터_24` | 리플 상향/하향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down_sel` |
+| `4. modulo-m 비동기 카운터_26` | modulo-m 리플 카운터 | `06_RippleCounter/ripple_counter_modulo_m` |
+| `0, 1, 2, …,8,9, 0, 1, 2, … 카운터_29` | 0~9 카운터(74112×4, 7400) | `06_RippleCounter/ripple_counter_mod10_74112` |
 
 비동기식(리플) 카운터는 첫 FF만 외부 클럭을 받고, 나머지는 앞 단 출력을 클럭으로 쓴다. 모든 FF는 J=K=1(토글)이라 클럭 에지마다 반전하고, 각 단은 앞 단의 주파수를 2로 나눈다. 상향·하향은 '어느 에지에서 다음 단을 트리거하느냐'와 'Q와 /Q 중 무엇을 출력으로 보느냐'로 정해진다.
 
@@ -287,13 +285,13 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 
 ## 강의11_동기순서논리회로
 
-| 폴더 | 내용 | 구분 | 원본 (Quartus_schematics) |
-|---|---|---|---|
-| `Quartus II 사용법 및 DE2 보드 (docs)_10` | 순차회로 해석(DFF 2개) | 슬라이드 화면 (창 제목 `Seq_Analysis1`) | `7.State machine/seq_analysis_dff` |
-| `Example 1 (Quartus II)_14` | Example 1/2 (74112, SetN·Cp·A) | 슬라이드 화면·회로도·시뮬레이션 | `7.State machine/5_sequential_circuit_analysis` |
-| `Example 1 (Quartus II)_15` | 같은 회로의 JKFF 기본소자판 (p.15·17 창 제목 `Example1.sim.vwf`) | 슬라이드 화면 | `7.State machine/seq_jkff_exam` |
-| `7. 논리 회로의 구현_60` | J-K FF 동기 순차회로 설계(x, A, B) | 회로도·시뮬레이션 | `7.State machine/6_sequential_circuit_design` |
-| `예제 9-4. 그레이 코드 카운터 회로도_120` | 74138+JKFF 그레이 코드 카운터 | 슬라이드 화면 (핀 clk, q[2..0]) | `7.State machine/seq_jkff_decoder_74138` |
+| 폴더 | 내용 | Quartus_schematics 폴더 |
+|---|---|---|
+| `Quartus II 사용법 및 DE2 보드 (docs)_10` | 순차회로 해석(DFF 2개) | `08_StateMachine/seq_analysis_dff` |
+| `Example 1 (Quartus II)_14` | Example 1/2 (74112, SetN·Cp·A) | `08_StateMachine/seq_analysis_jk_74112` |
+| `Example 1 (Quartus II)_15` | 같은 회로의 JKFF 기본소자판 | `08_StateMachine/seq_analysis_jk_jkff` |
+| `7. 논리 회로의 구현_60` | J-K FF 동기 순차회로 설계(x, A, B) | `08_StateMachine/seq_design_jkff` |
+| `예제 9-4. 그레이 코드 카운터 회로도_120` | 74138+JKFF 그레이 코드 카운터 | `08_StateMachine/gray_counter_74138_or_design` |
 
 순서회로 해석은 '회로도 → FF 입력식 → 상태표 → 상태도', 설계는 그 반대 순서다. 아래 예제들은 회로도에서 입력식을 읽고, 그 식으로 상태 변화를 예측한 뒤 시뮬레이션으로 확인하는 흐름으로 보면 된다. JK FF의 다음 상태는 Q⁺ = J·Q′ + K′·Q, D FF는 Q⁺ = D다.
 
@@ -383,13 +381,13 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 동기식 카운터 예제로, 강의08~11 슬라이드에 대응하는 페이지가 없다.
 
-| 폴더 | 원본 (Quartus_schematics) |
+| 폴더 | Quartus_schematics 폴더 |
 |---|---|
-| `6_1_2bit_counter` | `5_Ripplecounter/3.Counter/6_1_2bit_counter` |
-| `6_2_3bit_counter` | `5_Ripplecounter/3.Counter/6_2_3bit_counter` |
-| `4bits_Counter` | `6_Counter/4bits_Counter` |
-| `6_4_syn_bcd_counter` | `6_Counter/6_4_syn_bcd_counter` |
-| `6_5_syn_3bit_updown_counter` | `6_Counter/6_5_syn_3bit_updown_counter` |
+| `6_1_2bit_counter` | `07_Counter/sync_counter_2bit_jk` |
+| `6_2_3bit_counter` | `07_Counter/sync_counter_3bit_jk` |
+| `4bits_Counter` | `07_Counter/sync_counter_4bit_jk` |
+| `6_4_syn_bcd_counter` | `07_Counter/sync_counter_bcd_jk` |
+| `6_5_syn_3bit_updown_counter` | `07_Counter/sync_counter_3bit_updown_jk` |
 
 모두 JKFF(상승 에지, PRN=VCC)가 Cp를 공통으로 받고 ClrN이 모든 CLRN에 들어간다. 각 FF를 J=K로 묶어 T FF처럼 쓰고, '아래 비트가 모두 1일 때 토글'하도록 AND로 토글 조건을 만든다. 모든 FF가 동시에 바뀌므로 리플 카운터와 달리 출력이 단계적으로 흐트러지지 않는다.
 
