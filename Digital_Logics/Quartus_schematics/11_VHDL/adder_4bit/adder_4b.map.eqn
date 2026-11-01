@@ -1,0 +1,158 @@
+-- Copyright (C) 1991-2006 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L1 is add~32
+--operation mode is arithmetic
+
+A1L1_carry_eqn = A1L11;
+A1L1 = bstring[0] $ astring[0] $ A1L1_carry_eqn;
+
+--A1L2 is add~34
+--operation mode is arithmetic
+
+A1L2 = CARRY(bstring[0] & !astring[0] & !A1L11 # !bstring[0] & (!A1L11 # !astring[0]));
+
+
+--A1L3 is add~37
+--operation mode is arithmetic
+
+A1L3_carry_eqn = A1L2;
+A1L3 = bstring[1] $ astring[1] $ !A1L3_carry_eqn;
+
+--A1L4 is add~39
+--operation mode is arithmetic
+
+A1L4 = CARRY(bstring[1] & (astring[1] # !A1L2) # !bstring[1] & astring[1] & !A1L2);
+
+
+--A1L5 is add~42
+--operation mode is arithmetic
+
+A1L5_carry_eqn = A1L4;
+A1L5 = bstring[2] $ astring[2] $ A1L5_carry_eqn;
+
+--A1L6 is add~44
+--operation mode is arithmetic
+
+A1L6 = CARRY(bstring[2] & !astring[2] & !A1L4 # !bstring[2] & (!A1L4 # !astring[2]));
+
+
+--A1L7 is add~47
+--operation mode is arithmetic
+
+A1L7_carry_eqn = A1L6;
+A1L7 = bstring[3] $ astring[3] $ !A1L7_carry_eqn;
+
+--A1L8 is add~49
+--operation mode is arithmetic
+
+A1L8 = CARRY(bstring[3] & (astring[3] # !A1L6) # !bstring[3] & astring[3] & !A1L6);
+
+
+--A1L9 is add~52
+--operation mode is normal
+
+A1L9_carry_eqn = A1L8;
+A1L9 = A1L9_carry_eqn;
+
+
+--A1L11 is add~59
+--operation mode is arithmetic
+
+A1L11 = CARRY(cin);
+
+
+--bstring[0] is bstring[0]
+--operation mode is input
+
+bstring[0] = INPUT();
+
+
+--astring[0] is astring[0]
+--operation mode is input
+
+astring[0] = INPUT();
+
+
+--bstring[1] is bstring[1]
+--operation mode is input
+
+bstring[1] = INPUT();
+
+
+--astring[1] is astring[1]
+--operation mode is input
+
+astring[1] = INPUT();
+
+
+--bstring[2] is bstring[2]
+--operation mode is input
+
+bstring[2] = INPUT();
+
+
+--astring[2] is astring[2]
+--operation mode is input
+
+astring[2] = INPUT();
+
+
+--bstring[3] is bstring[3]
+--operation mode is input
+
+bstring[3] = INPUT();
+
+
+--astring[3] is astring[3]
+--operation mode is input
+
+astring[3] = INPUT();
+
+
+--cin is cin
+--operation mode is input
+
+cin = INPUT();
+
+
+--sum_string[0] is sum_string[0]
+--operation mode is output
+
+sum_string[0] = OUTPUT(A1L1);
+
+
+--sum_string[1] is sum_string[1]
+--operation mode is output
+
+sum_string[1] = OUTPUT(A1L3);
+
+
+--sum_string[2] is sum_string[2]
+--operation mode is output
+
+sum_string[2] = OUTPUT(A1L5);
+
+
+--sum_string[3] is sum_string[3]
+--operation mode is output
+
+sum_string[3] = OUTPUT(A1L7);
+
+
+--sum_string[4] is sum_string[4]
+--operation mode is output
+
+sum_string[4] = OUTPUT(A1L9);
+
+

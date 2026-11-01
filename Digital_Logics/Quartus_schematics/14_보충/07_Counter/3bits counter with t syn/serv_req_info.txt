@@ -1,0 +1,15 @@
+<internal_error>
+	<executable>quartus_map.exe</executable>
+	<sub_system>HDB</sub_system>
+	<file>/quartus/db/hdb/hdb_name_mgr.cpp</file>
+	<line>3494</line>
+	<callstack>
+	0x01018615: DB_HDB + 0x98615 (?open_cap_inst@HDB_NAME_MGR@@QAIXPAVHDB_CMP_ACTION_PT_INSTANCE@@@Z + 0x35)
+	</callstack>
+	<error>cap_inst != 0</error>
+	<date>Wed Oct 28 19:14:14 2009</date>
+	<version>Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition</version>
+	<full_error>cap_inst != 0
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition </full_error>
+</internal_error>
+
