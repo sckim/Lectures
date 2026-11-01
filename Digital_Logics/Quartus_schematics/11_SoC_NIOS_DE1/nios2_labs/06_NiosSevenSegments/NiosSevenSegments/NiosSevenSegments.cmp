@@ -1,8 +1,0 @@
-	component NiosSevenSegments is
-		port (
-			clk_clk          : in  std_logic                     := 'X'; -- clk
-			hex3_hex0_export : out std_logic_vector(31 downto 0);        -- export
-			hex5_hex4_export : out std_logic_vector(15 downto 0)         -- export
-		);
-	end component NiosSevenSegments;
-

@@ -1,3 +1,0 @@
-Revision name:      3digitsSeg
-Created on:         Monday, November 27, 2017
-Based on :          2digitsSeg

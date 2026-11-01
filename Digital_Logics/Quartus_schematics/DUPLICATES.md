@@ -1,5 +1,7 @@
 # Quartus_schematics 중복 목록
 
+> **2026-10-30 처리 완료.** 아래 A표의 정리 후보와 B표의 `1.3bit ripple down cnt`, 교재 번호 폴더 사본(`6_Counter\3bits_Counter`, `BCD_Counter`, `3bits_UpDown_Counter`, `7.State machine\Design_Sequential_Circuit`)을 `_to_delete_중복\`으로 옮겼다. 1번은 `Gray_counter`가 JK-FF 카운터이므로 `6_Counter` 쪽을 남기고 `1_Combinational/Graycode`를 격리했다. 7번은 `6_Counter` 쪽을 남겨 `6_3_syn_4bit_counter` 안으로 옮겼다. 9·10·12번의 `0_Basic` 사본은 이미 없었다. 같은 날 사용자 지시로 `6_Counter/GrayCounter_NOT`(NAND판과 회로도 동일), `6_Counter/4digits using 7447.txt`(2012년판 zip), `4_Flipflop/T_FlipFlop/tff.bdf`(`jkff_test.bdf` 사본, qsf 등록 줄도 삭제)를 삭제했다. 재조사 결과 격리 폴더 밖에는 프로젝트 단위 중복이 남아 있지 않다. 아래 표의 경로는 정리 전 기준이다. 같은 날 최상위 폴더 번호를 두 자리로 바꿨다(`0_Basic` → `00_Basic`, `7.State machine` → `07_State machine` 등). 이어서 05 중복을 없애려고 `05_Shift registers`를 두고 리플카운터부터 번호를 하나씩 미뤘다(`06_Ripplecounter` … `12_SoC_NIOS_DE1`).
+
 ## A. 폴더 단위 중복 (2026-10-29 재조사)
 
 설계 소스(.bdf/.v/.vhd/.vwf/.bsf 등)를 MD5로 비교한 결과다. db·output_files·desktop.ini는 비교에서 뺐다. 아직 아무것도 지우거나 옮기지 않았다.
