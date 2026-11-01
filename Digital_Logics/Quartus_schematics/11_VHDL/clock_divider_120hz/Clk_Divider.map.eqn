@@ -1,0 +1,219 @@
+-- Copyright (C) 1991-2006 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--buf is buf
+--operation mode is normal
+
+buf_lut_out = buf $ A1L33;
+buf = DFFEAS(buf_lut_out, clk, VCC, , , , , , );
+
+
+--cnt[10] is cnt[10]
+--operation mode is arithmetic
+
+cnt[10]_carry_eqn = A1L24;
+cnt[10]_lut_out = cnt[10] $ (!cnt[10]_carry_eqn);
+cnt[10] = DFFEAS(cnt[10]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L26 is cnt[10]~179
+--operation mode is arithmetic
+
+A1L26 = CARRY(cnt[10] & (!A1L24));
+
+
+--cnt[11] is cnt[11]
+--operation mode is arithmetic
+
+cnt[11]_carry_eqn = A1L26;
+cnt[11]_lut_out = cnt[11] $ (cnt[11]_carry_eqn);
+cnt[11] = DFFEAS(cnt[11]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L28 is cnt[11]~183
+--operation mode is arithmetic
+
+A1L28 = CARRY(!A1L26 # !cnt[11]);
+
+
+--cnt[12] is cnt[12]
+--operation mode is normal
+
+cnt[12]_carry_eqn = A1L28;
+cnt[12]_lut_out = cnt[12] $ (!cnt[12]_carry_eqn);
+cnt[12] = DFFEAS(cnt[12]_lut_out, clk, VCC, , , , , A1L33, );
+
+
+--cnt[9] is cnt[9]
+--operation mode is arithmetic
+
+cnt[9]_carry_eqn = A1L22;
+cnt[9]_lut_out = cnt[9] $ (cnt[9]_carry_eqn);
+cnt[9] = DFFEAS(cnt[9]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L24 is cnt[9]~191
+--operation mode is arithmetic
+
+A1L24 = CARRY(!A1L22 # !cnt[9]);
+
+
+--cnt[5] is cnt[5]
+--operation mode is arithmetic
+
+cnt[5]_carry_eqn = A1L14;
+cnt[5]_lut_out = cnt[5] $ (cnt[5]_carry_eqn);
+cnt[5] = DFFEAS(cnt[5]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L16 is cnt[5]~195
+--operation mode is arithmetic
+
+A1L16 = CARRY(!A1L14 # !cnt[5]);
+
+
+--cnt[0] is cnt[0]
+--operation mode is arithmetic
+
+cnt[0]_lut_out = !cnt[0];
+cnt[0] = DFFEAS(cnt[0]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L6 is cnt[0]~199
+--operation mode is arithmetic
+
+A1L6 = CARRY(cnt[0]);
+
+
+--cnt[1] is cnt[1]
+--operation mode is arithmetic
+
+cnt[1]_carry_eqn = A1L6;
+cnt[1]_lut_out = cnt[1] $ (cnt[1]_carry_eqn);
+cnt[1] = DFFEAS(cnt[1]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L8 is cnt[1]~203
+--operation mode is arithmetic
+
+A1L8 = CARRY(!A1L6 # !cnt[1]);
+
+
+--cnt[2] is cnt[2]
+--operation mode is arithmetic
+
+cnt[2]_carry_eqn = A1L8;
+cnt[2]_lut_out = cnt[2] $ (!cnt[2]_carry_eqn);
+cnt[2] = DFFEAS(cnt[2]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L10 is cnt[2]~207
+--operation mode is arithmetic
+
+A1L10 = CARRY(cnt[2] & (!A1L8));
+
+
+--cnt[3] is cnt[3]
+--operation mode is arithmetic
+
+cnt[3]_carry_eqn = A1L10;
+cnt[3]_lut_out = cnt[3] $ (cnt[3]_carry_eqn);
+cnt[3] = DFFEAS(cnt[3]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L12 is cnt[3]~211
+--operation mode is arithmetic
+
+A1L12 = CARRY(!A1L10 # !cnt[3]);
+
+
+--A1L30 is LessThan~259
+--operation mode is normal
+
+A1L30 = !cnt[2] & (!cnt[1] # !cnt[0]) # !cnt[3];
+
+
+--cnt[4] is cnt[4]
+--operation mode is arithmetic
+
+cnt[4]_carry_eqn = A1L12;
+cnt[4]_lut_out = cnt[4] $ (!cnt[4]_carry_eqn);
+cnt[4] = DFFEAS(cnt[4]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L14 is cnt[4]~215
+--operation mode is arithmetic
+
+A1L14 = CARRY(cnt[4] & (!A1L12));
+
+
+--cnt[6] is cnt[6]
+--operation mode is arithmetic
+
+cnt[6]_carry_eqn = A1L16;
+cnt[6]_lut_out = cnt[6] $ (!cnt[6]_carry_eqn);
+cnt[6] = DFFEAS(cnt[6]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L18 is cnt[6]~219
+--operation mode is arithmetic
+
+A1L18 = CARRY(cnt[6] & (!A1L16));
+
+
+--cnt[7] is cnt[7]
+--operation mode is arithmetic
+
+cnt[7]_carry_eqn = A1L18;
+cnt[7]_lut_out = cnt[7] $ (cnt[7]_carry_eqn);
+cnt[7] = DFFEAS(cnt[7]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L20 is cnt[7]~223
+--operation mode is arithmetic
+
+A1L20 = CARRY(!A1L18 # !cnt[7]);
+
+
+--cnt[8] is cnt[8]
+--operation mode is arithmetic
+
+cnt[8]_carry_eqn = A1L20;
+cnt[8]_lut_out = cnt[8] $ (!cnt[8]_carry_eqn);
+cnt[8] = DFFEAS(cnt[8]_lut_out, clk, VCC, , , , , A1L33, );
+
+--A1L22 is cnt[8]~227
+--operation mode is arithmetic
+
+A1L22 = CARRY(cnt[8] & (!A1L20));
+
+
+--A1L31 is LessThan~260
+--operation mode is normal
+
+A1L31 = cnt[4] # cnt[6] # cnt[7] # cnt[8];
+
+
+--A1L32 is LessThan~261
+--operation mode is normal
+
+A1L32 = cnt[9] & (cnt[5] # A1L31 # !A1L30);
+
+
+--A1L33 is LessThan~262
+--operation mode is normal
+
+A1L33 = cnt[11] & cnt[12] & (cnt[10] # A1L32);
+
+
+--clk is clk
+--operation mode is input
+
+clk = INPUT();
+
+
+--clk_120Hz is clk_120Hz
+--operation mode is output
+
+clk_120Hz = OUTPUT(buf);
+
+

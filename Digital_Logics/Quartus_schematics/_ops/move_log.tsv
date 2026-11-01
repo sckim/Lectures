@@ -1,0 +1,209 @@
+kind	from	to	reason
+move	5_Ripplecounter/3.Counter	6_Counter/3.Counter	동기식 카운터(교재 6장)·VHDL 카운터가 리플카운터 폴더에 있었음
+move	6_Counter/3.Counter/6_1_2bit_counter	6_Counter/6_1_2bit_counter	교재 6.1절 폴더를 6_Counter 최상위로
+move	6_Counter/3.Counter/6_2_3bit_counter	6_Counter/6_2_3bit_counter	교재 6.2절 폴더를 6_Counter 최상위로
+dup	6_Counter/3.Counter/4bits_Counter	_to_delete_중복/6_Counter__3.Counter__4bits_Counter	6_Counter/4bits_Counter와 동일
+move	6_Counter/4bits_Counter	6_Counter/6_3_syn_4bit_counter/4bits_Counter	6.3절 폴더에 그림만 있고 프로젝트가 없었음
+dup	6_Counter/3bits_Counter	_to_delete_중복/6_Counter__3bits_Counter	6_2_3bit_counter/3bits_Counter + 같은 JPG와 동일
+dup	6_Counter/BCD_Counter	_to_delete_중복/6_Counter__BCD_Counter	6_4_syn_bcd_counter/BCD_Counter + 같은 JPG와 동일
+dup	6_Counter/3bits_UpDown_Counter	_to_delete_중복/6_Counter__3bits_UpDown_Counter	6_5_syn_3bit_updown_counter/3bits_UpDown_Counter + 같은 JPG와 동일
+dup	7.State machine/Design_Sequential_Circuit	_to_delete_중복/7.State machine__Design_Sequential_Circuit	6_sequential_circuit_design/Design_Sequential_Circuit + 같은 JPG와 동일
+dup	0_Basic/MasterSlave_SR_FF(Ver.Subblock)	_to_delete_중복/0_Basic__MasterSlave_SR_FF(Ver.Subblock)	4_Flipflop/4_1_3_1_master_slave_ff_subblock 안의 것과 동일
+dup	Digital_StrongBox	_to_delete_중복/Digital_StrongBox	5_Shift registers/4_2_6_digital_locker_reg/Digital_StrongBox와 동일(zip)
+dup	7.State machine/RandomNumber_Generator	_to_delete_중복/7.State machine__RandomNumber_Generator	5_Shift registers/4_2_7_random_num_gen_reg 안의 것과 동일(zip)
+dup	6_Counter/Ripple up counter	_to_delete_중복/6_Counter__Ripple up counter	5_Ripplecounter/RippleCounter/4_3_x 안의 것과 동일
+dup	6_Counter/Ripple down counter	_to_delete_중복/6_Counter__Ripple down counter	5_Ripplecounter/RippleCounter/4_3_x 안의 것과 동일
+dup	6_Counter/Ripple up down counter	_to_delete_중복/6_Counter__Ripple up down counter	5_Ripplecounter/RippleCounter/4_3_x 안의 것과 동일
+dup	6_Counter/Modulo-m ripple counter	_to_delete_중복/6_Counter__Modulo-m ripple counter	5_Ripplecounter/RippleCounter/4_3_x 안의 것과 동일
+dup	6_Counter/3bit ripple	_to_delete_중복/6_Counter__3bit ripple	5_Ripplecounter/RippleCounter/3bit ripple과 동일
+dup	6_Counter/1.3bit ripple down cnt	_to_delete_중복/6_Counter__1.3bit ripple down cnt	0.3bit ripple up cnt와 완전히 동일(다운 회로가 아님)
+dup	1_Combinational/Graycode	_to_delete_중복/1_Combinational__Graycode	6_Counter/Gray_counter와 동일. JK-FF 그레이 카운터라 6_Counter 쪽을 남김
+move	6_Counter/0.3bit ripple up cnt	5_Ripplecounter/0.3bit ripple up cnt	리플(비동기) 카운터가 6_Counter에 있었음
+move	6_Counter/3bits_ripple down	5_Ripplecounter/3bits_ripple down	리플(비동기) 카운터가 6_Counter에 있었음
+move	6_Counter/3bits_ripple falling edge	5_Ripplecounter/3bits_ripple falling edge	리플(비동기) 카운터가 6_Counter에 있었음
+move	6_Counter/4bit ripple counter	5_Ripplecounter/4bit ripple counter	리플(비동기) 카운터가 6_Counter에 있었음
+move	5_Ripplecounter/BCD2SEG	8_IO_Display/BCD2SEG	7490+7447 7세그먼트 표시 회로
+move	Demo3	8_IO_Display/Demo3_BCD2SEG	7490+7447 7세그먼트 표시 데모
+move	Demo2	6_Counter/Demo2_Graycode	JK-FF 그레이 카운터 데모
+move	Demo4	7.State machine/Demo4_Seq_detector	D-FF 시퀀스 검출기 데모
+move	6_Counter/Projects	9_DigitalClock	디지털 시계 프로젝트(Basic_Clock, Set_Clock_90/92)
+move	Clock	9_DigitalClock/Clock	디지털 시계 구성 블록
+move	DigitalClock	9_DigitalClock/DigitalClock	디지털 시계 전체 설계
+deleted	6_Counter/GrayCounter_NOT	-	GrayCounter_NAND와 회로도 동일(사용자 지시)
+deleted	6_Counter/4digits using 7447.txt	-	2012년판 zip(사용자 지시)
+deleted	4_Flipflop/T_FlipFlop/tff.bdf	-	jkff_test.bdf 사본, qsf BDF_FILE 줄 제거(사용자 지시)
+rename	0_Basic	00_Basic	번호 두 자리로 통일(2026-10-30)
+rename	1_Combinational	01_Combinational	번호 두 자리로 통일(2026-10-30)
+rename	4_Flipflop	04_Flipflop	번호 두 자리로 통일(2026-10-30)
+rename	5_Ripplecounter	05_Ripplecounter	번호 두 자리로 통일(2026-10-30)
+rename	5_Shift registers	05_Shift registers	번호 두 자리로 통일(2026-10-30)
+rename	6_Counter	06_Counter	번호 두 자리로 통일(2026-10-30)
+rename	7.State machine	07_State machine	번호 두 자리로 통일(2026-10-30)
+rename	8_IO_Display	08_IO_Display	번호 두 자리로 통일(2026-10-30)
+rename	9_DigitalClock	09_DigitalClock	번호 두 자리로 통일(2026-10-30)
+rename	11_SoC_NIOS_DE1	12_SoC_NIOS_DE1	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	10_Verilog	11_Verilog	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	09_DigitalClock	10_DigitalClock	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	08_IO_Display	09_IO_Display	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	07_State machine	08_State machine	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	06_Counter	07_Counter	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+rename	05_Ripplecounter	06_Ripplecounter	05 중복 해소: Shift registers를 05로 두고 이후 번호를 하나씩 미룸
+move	07_Counter/eightcounter	06_Ripplecounter/eightcounter	74112 리플 0~9 카운터(강의10 비동기식)
+dup	07_Counter/Mod50MHz.vhd	_to_delete_중복/07_Counter__Mod50MHz.vhd	06_Ripplecounter/eightcounter/Mod50MHz.vhd와 동일
+copy	Quartus_Examples/강의09_레지스터/Right-Shift Register_23/rightshift_schematic.png	05_Shift registers/RightShift/rightshift_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의10_비동기식_카운터/0, 1, 2, …,8,9, 0, 1, 2, … 카운터_29/eightcounter_schematic.png	06_Ripplecounter/eightcounter/eightcounter_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의10_비동기식_카운터/12.3 Design of Binary Counters_7_14/3bit_ripple_schematic.png	06_Ripplecounter/RippleCounter/3bit ripple/3bit_ripple_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의10_비동기식_카운터/12.3 Design of Binary Counters_7_14/3bit_ripple_down_schematic.png	06_Ripplecounter/RippleCounter/3bit ripple/3bit_ripple_down_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의11_동기순서논리회로/Example 1 (Quartus II)_15/Example1_schematic.png	08_State machine/seq_jkff_exam/Example1_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의11_동기순서논리회로/Quartus II 사용법 및 DE2 보드 (docs)_10/Seq_Analysis1_schematic.png	08_State machine/seq_analysis_dff/Seq_Analysis1_schematic.png	.bdf로 그린 회로도 그림(신규)
+copy	Quartus_Examples/강의11_동기순서논리회로/예제 9-4. 그레이 코드 카운터 회로도_120/seq_decoder_schematic.png	08_State machine/seq_jkff_decoder_74138/seq_decoder_schematic.png	.bdf로 그린 회로도 그림(신규)
+rename	09_IO_Display/BCD2SEG	09_IO_Display/BCD_Counter_7Seg	01_Combinational/2.BCD2SEG(7447 디코더)와 구별: 7490 카운터+7447 표시 회로
+rename	09_IO_Display/Demo3_BCD2SEG	09_IO_Display/Demo3_BCD_Counter_7Seg	BCD_Counter_7Seg와 이름 규칙 통일(7490+7447 데모판)
+excluded	07_Counter/Gray_counter/graycode	_to_delete_중복/07_Counter__Gray_counter__graycode	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/1.Async TFF Up	_to_delete_중복/07_Counter__1.Async TFF Up	검토 페이지에서 제외 표시(2026-10-30)
+excluded	06_Ripplecounter/RippleCounter/3bit ripple	_to_delete_중복/06_Ripplecounter__RippleCounter__3bit ripple	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/2bit UD counter	_to_delete_중복/07_Counter__2bit UD counter	검토 페이지에서 제외 표시(2026-10-30)
+excluded	04_Flipflop/SRLatch	_to_delete_중복/04_Flipflop__SRLatch	검토 페이지에서 제외 표시(2026-10-30)
+excluded	06_Ripplecounter/0.3bit ripple up cnt	_to_delete_중복/06_Ripplecounter__0.3bit ripple up cnt	검토 페이지에서 제외 표시(2026-10-30)
+excluded	09_IO_Display/Demo3_BCD_Counter_7Seg	_to_delete_중복/09_IO_Display__Demo3_BCD_Counter_7Seg	검토 페이지에서 제외 표시(2026-10-30)
+excluded	06_Ripplecounter/RippleCounter/4_3_1_ripple_up_counter	_to_delete_중복/06_Ripplecounter__RippleCounter__4_3_1_ripple_up_counter	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/1. Async TFF Down	_to_delete_중복/07_Counter__1. Async TFF Down	검토 페이지에서 제외 표시(2026-10-30)
+excluded	08_State machine/fsm_detector_101_alt	_to_delete_중복/08_State machine__fsm_detector_101_alt	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/2. 3digits with VHDL	_to_delete_중복/07_Counter__2. 3digits with VHDL	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/0.3digits using 7447	_to_delete_중복/07_Counter__0.3digits using 7447	검토 페이지에서 제외 표시(2026-10-30)
+excluded	00_Basic/Test_and_gate_de1soc	_to_delete_중복/00_Basic__Test_and_gate_de1soc	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/74160	_to_delete_중복/07_Counter__74160	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/1.3digits with VHDL	_to_delete_중복/07_Counter__1.3digits with VHDL	검토 페이지에서 제외 표시(2026-10-30)
+excluded	05_Shift registers/Register_74194	_to_delete_중복/05_Shift registers__Register_74194	검토 페이지에서 제외 표시(2026-10-30)
+excluded	06_Ripplecounter/RippleCnt	_to_delete_중복/06_Ripplecounter__RippleCnt	검토 페이지에서 제외 표시(2026-10-30)
+excluded	10_DigitalClock/DigitalClock	_to_delete_중복/10_DigitalClock__DigitalClock	검토 페이지에서 제외 표시(2026-10-30)
+excluded	07_Counter/3. Async DFF Up	_to_delete_중복/07_Counter__3. Async DFF Up	검토 페이지에서 제외 표시(2026-10-30)
+excluded	00_Basic/and_gate	_to_delete_중복/00_Basic__and_gate	검토 페이지에서 제외 표시(2026-10-30)
+move	07_Counter/3.Counter/mod16up	11_Verilog/mod16up	검토 메모: verilog 폴더로 이동
+move	07_Counter/3.Counter/Clk_Test	11_Verilog/Clk_Test	검토 메모: verilog 폴더로 이동
+move	07_Counter/3.Counter/counter2	11_Verilog/counter2	검토 메모: verilog 폴더로 이동
+move	07_Counter/3.Counter/DisplaySegment	11_Verilog/DisplaySegment	검토 메모: verilog 폴더로 이동
+move	07_Counter/3.Counter/3.Counter	11_Verilog/3.Counter	검토 메모: verilog 폴더로 이동
+move	07_Counter/3.Counter/Counter	11_Verilog/Counter	검토 메모: verilog 폴더로 이동
+move	01_Combinational/2_Seven_Segments	11_Verilog/2_Seven_Segments	검토 메모: 11_Verilog로 이동
+move	00_Basic/1_Basic_gates	11_Verilog/1_Basic_gates	검토 메모: 11_Verilog로 이동
+move	01_Combinational/3_Adder	11_Verilog/3_Adder	검토 메모: 11_Verilog로 이동
+move	00_Basic/0.MyFirstProject	04_Flipflop/0.MyFirstProject	검토 메모: 플립플롭으로 이동(DFF 하나짜리 첫 프로젝트)
+move	01_Combinational/FA4_adder	01_Combinational/FA4_adder_withSegments	검토 메모: 폴더명에 withSegments 추가
+move	07_Counter/Demo	07_Counter/Ten_Counter	검토 메모: Ten_Counter로 폴더명 수정
+move	04_Flipflop/WithGates	04_Flipflop/JK_FlipFlop_WithGates	검토 메모: JK_FlipFlop으로 명명 → 기존 폴더와 겹쳐 JK_FlipFlop_WithGates(사용자 선택)
+move	07_Counter/Demo2_Graycode	07_Counter/graycounterUsingdecoder	검토 메모: graycounterUsingdecoder로 이름 변경(사용자 선택: 남김)
+rename	04_Flipflop/T_FlipFlop/jkff_test.*	04_Flipflop/T_FlipFlop/T_ff.*	검토 메모: 프로젝트 이름을 T_ff로(qpf·qsf·bdf·sof·pof·그림, qpf REVISION·qsf TOP_LEVEL_ENTITY 수정)
+move	12_SoC_NIOS_DE1	13_SoC_NIOS_DE1	11_VHDL 신설로 번호 하나 미룸
+move	11_Verilog	12_Verilog	11_VHDL 신설로 번호 하나 미룸
+move	12_Verilog/1_Basic_gates	11_VHDL/1_Basic_gates	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/2_Seven_Segments	11_VHDL/2_Seven_Segments	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/3_Adder	11_VHDL/3_Adder	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/3.Counter	11_VHDL/3.Counter	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/Counter	11_VHDL/Counter	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/counter2	11_VHDL/counter2	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/mod16up	11_VHDL/mod16up	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/Clk_Test	11_VHDL/Clk_Test	VHDL 예제를 11_VHDL로 모음
+move	12_Verilog/DisplaySegment	11_VHDL/DisplaySegment	VHDL 예제를 11_VHDL로 모음
+move	01_Combinational/FA4_adder_withSegments/VHDL/adder_4b	11_VHDL/adder_4b	VHDL 4비트 가산기(FA4_adder의 VHDL판)
+move	09_IO_Display/uart_tx_rx	11_VHDL/uart_tx_rx	최상위 엔티티가 VHDL인 프로젝트
+move	09_IO_Display/seg7_decoder	11_VHDL/seg7_decoder	최상위 엔티티가 VHDL인 프로젝트
+move	09_IO_Display/seg7_de1soc	11_VHDL/seg7_de1soc	최상위 엔티티가 VHDL인 프로젝트
+deleted	01_Combinational/FA4_adder_withSegments/VHDL	-	빈 폴더(adder_4b를 11_VHDL로 옮긴 뒤), 사용자 지시
+move	05_Shift registers/SIPO_Register/SIPO_Register.zip	05_Shift registers/4_2_2_sipo_reg/SIPO_Register/SIPO_Register.zip	4_2_2(74164 SIPO) 그림과 같은 회로의 프로젝트
+move	05_Shift registers/SIPO_Register/SIPO_Register_schematic.png	_to_delete_중복/05_Shift registers__SIPO_Register__SIPO_Register_schematic.png	4_2_2 원본 캡처와 같은 회로라 변환 그림은 불필요
+move	00_Basic/switch_input_de2	14_보충/00_Basic/switch_input_de2	학습 보충: 스위치→LED 연결만 하는 보드 입출력 확인
+move	01_Combinational/adder_full_with_accumulator	14_보충/01_Combinational/adder_full_with_accumulator	학습 보충: 레지스터가 들어간 누산기, 조합회로 범위 밖
+move	04_Flipflop/0.MyFirstProject	14_보충/04_Flipflop/0.MyFirstProject	학습 보충: DFF 하나 배치, 4_1_2 기본 FF 모음에 포함
+move	04_Flipflop/JK_FlipFlop	14_보충/04_Flipflop/JK_FlipFlop	학습 보충: JKFF 소자 단독 시험, 4_1_2 기본 FF 모음에 포함
+move	04_Flipflop/T_FlipFlop	14_보충/04_Flipflop/T_FlipFlop	학습 보충: TFF 소자 단독 시험, 4_1_2 기본 FF 모음에 포함
+move	05_Shift registers/SISO_Register	14_보충/05_Shift registers/SISO_Register	학습 보충: 4_2_1_siso_reg와 같은 회로(4비트·8비트 SISO)
+move	05_Shift registers/shiftreg_74ls74_bdf	14_보충/05_Shift registers/shiftreg_74ls74_bdf	학습 보충: 74LS74 내부 게이트 모델, 부품 내부 구조
+move	06_Ripplecounter/3bits_ripple down	14_보충/06_Ripplecounter/3bits_ripple down	학습 보충: RippleCounter 4_3_2(리플 다운)와 겹침
+move	06_Ripplecounter/3bits_ripple falling edge	14_보충/06_Ripplecounter/3bits_ripple falling edge	학습 보충: RippleCounter 3bit_ripple과 겹침
+move	07_Counter/1.3digits with decoder	14_보충/07_Counter/1.3digits with decoder	학습 보충: 7490·7447 다자리 표시 변형, 2digits using 7447로 대표
+move	07_Counter/4digits using 7447	14_보충/07_Counter/4digits using 7447	학습 보충: 7490·7447 다자리 표시 변형, 10_DigitalClock과 겹침
+move	07_Counter/3bits counter with t syn	14_보충/07_Counter/3bits counter with t syn	학습 보충: TFF 동기 카운터, '3. 동기식 TFF Down'과 6_2와 겹침
+move	07_Counter/4.Digital Safe	14_보충/07_Counter/4.Digital Safe	학습 보충: 디지털 금고, 05 4_2_6 디지털 금고와 겹침
+move	07_Counter/Gray_counter	14_보충/07_Counter/Gray_counter	학습 보충: graycounterUsingdecoder와 같은 설계(74138+NOT+OR)
+move	07_Counter/Ten_Counter	14_보충/07_Counter/Ten_Counter	학습 보충: VHDL 블록 조합 데모, 게이트·FF 수준 학습 아님
+move	07_Counter/counter_de1soc_my_first_fpga	14_보충/07_Counter/counter_de1soc_my_first_fpga	학습 보충: Intel My First FPGA 튜토리얼(PLL·VHDL)
+move	07_Counter/Mod50MHz.bsf	14_보충/07_Counter/Mod50MHz.bsf	학습 보충: 07_Counter 최상위에 따로 놓인 심볼 파일
+deleted	05_Shift registers/SIPO_Register	-	desktop.ini만 남은 빈 폴더
+move	08_State machine/Design14_1	08_State machine/detector_101_ch14_1	101 검출기(D_A=X'Q_B, D_B=X, Z=Q_A·X), 같은 회로 묶음 이름 통일
+move	08_State machine/Demo4_Seq_detector	08_State machine/detector_101_demo4	101 검출기, ch14_1과 같은 회로·다른 파형
+move	08_State machine/fsm_detector_101	08_State machine/detector_101_negedge	101 검출기 하강 에지판(클록 NOT, 클리어 없음)
+move	08_State machine/seq_jkff_exam	08_State machine/5_sequential_circuit_analysis_jkff	예제 1을 JKFF+NOT으로 구현, 74112판과 같은 회로·다른 파형
+move	08_State machine/Sequential logic circuit example	_to_delete_중복/08_State machine__Sequential logic circuit example	5_sequential_circuit_analysis와 bdf·vwf 모두 동일한 사본
+rename	00_Basic/0_and_gate	00_Basic/and_gate	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	00_Basic/Headlight	00_Basic/headlight_logic	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	01_Combinational/2.BCD2SEG	01_Combinational/bcd_to_7seg_7447	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	01_Combinational/FA4_adder_withSegments	01_Combinational/adder_4bit_7seg	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/SR_Latch	04_Flipflop/sr_latch	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/SR_FlipFlop	04_Flipflop/gated_latch_sr_d	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/JK_FlipFlop_WithGates	04_Flipflop/ff_gate_level_d_jk_t	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/4_1_2_basic_flipflops	04_Flipflop/basic_flipflops	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/4_1_3_master_slave_ff	04_Flipflop/master_slave_ff	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/4_1_3_1_master_slave_ff_subblock	04_Flipflop/master_slave_ff_subblock	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	04_Flipflop/4_1_7_debouncing_circuit	04_Flipflop/debouncing_circuit	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/fsm_jkff_ex10_19	04_Flipflop/latch_vs_ff	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/4_2_1_siso_reg	05_Shift registers/shiftreg_siso	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/4_2_2_sipo_reg	05_Shift registers/shiftreg_sipo_74164	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/4_2_6_digital_locker_reg	05_Shift registers/shiftreg_digital_locker	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/4_2_7_random_num_gen_reg	05_Shift registers/shiftreg_random_number	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/74194	05_Shift registers/shiftreg_universal_74194	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/PIPO_74195	05_Shift registers/shiftreg_pipo_74195	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/PISO_74165	05_Shift registers/shiftreg_piso_74165	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	05_Shift registers/RightShift	05_Shift registers/shiftreg_right_4bit	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/RippleCounter/3bit_ripple	06_Ripplecounter/ripple_counter_3bit_up_down	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/RippleCounter/4_3_2_ripple_down_counter	06_Ripplecounter/ripple_counter_3bit_down	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/RippleCounter/4_3_3_ripple_up_down_counter	06_Ripplecounter/ripple_counter_3bit_up_down_sel	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/RippleCounter/4_3_4_modulom_ripple_counter	06_Ripplecounter/ripple_counter_modulo_m	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/4bit ripple counter	06_Ripplecounter/ripple_counter_4bit	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	06_Ripplecounter/eightcounter	06_Ripplecounter/ripple_counter_mod10_74112	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/3bit ripple counter syn	06_Ripplecounter/ripple_counter_3bit_nor_reset	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/2. Sync DFF Up	07_Counter/sync_counter_3bit_dff_up	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/2. Sync DFF Down	07_Counter/sync_counter_3bit_dff_down	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/3. 동기식 TFF Down	07_Counter/sync_counter_3bit_tff_down	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/6_1_2bit_counter	07_Counter/sync_counter_2bit_jk	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/6_2_3bit_counter	07_Counter/sync_counter_3bit_jk	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/6_3_syn_4bit_counter	07_Counter/sync_counter_4bit_jk	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/6_4_syn_bcd_counter	07_Counter/sync_counter_bcd_jk	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/6_5_syn_3bit_updown_counter	07_Counter/sync_counter_3bit_updown_jk	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/2digits using 7447	07_Counter/bcd_counter_2digit_7490_7447	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/GrayCounter_NAND	07_Counter/gray_counter_74138_nand	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/graycounterUsingdecoder	07_Counter/gray_counter_74138_or	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	07_Counter/counter_johnson_bdf	07_Counter/johnson_counter_3bit	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/5_sequential_circuit_analysis_jkff	08_State machine/seq_analysis_jk_jkff	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/6_sequential_circuit_design	08_State machine/seq_design_jkff	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/detector_101_ch14_1	08_State machine/detector_101	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/detector_101_demo4	08_State machine/detector_101_demo	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/seq_dff_xor_p12_20	08_State machine/seq_dff_xor	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	08_State machine/seq_jkff_decoder_74138	08_State machine/gray_counter_74138_or_design	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	09_IO_Display/BCD_Counter_7Seg	09_IO_Display/bcd_counter_7seg_7490	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	10_DigitalClock/Basic_Clock	10_DigitalClock/clock_basic	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	10_DigitalClock/Clock	10_DigitalClock/clock_blocks_vhdl	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	10_DigitalClock/Set_Clock_90	10_DigitalClock/clock_set_7490	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	10_DigitalClock/Set_Clock_92	10_DigitalClock/clock_set_7492	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/1_Basic_gates	11_VHDL/basic_gates	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/2_Seven_Segments	11_VHDL/bcd_to_7seg	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/3_Adder	11_VHDL/full_adder	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/adder_4b	11_VHDL/adder_4bit	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/mod16up	11_VHDL/counter_mod16_up_7seg	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/Clk_Test	11_VHDL/clock_divider_120hz	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/3.Counter	11_VHDL/counter_lpm_bcd_7seg	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/Counter	11_VHDL/counter_structural_bcd_7seg	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/counter2	11_VHDL/counter_process_basic	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+rename	11_VHDL/DisplaySegment	11_VHDL/bcd_to_7seg_case	하위 폴더 이름에서 교재 번호 제거·snake_case 통일(2026-10-30)
+deleted	06_Ripplecounter/RippleCounter	-	하위 폴더를 06 바로 아래로 올린 뒤 빈 폴더
+rename	05_Shift registers	05_ShiftRegister	최상위 폴더 공백 제거(제안안)
+rename	06_Ripplecounter	06_RippleCounter	최상위 폴더 표기 통일(제안안)
+rename	14_보충/05_Shift registers	14_보충/05_ShiftRegister	본 폴더 이름에 맞춤
+rename	14_보충/06_Ripplecounter	14_보충/06_RippleCounter	본 폴더 이름에 맞춤
+rename	08_State machine/5_sequential_circuit_analysis	08_State machine/seq_analysis_jk_74112	폴더 잠김으로 새 폴더를 만들어 파일 9개를 옮김
+rename	08_State machine	08_StateMachine	최상위 폴더 공백 제거(제안안)
+excluded	12_Verilog/hello_world_verilog	_to_delete_불필요/12_Verilog__hello_world_verilog	교재 3_labs로 옮길 가치 없음(사용자 지시: 없으면 삭제 대상으로)
+excluded	12_Verilog/counter_verilog_first	_to_delete_불필요/12_Verilog__counter_verilog_first	교재 3_labs로 옮길 가치 없음(사용자 지시: 없으면 삭제 대상으로)
+excluded	12_Verilog/ps2_keyboard	_to_delete_불필요/12_Verilog__ps2_keyboard	교재 3_labs로 옮길 가치 없음(사용자 지시: 없으면 삭제 대상으로)
+deleted	12_Verilog	-	예제를 모두 옮긴 뒤 빈 폴더
+deleted	_to_delete_중복, _to_delete_불필요	-	격리 폴더 전체 삭제(사용자 지시 2026-10-30), 목록은 _ops/deleted_list.txt
