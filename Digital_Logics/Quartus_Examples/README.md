@@ -37,6 +37,8 @@
 
 ![NOR S-R 래치](<강의08_플립플롭/01. 기본적인 플립플롭_22/4_1_1_sr_latch_schematic.png>)
 
+![NOR S-R 래치 시뮬레이션](<강의08_플립플롭/01. 기본적인 플립플롭_22/4_1_1_sr_latch_vwf_sim.png>)
+
 회로: NOR2 2개를 교차 결합했다. S는 위쪽 NOR(출력 /Q), R은 아래쪽 NOR(출력 Q)에 들어가고, 각 NOR의 나머지 입력은 상대 게이트의 출력이다.
 
 동작: NOR는 입력에 1이 하나라도 있으면 0을 내므로, S=1이면 /Q=0이 되고 이것이 아래 NOR로 돌아가 Q=1이 된다. 입력이 모두 0으로 돌아와도 되먹임 때문에 Q=1이 유지된다.
@@ -53,6 +55,8 @@
 ### NAND 래치 스위치 디바운스 (`Switch Debouncing with an S-R Latch_34`, Debouce.bdf)
 
 ![NAND 래치 디바운스](<강의08_플립플롭/Switch Debouncing with an S-R Latch_34/4_1_7_debouncing_circuit_schematic.png>)
+
+![NAND 래치 디바운스 시뮬레이션](<강의08_플립플롭/Switch Debouncing with an S-R Latch_34/4_1_7_debouncing_circuit_vwf_sim.png>)
 
 회로: NAND2 2개를 교차 결합한 /S-/R 래치다. 입력은 S_bar, R_bar(액티브 로우), 출력은 Q, Q_bar이다.
 
@@ -71,6 +75,8 @@
 
 ![주종형 S-R FF](<강의08_플립플롭/3. 주종형 S-R 플립플롭_59/4_1_3_master_slave_ff_schematic.png>)
 
+![주종형 S-R FF 시뮬레이션](<강의08_플립플롭/3. 주종형 S-R 플립플롭_59/4_1_3_master_slave_ff_vwf_sim.png>)
+
 회로: NAND2 8개와 NOT 1개로 만든 두 단 구조다.
 
 1. 마스터: inst·inst3가 S·R을 Cp로 게이트하고, inst4·inst5가 NAND 래치를 이룬다. 마스터 출력은 Y, Y_Bar로 따로 내보냈다.
@@ -82,11 +88,15 @@
 
 ![SR_FF 블록 주종형 FF](<강의08_플립플롭/3. 주종형 S-R 플립플롭_60/4_1_3_1_master_slave_ff_subblock_schematic.png>)
 
+![SR_FF 블록 주종형 FF 시뮬레이션](<강의08_플립플롭/3. 주종형 S-R 플립플롭_60/4_1_3_1_master_slave_ff_subblock_vwf_sim.png>)
+
 앞 회로의 게이트 래치 부분을 `SR_FF` 심볼(.bsf)로 묶어 두 번 쓴 계층형 설계다. 첫 블록(inst)은 CP, 두 번째 블록(inst3)은 NOT CP를 받고, 첫 블록의 Q·/Q가 두 번째 블록의 S·R로 들어간다. 동작은 앞 예제와 같고, 하위 블록을 만들어 재사용하는 Quartus 작업 방법을 익히는 예제다.
 
 ### SR·JK·D·T 플립플롭 모음 (`11.9 Summary_135`, ExampleCollection.bdf)
 
 ![플립플롭 4종](<강의08_플립플롭/11.9 Summary_135/4_1_2_basic_flipflops_schematic.png>)
+
+![플립플롭 4종 시뮬레이션](<강의08_플립플롭/11.9 Summary_135/4_1_2_basic_flipflops_vwf_sim.png>)
 
 한 파일에 네 회로가 독립적으로 그려져 있다.
 
@@ -120,6 +130,8 @@
 
 ![4비트 SISO](<강의09_레지스터/1. 4비트 직렬입력-직렬출력 레지스터 구조_18/4_2_1_siso_reg_schematic.png>)
 
+![4비트 SISO 시뮬레이션](<강의09_레지스터/1. 4비트 직렬입력-직렬출력 레지스터 구조_18/4_2_1_siso_reg_vwf_simulation.png>)
+
 회로: DFFE(인에이블 붙은 D FF) 4개를 직렬로 잇고, SI → Q3 → Q2 → Q1 → Q0 순서로 데이터가 흐른다. Clock은 4개 FF에 공통, Shift는 모든 ENA에, ClrN은 모든 CLRN에 들어가고 PRN은 VCC다.
 
 동작: Shift=1이면 Clock 상승 에지마다 SI가 Q3에 들어가고 기존 값은 오른쪽(Q0 방향)으로 한 칸 밀린다. Shift=0이면 클럭이 들어와도 값을 유지한다. 직렬 출력은 Q0이며, 입력한 비트는 4클럭 뒤에 Q0에 나타난다.
@@ -127,6 +139,10 @@
 시뮬레이션: SI=1, 0, 1, 0 순서의 입력이 Q3 → Q2 → Q1 → Q0으로 한 클럭(약 5 µs)씩 늦어져 계단처럼 나타난다.
 
 같은 폴더의 8비트 예제는 **7491**(8비트 SISO 시프트 레지스터) 매크로 하나를 쓴다. 직렬 입력은 A·B의 AND이므로 SI를 A, 쓰기 허용 WR을 B에 넣었다. WR=1인 동안 들어온 SI 비트가 8클럭 뒤 SO(QH)에 그대로 나오고, WR=0이면 0이 채워진다. 시뮬레이션에서 약 3~10 µs에 넣은 패턴이 약 17~27 µs에 SO로 나오는 것을 볼 수 있다.
+
+![8비트 SISO(7491)](<강의09_레지스터/1. 4비트 직렬입력-직렬출력 레지스터 구조_18/4_2_1_1_8bit_siso_reg_schematic.png>)
+
+![8비트 SISO(7491) 시뮬레이션](<강의09_레지스터/1. 4비트 직렬입력-직렬출력 레지스터 구조_18/4_2_1_1_8bit_siso_reg_vwf_simulation.png>)
 
 ### 4비트 우측 시프트 레지스터 (`Right-Shift Register_23`, rightshift.bdf)
 
@@ -138,6 +154,8 @@
 
 ![74164 SIPO](<강의09_레지스터/74LS164(8-Bit Parallel Output Serial Shift Registers)_31/4_2_2_sipo_reg_schematic.png>)
 
+![74164 SIPO 시뮬레이션](<강의09_레지스터/74LS164(8-Bit Parallel Output Serial Shift Registers)_31/4_2_2_sipo_reg_vwf_simulation.png>)
+
 회로: **74164** 매크로 하나에 SI→A, WR→B, ClrN→CLRN, Clk→CLK을 물리고, 8개 출력 QA~QH를 모두 핀으로 내보냈다.
 
 동작: 클럭 상승 에지마다 (A AND B)가 QA에 들어가고 QA→QB→…→QH로 밀린다. 8클럭 뒤에는 직렬로 넣은 8비트를 QA~QH에서 한 번에 읽을 수 있다. CLRN=0이면 클럭과 무관하게 모두 0이 된다.
@@ -147,6 +165,8 @@
 ### 디지털 금고 (`1. 디지털 금고_76`, Digital_StrongBox.zip)
 
 ![디지털 금고](<강의09_레지스터/1. 디지털 금고_76/4_2_6_digital_locker_reg_schematic.png>)
+
+![디지털 금고 시뮬레이션](<강의09_레지스터/1. 디지털 금고_76/4_2_6_digital_locker_reg_vwf_simulation.png>)
 
 회로: DFF 4개를 직렬로 잇고 첫 단 D를 VCC(1)에 물렸다. 각 FF의 클럭은 숫자 버튼 하나씩이다.
 
@@ -166,6 +186,8 @@
 ### 난수 발생 회로 (`3. 난수발생회로_79`, RandomNumber_Generator.zip)
 
 ![난수 발생 회로](<강의09_레지스터/3. 난수발생회로_79/4_2_7_random_num_gen_reg_schematic.png>)
+
+![난수 발생 회로 시뮬레이션](<강의09_레지스터/3. 난수발생회로_79/4_2_7_random_num_gen_reg_vwf_simulation.png>)
 
 회로: DFF 4개를 Qa→Qb→Qc→Qd로 잇고, Qc와 Qd의 XNOR를 첫 단 D로 되돌린 4비트 LFSR(선형 귀환 시프트 레지스터)이다. St는 첫 FF의 PRN에 들어가 시작 값을 정하고, 나머지 PRN·CLRN은 VCC다.
 
@@ -204,6 +226,8 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 
 ![3비트 리플 상향 카운터](<강의10_비동기식_카운터/12.3 Design of Binary Counters_7/4_3_1_ripple_up_counter_schematic.png>)
 
+![3비트 리플 상향 카운터 시뮬레이션](<강의10_비동기식_카운터/12.3 Design of Binary Counters_7/4_3_1_ripple_up_counter_vwf_simulation.png>)
+
 회로: JKFF 3개(J=K=PRN=VCC), CLRN은 ClrN 공통. Clk(또는 n_cp) → NOT → inst, Q[0] → NOT → inst1, Q[1] → NOT → inst2 순서로 클럭이 이어진다. 출력은 버스 Q[2..0]이다.
 
 동작: Q[0]은 Clk 하강 에지마다, Q[1]은 Q[0]이 1→0이 될 때마다, Q[2]는 Q[1]이 1→0이 될 때마다 반전한다. 그 결과 000 → 001 → … → 111 → 000을 반복하는 MOD-8 상향 카운터가 된다. 시뮬레이션에서도 Clk 하강 에지마다 Q가 000부터 111까지 1씩 증가한다.
@@ -211,6 +235,8 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 ### MOD-8 리플 하향 카운터 (`MOD-8 리플 다운 카운터_14`, `_7_14`의 3bit_ripple_down.bdf)
 
 ![MOD-8 리플 하향 카운터](<강의10_비동기식_카운터/MOD-8 리플 다운 카운터_14/4_3_2_ripple_down_counter_schematic.png>)
+
+![MOD-8 리플 하향 카운터 시뮬레이션](<강의10_비동기식_카운터/MOD-8 리플 다운 카운터_14/4_3_2_ripple_down_counter_vwf_simulation.png>)
 
 두 프로젝트 모두 FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다르다.
 - `3bit_ripple_down.bdf`: 각 FF Q에 NOT(inst9~11)을 달아 Q[2..0]으로 내보냈다.
@@ -221,6 +247,10 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 ### 비동기 상향/하향 카운터 (`3. 비동기 상향-하향 카운터_24`, zip)
 
 ![리플 상향/하향 카운터](<강의10_비동기식_카운터/3. 비동기 상향-하향 카운터_24/4_3_3_ripple_up_down_counter_schematic.png>)
+
+![리플 상향/하향 카운터 시뮬레이션 1](<강의10_비동기식_카운터/3. 비동기 상향-하향 카운터_24/4_3_3_ripple_up_down_counter_vwf_simulation_0.png>)
+
+![리플 상향/하향 카운터 시뮬레이션 2](<강의10_비동기식_카운터/3. 비동기 상향-하향 카운터_24/4_3_3_ripple_up_down_counter_vwf_simulation_1.png>)
 
 회로: JKFF 4개(J=K=VCC)로 만든 4비트 리플 카운터다. 단 사이마다 `2to1mux`가 있어 input0=Q, input1=/Q(NOT) 중 하나를 선택 입력 S로 고르고, 그 출력을 NOT을 거쳐 다음 단 클럭에 넣는다. 출력은 Q[3..0]이다.
 
@@ -233,6 +263,8 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 ### modulo-m 비동기 카운터 (`4. modulo-m 비동기 카운터_26`, zip)
 
 ![modulo-m 리플 카운터](<강의10_비동기식_카운터/4. modulo-m 비동기 카운터_26/4_3_4_modulom_ripple_counter_schematic.png>)
+
+![modulo-m 리플 카운터 시뮬레이션](<강의10_비동기식_카운터/4. modulo-m 비동기 카운터_26/4_3_4_modulom_ripple_counter_vwf_simulation.png>)
 
 회로: 4비트 리플 상향 카운터(JKFF 4개 + NOT)에 NAND2 하나를 더했다. NAND2 입력은 Q[1]과 Q[3], 출력은 4개 FF의 CLRN에 공통으로 물린다.
 
@@ -279,6 +311,8 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 ![Example 1 74112](<강의11_동기순서논리회로/Example 1 (Quartus II)_14/5_sequential_circuit_analysis_schematic.png>)
 
+![Example 1 74112 시뮬레이션](<강의11_동기순서논리회로/Example 1 (Quartus II)_14/5_sequential_circuit_analysis_vwf_simulation.png>)
+
 회로: 74112 두 개의 1번 FF와 AND2 2개를 쓴다.
 
 | FF | 클럭 | J | K | PRN / CLRN |
@@ -303,6 +337,8 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 ### J-K FF 동기 순차회로 설계 (`7. 논리 회로의 구현_60`, Design_Sequential_Circuit.zip)
 
 ![J-K FF 순차회로 설계](<강의11_동기순서논리회로/7. 논리 회로의 구현_60/6_sequential_circuit_design_schematic.png>)
+
+![J-K FF 순차회로 설계 시뮬레이션](<강의11_동기순서논리회로/7. 논리 회로의 구현_60/6_sequential_circuit_design_vwf_simulation.JPG>)
 
 회로: JKFF 2개(A, B)가 Cp 상승 에지를 공통으로 받는 동기식 회로다. 입력은 x, ClrN은 두 CLRN에 공통이다. FF 입력식은 회로도에서 다음과 같이 읽힌다.
 - J_A = x′·B (NOT inst4 + AND inst2), K_A = x·B (AND inst3)
@@ -363,13 +399,25 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 | `6_2_3bit_counter` | Qa: 1, Qb: Qa, Qc: Qa·Qb | 0 → 7 반복 (MOD-8) |
 | `4bits_Counter` | Qa: 1, Qb: Qa, Qc: Qa·Qb, Qd: Qa·Qb·Qc | 0 → 15 반복 (MOD-16) |
 
+![2비트 동기 카운터](<슬라이드_미대응/6_1_2bit_counter/6_1_2bit_counter_schematic.png>)
+
+![2비트 동기 카운터 시뮬레이션](<슬라이드_미대응/6_1_2bit_counter/6_1_2bit_counter_vwf_simulation.png>)
+
+![3비트 동기 카운터](<슬라이드_미대응/6_2_3bit_counter/6_2_3bit_counter_schematic.png>)
+
+![3비트 동기 카운터 시뮬레이션](<슬라이드_미대응/6_2_3bit_counter/6_2_3bit_counter_vwf_simulation.png>)
+
 ![4비트 동기 카운터](<슬라이드_미대응/4bits_Counter/4bits_counter_schematic.png>)
+
+![4비트 동기 카운터 시뮬레이션](<슬라이드_미대응/4bits_Counter/4bits_counter_SimulationCaptured.JPG>)
 
 4비트 카운터는 Qa·Qb(inst5) 출력을 다시 Qc와 AND(inst9)해 쓰는 직렬 캐리 구조다. 비트 수가 늘어도 게이트는 AND2 하나씩만 늘어난다.
 
 ### 동기식 BCD 카운터 (`6_4_syn_bcd_counter`, BCD_counter.zip)
 
 ![동기식 BCD 카운터](<슬라이드_미대응/6_4_syn_bcd_counter/6_4_syn_bcd_counter_schematic.png>)
+
+![동기식 BCD 카운터 시뮬레이션](<슬라이드_미대응/6_4_syn_bcd_counter/6_4_syn_bcd_counter_vwf_simulation.png>)
 
 회로: 4비트 동기 카운터에 9 다음 0으로 돌아가는 조건을 더했다.
 
@@ -385,6 +433,8 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 ### 동기식 3비트 상향/하향 카운터 (`6_5_syn_3bit_updown_counter`, 3bits_updown_counter.zip)
 
 ![동기식 3비트 상향/하향 카운터](<슬라이드_미대응/6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_schematic.png>)
+
+![동기식 3비트 상향/하향 카운터 시뮬레이션](<슬라이드_미대응/6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_vwf_simulation.png>)
 
 회로: 방향 입력 X에 따라 토글 조건을 두 가지로 만들고 OR로 합쳤다.
 - Qa: J = K = 1
