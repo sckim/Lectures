@@ -19,6 +19,12 @@ This folder contains Simulink models for simulating and analyzing digital logic 
 | **VendingMachine.slx** | 자동판매기 제어 로직 시뮬레이션 |
 | **ADC.slx** | Sampling rate에 따른 아날로그-디지털 변환 시뮬레이션 |
 
+### HDL Coder로 만든 Quartus 프로젝트
+
+`*_prj\quartus_prj`, `Demo*\quartus_prj` 등은 각 모델에서 HDL Coder가 생성한 Quartus 프로젝트다.
+
+`12_Simulink_HDL\`은 2026-10-10 Drive(`03_FPGA\Examples\06_Simulink_HDL`)에서 `Quartus_schematics`를 거쳐 옮겨 온 HDL Coder 생성 프로젝트 4종(`04General_basicGate`, `Work_basicGate`: BasicGatesBits / `05Others_Logics`, `05Others_de1_soc`: Simulink_HDL, DE1-SoC)이다. `.qpf`·`.qsf`·실행용 `.tcl`만 있고 생성 HDL 소스는 없으므로, 원본 모델에서 HDL을 다시 생성해야 컴파일된다.
+
 ---
 
 ## 🔍 학습 목표 (Learning Objectives)
