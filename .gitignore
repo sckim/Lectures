@@ -137,6 +137,8 @@ Pigpio-master/
 
 # ===== Archives =====
 *.zip
+# Quartus_Examples: 일부 예제는 프로젝트가 .zip으로만 있음
+!Digital_Logics/Quartus_Examples/**/*.zip
 
 # ===== Project-specific =====
 Digital_Logics/VHDL/
