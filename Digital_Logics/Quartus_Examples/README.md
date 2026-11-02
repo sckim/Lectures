@@ -1,6 +1,6 @@
 # Quartus 예제 — 강의 슬라이드별 정리
 
-디지털논리회로 강의08~12 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름 끝의 `_숫자`는 해당 회로가 나오는 슬라이드 페이지 번호이고, Quartus가 한글·공백·특수문자 경로를 처리하지 못하므로 제목은 영문으로 옮기고 공백·기호는 `_`로 바꾸었다. 강의08~11 폴더는 `01_`부터 번호를 앞에 붙였고, 강의12 폴더는 원래 예제 이름(`6_1_` 등)을 그대로 두었다. 같은 프로젝트는 [`../Quartus_schematics`](../Quartus_schematics/README.md)에도 주제별로 정리되어 있다.
+디지털논리회로 강의08~12 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름 끝의 `_숫자`는 해당 회로가 나오는 슬라이드 페이지 번호이고, Quartus가 한글·공백·특수문자 경로를 처리하지 못하므로 제목은 영문으로 옮기고 공백·기호는 `_`로 바꾸었다. 강의08~11 폴더는 `01_`부터 번호를 앞에 붙였고, 강의12 폴더는 원래 예제 이름(`6_1_` 등)을 그대로 두었다.
 
 예제마다 회로 구성·동작 원리·시뮬레이션에서 확인할 점을 정리했다.
 
@@ -14,20 +14,18 @@
 
 참고:
 - `*_schematic.png` 가운데 일부는 .bdf를 읽어 그린 그림이다(Quartus 화면 캡처 아님). 강의08·09 폴더의 그림은 `<폴더 이름>_schematic.png`(.bdf), `<폴더 이름>_vwf_sim.png`(ModelSim 시뮬레이션 결과 .vwf)로 그렸다. 파형의 파란색은 입력, 빨간색은 출력, 회색 X는 미정 구간이다.
-- 일부 예제는 프로젝트가 .zip으로만 들어 있다. 압축을 풀고 .qpf를 열면 된다.
+- 강의12 예제는 프로젝트가 .zip으로만 들어 있다. 압축을 풀고 .qpf를 열면 된다. 강의10의 01·04·05 폴더에도 원래 배포용 zip이 함께 들어 있지만, 같은 프로젝트가 이미 풀려 있다.
 - 시뮬레이션 설명의 시각(예: "약 3 µs")은 캡처 화면에서 읽은 대략값이다.
-
----
 
 ## Lec08_FlipFlops
 
-| 폴더 | 내용 | Quartus_schematics 폴더 |
-|---|---|---|
-| `01_Basic_FlipFlops_22` | NOR S-R 래치 | `04_Flipflop/sr_latch` |
-| `02_Switch_Debouncing_with_SR_Latch_34` | NAND 래치 디바운스 회로 | `04_Flipflop/debouncing_circuit` |
-| `03_MasterSlave_SR_FlipFlop_59` | NAND 게이트 주종형 S-R FF | `04_Flipflop/master_slave_ff` |
-| `04_MasterSlave_SR_FlipFlop_Block_60` | SR_FF 블록 2개로 만든 주종형 FF | `04_Flipflop/master_slave_ff_subblock` |
-| `05_Summary_135` | SR·JK·D·T 플립플롭 모음 | `04_Flipflop/basic_flipflops` |
+| 폴더 | 내용 |
+|---|---|
+| `01_Basic_FlipFlops_22` | NOR S-R 래치 |
+| `02_Switch_Debouncing_with_SR_Latch_34` | NAND 래치 디바운스 회로 |
+| `03_MasterSlave_SR_FlipFlop_59` | NAND 게이트 주종형 S-R FF |
+| `04_MasterSlave_SR_FlipFlop_Block_60` | SR_FF 블록 2개로 만든 주종형 FF |
+| `05_Summary_135` | SR·JK·D·T 플립플롭 모음 |
 
 두 게이트의 출력을 서로의 입력으로 되먹임하면 1비트를 기억하는 래치가 되고, 여기에 클럭 제어를 더하면 플립플롭이 된다. 강의08 예제 5개는 이 과정을 래치 → 디바운스 응용 → 주종형 FF → FF 4종 순서로 보여 준다.
 
@@ -110,16 +108,14 @@
 - JK·T는 ClrN을 1로 두어 Q=0(기본소자의 초기값)에서 시작하고, CP 상승 에지에서만 바뀐다. 예를 들어 Q_jk는 2 µs(J=1, K=0)에 셋, 10 µs(J=K=1)에 토글된다.
 - 여기서 SR·D는 엄밀히 게이트형 래치(레벨 트리거)이므로, 에지 트리거인 JK·T와 파형을 비교해 보면 차이가 드러난다.
 
----
-
 ## Lec09_Registers
 
-| 폴더 | 내용 | Quartus_schematics 폴더 |
-|---|---|---|
-| `01_4bit_SISO_Register_18` | 4비트 SISO(DFFE) | `05_ShiftRegister/shiftreg_siso` |
-| `02_Right_Shift_Register_23` | 4비트 우측 시프트 레지스터(DFFE) | `05_ShiftRegister/shiftreg_right_4bit` |
-| `03_Digital_SafetyBox_76` | 디지털 금고 | `05_ShiftRegister/shiftreg_digital_locker` |
-| `04_Random_Number_Generator_79` | 난수 발생 회로 | `05_ShiftRegister/shiftreg_random_number` |
+| 폴더 | 내용 |
+|---|---|
+| `01_4bit_SISO_Register_18` | 4비트 SISO(DFFE) |
+| `02_Right_Shift_Register_23` | 4비트 우측 시프트 레지스터(DFFE) |
+| `03_Digital_SafetyBox_76` | 디지털 금고 |
+| `04_Random_Number_Generator_79` | 난수 발생 회로 |
 
 레지스터는 같은 클럭을 받는 플립플롭을 줄지어 놓은 것이다. 앞 단 Q를 뒤 단 D에 이으면 클럭마다 데이터가 한 칸씩 이동하는 시프트 레지스터가 되고, 금고와 난수 발생기는 이 구조를 응용한 것이다.
 
@@ -181,17 +177,15 @@
 
 XNOR 귀환에서는 1111이 빠지는데, 1111에 들어가면 XNOR(1,1)=1이 되어 빠져나오지 못하는 잠김 상태이기 때문이다. 시뮬레이션에서는 4 µs마다(Cp 상승 에지) 상태가 바뀌어, 0 µs의 1000부터 56 µs의 0000까지 위 15개 상태가 순서대로 나타난다.
 
----
-
 ## Lec10_Async_Counters
 
-| 폴더 | 내용 | Quartus_schematics 폴더 |
-|---|---|---|
-| `01_Ripple_Up_7` | 3비트 리플 상향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down` |
-| `02_Ripple_Up_TTL_29` | 0~9 카운터(74112×4, 7400), DE1-SoC | `06_RippleCounter/ripple_counter_mod10_74112` |
-| `03_Ripple_Down_Counter_14` | 리플 하향 카운터 | `06_RippleCounter/ripple_counter_3bit_down` |
-| `04_Ripple_Up_Down_24` | 리플 상향/하향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down_sel` |
-| `05_Ripple_Ten_Counter_28` | modulo-m(MOD-10) 리플 카운터 | `06_RippleCounter/ripple_counter_modulo_m` |
+| 폴더 | 내용 |
+|---|---|
+| `01_Ripple_Up_7` | 3비트 리플 상향 카운터 |
+| `02_Ripple_Up_TTL_29` | 0~9 카운터(74112×4, 7400), DE1-SoC |
+| `03_Ripple_Down_Counter_14` | 리플 하향 카운터 |
+| `04_Ripple_Up_Down_24` | 리플 상향/하향 카운터 |
+| `05_Ripple_Ten_Counter_28` | modulo-m(MOD-10) 리플 카운터 |
 
 비동기식(리플) 카운터는 첫 FF만 외부 클럭을 받고, 나머지는 앞 단 출력을 클럭으로 쓴다. 모든 FF는 J=K=1(토글)이라 클럭 에지마다 반전하고, 각 단은 앞 단의 주파수를 2로 나눈다. 상향·하향은 '어느 에지에서 다음 단을 트리거하느냐'와 'Q와 /Q 중 무엇을 출력으로 보느냐'로 정해진다.
 
@@ -208,7 +202,7 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 
 ![3비트 리플 상향 카운터 시뮬레이션](<Lec10_Async_Counters/01_Ripple_Up_7/4_3_1_ripple_up_counter_vwf_simulation.png>)
 
-회로: JKFF 3개(J=K=PRN=VCC), CLRN은 ClrN 공통. Clk(또는 n_cp) → NOT → inst, Q[0] → NOT → inst1, Q[1] → NOT → inst2 순서로 클럭이 이어진다. 출력은 버스 Q[2..0]이다.
+회로: JKFF 3개(J=K=PRN=VCC), CLRN은 ClrN 공통. Clk → NOT → inst, Q[0] → NOT → inst1, Q[1] → NOT → inst2 순서로 클럭이 이어진다. 출력은 버스 Q[2..0]이다.
 
 동작: Q[0]은 Clk 하강 에지마다, Q[1]은 Q[0]이 1→0이 될 때마다, Q[2]는 Q[1]이 1→0이 될 때마다 반전한다. 그 결과 000 → 001 → … → 111 → 000을 반복하는 MOD-8 상향 카운터가 된다. 시뮬레이션에서도 Clk 하강 에지마다 Q가 000부터 111까지 1씩 증가한다.
 
@@ -241,13 +235,13 @@ FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다�
 
 ![리플 상향/하향 카운터 시뮬레이션 2](<Lec10_Async_Counters/04_Ripple_Up_Down_24/4_3_3_ripple_up_down_counter_vwf_simulation_1.png>)
 
-회로: JKFF 4개(J=K=VCC)로 만든 4비트 리플 카운터다. 단 사이마다 `2to1mux`가 있어 input0=Q, input1=/Q(NOT) 중 하나를 선택 입력 S로 고르고, 그 출력을 NOT을 거쳐 다음 단 클럭에 넣는다. 출력은 Q[3..0]이다.
+회로: JKFF 4개(J=K=PRN=VCC)로 만든 4비트 리플 카운터이고, ClrN이 4개 FF의 CLRN에 공통으로 들어간다. 첫 단은 NOT Cp를 클럭으로 받는다. 단 사이마다 `2to1mux`(같은 폴더의 2to1mux.bdf: NOT·AND2 2개·OR2, S=0이면 input0, S=1이면 input1)가 있어 input0=Q, input1=/Q(NOT) 중 하나를 선택 입력 S로 고르고, 그 출력을 NOT을 거쳐 다음 단 클럭에 넣는다. 출력은 Q[3..0]이다.
 
 동작:
 - S=0: 다음 단이 Q의 하강 에지에서 토글 → 상향(0 → 15).
 - S=1: 다음 단이 Q의 상승 에지(=/Q의 하강 에지)에서 토글 → 하향(15 → 0).
 
-시뮬레이션 파일은 두 장이다. `_0`은 S=0 상향 동작, `_1`은 S=1 하향 동작을 보여 준다. S를 도중에 바꾸면 멀티플렉서 출력이 변하면서 클럭 에지가 생겨 값이 튈 수 있으므로, S는 동작 전에 정해 두는 것이 좋다.
+시뮬레이션 그림 두 장은 ClrN 입력을 넣기 전 회로의 캡처다. `_0`은 S=0 상향 동작, `_1`은 S=1 하향 동작을 보여 준다. 현재 RippleUpdown.vwf는 ClrN을 처음 0.48 µs 동안 0으로 두어 0000에서 시작하고, S를 0으로 두었다가 14.88 µs에 1로 바꿔 상향과 하향을 한 파형에서 본다. S를 도중에 바꾸면 멀티플렉서 출력이 변하면서 클럭 에지가 생겨 값이 튈 수 있으므로, S는 동작 전에 정해 두는 것이 좋다.
 
 ### modulo-m 비동기 카운터 (`05_Ripple_Ten_Counter_28`, RippleUpDown.bdf)
 
@@ -261,17 +255,15 @@ FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다�
 
 시뮬레이션에서 볼 점: 약 20.5 µs에 Q1에 짧은 스파이크(글리치)가 보인다. 1010 상태가 아주 짧게 나타났다가 클리어되기 때문이며, 비동기 리셋 방식의 특징이다.
 
----
-
 ## Lec11_Sync_Sequential_Circuits
 
-| 폴더 | 내용 | Quartus_schematics 폴더 |
-|---|---|---|
-| `01_Example2_10` | 순차회로 해석(DFF 2개) | `08_StateMachine/seq_analysis_dff` |
-| `02_Example1_14` | Example 1/2 (74112, SetN·Cp·A) | `08_StateMachine/seq_analysis_jk_74112` |
-| `03_Example1_15` | 같은 회로의 JKFF 기본소자판 | `08_StateMachine/seq_analysis_jk_jkff` |
-| `04_Example3_59` | J-K FF 동기 순차회로 설계(x, A, B) | `08_StateMachine/seq_design_jkff` |
-| `05_Example_9_4_Gray_Code_Counter_119` | 74138+JKFF 그레이 코드 카운터 | `08_StateMachine/gray_counter_74138_or_design` |
+| 폴더 | 내용 |
+|---|---|
+| `01_Example2_10` | 순차회로 해석(DFF 2개) |
+| `02_Example1_14` | Example 1 (74112, SetN·Cp·A) |
+| `03_Example1_15` | 같은 회로의 JKFF 기본소자판 |
+| `04_Example3_59` | J-K FF 동기 순차회로 설계(x, A, B) |
+| `05_Example_9_4_Gray_Code_Counter_119` | 74138+JKFF 그레이 코드 카운터 |
 
 순서회로 해석은 '회로도 → FF 입력식 → 상태표 → 상태도', 설계는 그 반대 순서다. 아래 예제들은 회로도에서 입력식을 읽고, 그 식으로 상태 변화를 예측한 뒤 시뮬레이션으로 확인하는 흐름으로 보면 된다. JK FF의 다음 상태는 Q⁺ = J·Q′ + K′·Q, D FF는 Q⁺ = D다.
 
@@ -279,7 +271,7 @@ FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다�
 
 ![순차회로 해석 DFF](<Lec11_Sync_Sequential_Circuits/01_Example2_10/Seq_Analysis1_schematic.png>)
 
-Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 컴파일 보고서(.rpt)와 핀 파일(.pin)까지 들어 있다.
+시뮬레이션 파형 파일(Seq_Analysis1.vwf)은 들어 있지만 결과 그림은 없다.
 
 회로: DFF 2개, 두 FF 모두 D = 자기 /Q(NOT inst2, inst4)다. inst는 NOT Clock(inst5)을, inst3은 Clock을 그대로 클럭으로 받고, ClrN은 두 CLRN에 공통이다.
 
@@ -310,7 +302,7 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 ![Example 1 JKFF](<Lec11_Sync_Sequential_Circuits/03_Example1_15/Example1_schematic.png>)
 
-같은 회로를 74112 대신 JKFF 기본소자로 다시 그렸다. JKFF는 상승 에지 트리거이므로 클럭 앞에 NOT(inst1: Cp, inst3: Q0)을 넣어 하강 에지 동작을 맞추었다. 입력식(J1 = A·Q1, K1 = A·Q0)과 SetN→PRN 연결은 74112 버전과 같아, 시뮬레이션 결과도 같아야 한다. 두 버전을 비교하면 74 시리즈 매크로와 기본소자의 에지 극성 차이를 익힐 수 있다.
+같은 회로를 74112 대신 JKFF 기본소자로 다시 그렸다. JKFF는 상승 에지 트리거이므로 클럭 앞에 NOT(inst1: Cp, inst3: Q0)을 넣어 하강 에지 동작을 맞추었다. 입력식(J1 = A·Q1, K1 = A·Q0)과 SetN→PRN 연결은 74112 버전과 같아, 시뮬레이션 결과도 같아야 한다. 두 버전을 비교하면 74 시리즈 매크로와 기본소자의 에지 극성 차이를 익힐 수 있다. 파형 파일은 Waveform.vwf, Waveform1.vwf 두 개이고 결과 그림은 없다.
 
 ### J-K FF 동기 순차회로 설계 (`04_Example3_59`, Design_Sequential_Circuit.bdf)
 
@@ -353,21 +345,19 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 000 → 001 → 011 → 010 → 110 → 111 → 101 → 100 → 000
 ```
 
-예를 들어 상태 011(m3)에서는 K0 = m3 + m5 = 1이라 q0만 0이 되어 010으로, 상태 010(m2)에서는 J2 = m2 = 1이라 q2만 1이 되어 110으로 간다. 리셋 입력이 없으므로 시뮬레이션은 전원 투입 시의 000에서 시작한다고 보면 된다.
-
----
+예를 들어 상태 011(m3)에서는 K0 = m3 + m5 = 1이라 q0만 0이 되어 010으로, 상태 010(m2)에서는 J2 = m2 = 1이라 q2만 1이 되어 110으로 간다. 리셋 입력이 없으므로(모든 PRN·CLRN = VCC) 시뮬레이션은 전원 투입 시의 000에서 시작한다고 보면 된다. 파형 파일은 Waveform.vwf이고 결과 그림은 없다.
 
 ## Lec12_Counters
 
 강의12 「동기식 카운터」 예제다. 슬라이드에는 Quartus 화면 대신 교재 회로도가 실려 있어, 같은 회로가 나오는 페이지 번호를 붙였다.
 
-| 폴더 | Quartus_schematics 폴더 |
-|---|---|
-| `6_1_2bit_counter_5` | `07_Counter/sync_counter_2bit_jk` |
-| `6_2_3bit_counter_12` | `07_Counter/sync_counter_3bit_jk` |
-| `4bits_Counter_24` | `07_Counter/sync_counter_4bit_jk` |
-| `6_4_syn_bcd_counter_45` | `07_Counter/sync_counter_bcd_jk` |
-| `6_5_syn_3bit_updown_counter_49` | `07_Counter/sync_counter_3bit_updown_jk` |
+| 폴더 | 내용 | 프로젝트 |
+|---|---|---|
+| `6_1_2bit_counter_5` | 2비트 동기 카운터 | `2bits_Counter/2bits_counter.zip` |
+| `6_2_3bit_counter_12` | 3비트 동기 카운터 | `3bits_Counter/3bits_counter.zip` |
+| `4bits_Counter_24` | 4비트 동기 카운터 | `4bits_counter.zip` |
+| `6_4_syn_bcd_counter_45` | 동기식 BCD 카운터(캐리 C) | `BCD_Counter/BCD_counter.zip` |
+| `6_5_syn_3bit_updown_counter_49` | 동기식 3비트 상향/하향 카운터 | `3bits_UpDown_Counter/3bits_updown_counter.zip` |
 
 모두 JKFF(상승 에지, PRN=VCC)가 Cp를 공통으로 받고 ClrN이 모든 CLRN에 들어간다. 각 FF를 J=K로 묶어 T FF처럼 쓰고, '아래 비트가 모두 1일 때 토글'하도록 AND로 토글 조건을 만든다. 모든 FF가 동시에 바뀌므로 리플 카운터와 달리 출력이 단계적으로 흐트러지지 않는다.
 
@@ -420,8 +410,6 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 - Qc: J = K = X′·Qa·Qb + X·Qa′·Qb′ (AND inst11, inst12 → OR inst14)
 
 동작: X=0이면 아래 비트가 모두 1일 때 토글하므로 상향(0→7), X=1이면 아래 비트가 모두 0일 때 토글하므로 하향(7→0)이다. 모든 FF가 같은 클럭을 쓰므로, 비동기 상하향 카운터와 달리 X를 바꿔도 클럭에 가짜 에지가 생기지 않고, 다음 클럭부터 방향만 바뀐다.
-
----
 
 ## 실습 시 유의사항
 
