@@ -1,6 +1,6 @@
 # Quartus 예제 — 강의 슬라이드별 정리
 
-디지털논리회로 강의08~11 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름은 `슬라이드 제목_페이지번호`이고, Quartus가 한글·공백·특수문자 경로를 처리하지 못하므로 제목은 영문으로 옮기고 공백·기호는 `_`로 바꾸었다. 강의08·09 폴더는 슬라이드 순서대로 `01_`부터 번호를 앞에 붙였다. 같은 프로젝트는 [`../Quartus_schematics`](../Quartus_schematics/README.md)에도 주제별로 정리되어 있다.
+디지털논리회로 강의08~12 Google Slides에 대응하는 Quartus 예제를 강의별로 모은 폴더이다. 폴더 이름 끝의 `_숫자`는 해당 회로가 나오는 슬라이드 페이지 번호이고, Quartus가 한글·공백·특수문자 경로를 처리하지 못하므로 제목은 영문으로 옮기고 공백·기호는 `_`로 바꾸었다. 강의08~11 폴더는 `01_`부터 번호를 앞에 붙였고, 강의12 폴더는 원래 예제 이름(`6_1_` 등)을 그대로 두었다. 같은 프로젝트는 [`../Quartus_schematics`](../Quartus_schematics/README.md)에도 주제별로 정리되어 있다.
 
 예제마다 회로 구성·동작 원리·시뮬레이션에서 확인할 점을 정리했다.
 
@@ -8,9 +8,9 @@
 |---|---|---|---|
 | 강의08 | 플립플롭 | 5 | NOR/NAND 래치, 주종형 S-R, JK·D·T FF |
 | 강의09 | 레지스터 | 4 | DFF, DFFE |
-| 강의10 | 비동기식 카운터 | 6 | JKFF, 74112, 7400 |
+| 강의10 | 비동기식 카운터 | 5 | JKFF, 74112, 7400 |
 | 강의11 | 동기 순서논리회로 | 5 | DFF, JKFF, 74112, 74138 |
-| 슬라이드 미대응 | 동기식 카운터 | 5 | JKFF, AND/OR 게이트 |
+| 강의12 | 동기식 카운터 | 5 | JKFF, AND/OR 게이트 |
 
 참고:
 - `*_schematic.png` 가운데 일부는 .bdf를 읽어 그린 그림이다(Quartus 화면 캡처 아님). 강의08·09 폴더의 그림은 `<폴더 이름>_schematic.png`(.bdf), `<폴더 이름>_vwf_sim.png`(ModelSim 시뮬레이션 결과 .vwf)로 그렸다. 파형의 파란색은 입력, 빨간색은 출력, 회색 X는 미정 구간이다.
@@ -187,12 +187,11 @@ XNOR 귀환에서는 1111이 빠지는데, 1111에 들어가면 XNOR(1,1)=1이 �
 
 | 폴더 | 내용 | Quartus_schematics 폴더 |
 |---|---|---|
-| `12_3_Design_of_Binary_Counters_7` | 3비트 리플 상향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down` |
-| `12_3_Design_of_Binary_Counters_7_14` | 3비트 리플 상향(`3bit_ripple.bdf`, p.7)·MOD-8 하향(`3bit_ripple_down.bdf`, p.14) | `06_RippleCounter/ripple_counter_3bit_up_down` |
-| `MOD8_Ripple_Down_Counter_14` | 리플 하향 카운터 | `06_RippleCounter/ripple_counter_3bit_down` |
-| `3_Async_Up_Down_Counter_24` | 리플 상향/하향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down_sel` |
-| `4_Modulo_m_Async_Counter_26` | modulo-m 리플 카운터 | `06_RippleCounter/ripple_counter_modulo_m` |
-| `0_to_9_Counter_29` | 0~9 카운터(74112×4, 7400) | `06_RippleCounter/ripple_counter_mod10_74112` |
+| `01_Ripple_Up_7` | 3비트 리플 상향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down` |
+| `02_Ripple_Up_TTL_29` | 0~9 카운터(74112×4, 7400), DE1-SoC | `06_RippleCounter/ripple_counter_mod10_74112` |
+| `03_Ripple_Down_Counter_14` | 리플 하향 카운터 | `06_RippleCounter/ripple_counter_3bit_down` |
+| `04_Ripple_Up_Down_24` | 리플 상향/하향 카운터 | `06_RippleCounter/ripple_counter_3bit_up_down_sel` |
+| `05_Ripple_Ten_Counter_28` | modulo-m(MOD-10) 리플 카운터 | `06_RippleCounter/ripple_counter_modulo_m` |
 
 비동기식(리플) 카운터는 첫 FF만 외부 클럭을 받고, 나머지는 앞 단 출력을 클럭으로 쓴다. 모든 FF는 J=K=1(토글)이라 클럭 에지마다 반전하고, 각 단은 앞 단의 주파수를 2로 나눈다. 상향·하향은 '어느 에지에서 다음 단을 트리거하느냐'와 'Q와 /Q 중 무엇을 출력으로 보느냐'로 정해진다.
 
@@ -203,35 +202,44 @@ XNOR 귀환에서는 1111이 빠지는데, 1111에 들어가면 XNOR(1,1)=1이 �
 
 Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 클럭 앞에 NOT을 넣어 하강 에지 FF처럼 쓴다. 74112는 원래 하강 에지 FF라 NOT이 필요 없다.
 
-### 3비트 리플 상향 카운터 (`12_3_Design_of_Binary_Counters_7`, `_7_14`의 3bit_ripple.bdf)
+### 3비트 리플 상향 카운터 (`01_Ripple_Up_7`, Ripple_up.bdf)
 
-![3비트 리플 상향 카운터](<Lec10_Async_Counters/12_3_Design_of_Binary_Counters_7/4_3_1_ripple_up_counter_schematic.png>)
+![3비트 리플 상향 카운터](<Lec10_Async_Counters/01_Ripple_Up_7/4_3_1_ripple_up_counter_schematic.png>)
 
-![3비트 리플 상향 카운터 시뮬레이션](<Lec10_Async_Counters/12_3_Design_of_Binary_Counters_7/4_3_1_ripple_up_counter_vwf_simulation.png>)
+![3비트 리플 상향 카운터 시뮬레이션](<Lec10_Async_Counters/01_Ripple_Up_7/4_3_1_ripple_up_counter_vwf_simulation.png>)
 
 회로: JKFF 3개(J=K=PRN=VCC), CLRN은 ClrN 공통. Clk(또는 n_cp) → NOT → inst, Q[0] → NOT → inst1, Q[1] → NOT → inst2 순서로 클럭이 이어진다. 출력은 버스 Q[2..0]이다.
 
 동작: Q[0]은 Clk 하강 에지마다, Q[1]은 Q[0]이 1→0이 될 때마다, Q[2]는 Q[1]이 1→0이 될 때마다 반전한다. 그 결과 000 → 001 → … → 111 → 000을 반복하는 MOD-8 상향 카운터가 된다. 시뮬레이션에서도 Clk 하강 에지마다 Q가 000부터 111까지 1씩 증가한다.
 
-### MOD-8 리플 하향 카운터 (`MOD8_Ripple_Down_Counter_14`, `_7_14`의 3bit_ripple_down.bdf)
+### 0~9 카운터, 74112 사용 (`02_Ripple_Up_TTL_29`, eightcounter.bdf)
 
-![MOD-8 리플 하향 카운터](<Lec10_Async_Counters/MOD8_Ripple_Down_Counter_14/4_3_2_ripple_down_counter_schematic.png>)
+![0~9 카운터](<Lec10_Async_Counters/02_Ripple_Up_TTL_29/eightcounter_schematic.png>)
 
-![MOD-8 리플 하향 카운터 시뮬레이션](<Lec10_Async_Counters/MOD8_Ripple_Down_Counter_14/4_3_2_ripple_down_counter_vwf_simulation.png>)
+회로는 세 부분으로 나뉜다.
+1. 클럭 분주: `Mod50MHz.v`(Verilog)는 n_cp 하강 에지마다 q를 0~49,999,999로 세는 카운터다. 입력 핀 CP_50MHz는 DE1-SoC의 50 MHz 클럭 CLOCK_50(PIN_AF14)에 할당되어 있고, 이를 넣고 비트 q[25]를 클럭으로 쓰면 주기 1초(약 1 Hz)의 느린 클럭이 나와, LED로 숫자가 바뀌는 것을 눈으로 볼 수 있다. n_rd는 VCC다.
+2. 카운터: 74112(하강 에지 JK FF) 4개의 1번 FF만 쓴다. 1PRN·1J·1K는 VCC, 첫 단 1CLK은 q[25], 다음 단 1CLK은 앞 단 1Q다. 출력은 Qa_LSB, Qb, Qc, Qd_MSB다.
+3. 리셋: 7400(NAND) 5개를 직렬로 잇는다. 첫 NAND(inst11)가 Qb·Qd를 받고, 나머지 4개는 입력을 묶어 인버터로 쓴다. 최종 출력은 NAND(Qb, Qd)와 같은 논리이고, 4개 FF의 1CLRN에 들어간다.
 
-두 프로젝트 모두 FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다르다.
-- `3bit_ripple_down.bdf`: 각 FF Q에 NOT(inst9~11)을 달아 Q[2..0]으로 내보냈다.
-- `4_3_2_ripple_down_counter`: 다음 단 클럭용 NOT(inst5, inst6)의 출력을 Q[0], Q[1]로 꺼내고, 마지막 단은 NOT(inst9)을 달았다.
+동작: 74112는 하강 에지 FF이므로 NOT 없이 Q를 다음 단 클럭에 이어도 상향 카운터가 된다. 1010(10)이 되면 Qd=Qb=1이라 클리어되어 0~9를 반복한다. 인버터 4단은 논리를 바꾸지 않고 리셋 신호에 지연을 더해, 모든 FF가 확실히 지워질 만큼 리셋 펄스를 길게 하는 역할로 볼 수 있다.
+
+### MOD-8 리플 하향 카운터 (`03_Ripple_Down_Counter_14`, Rippledown.bdf)
+
+![MOD-8 리플 하향 카운터](<Lec10_Async_Counters/03_Ripple_Down_Counter_14/4_3_2_ripple_down_counter_schematic.png>)
+
+![MOD-8 리플 하향 카운터 시뮬레이션](<Lec10_Async_Counters/03_Ripple_Down_Counter_14/4_3_2_ripple_down_counter_vwf_simulation.png>)
+
+FF 연결은 상향 카운터와 같고, **출력을 /Q로 바꾼** 것만 다르다. 다음 단 클럭용 NOT(inst5, inst6)의 출력을 Q[0], Q[1]로 꺼내고, 마지막 단은 NOT(inst9)을 달았다.
 
 동작: 내부 FF는 0→7로 올라가지만 출력은 보수(7−n)이므로 111 → 110 → … → 000 → 111로 내려간다. 시뮬레이션에서 ClrN=0으로 FF를 지우면 출력은 111에서 시작하는 것을 확인한다.
 
-### 비동기 상향/하향 카운터 (`3_Async_Up_Down_Counter_24`, zip)
+### 비동기 상향/하향 카운터 (`04_Ripple_Up_Down_24`, RippleUpdown.bdf)
 
-![리플 상향/하향 카운터](<Lec10_Async_Counters/3_Async_Up_Down_Counter_24/4_3_3_ripple_up_down_counter_schematic.png>)
+![리플 상향/하향 카운터](<Lec10_Async_Counters/04_Ripple_Up_Down_24/4_3_3_ripple_up_down_counter_schematic.png>)
 
-![리플 상향/하향 카운터 시뮬레이션 1](<Lec10_Async_Counters/3_Async_Up_Down_Counter_24/4_3_3_ripple_up_down_counter_vwf_simulation_0.png>)
+![리플 상향/하향 카운터 시뮬레이션 1](<Lec10_Async_Counters/04_Ripple_Up_Down_24/4_3_3_ripple_up_down_counter_vwf_simulation_0.png>)
 
-![리플 상향/하향 카운터 시뮬레이션 2](<Lec10_Async_Counters/3_Async_Up_Down_Counter_24/4_3_3_ripple_up_down_counter_vwf_simulation_1.png>)
+![리플 상향/하향 카운터 시뮬레이션 2](<Lec10_Async_Counters/04_Ripple_Up_Down_24/4_3_3_ripple_up_down_counter_vwf_simulation_1.png>)
 
 회로: JKFF 4개(J=K=VCC)로 만든 4비트 리플 카운터다. 단 사이마다 `2to1mux`가 있어 input0=Q, input1=/Q(NOT) 중 하나를 선택 입력 S로 고르고, 그 출력을 NOT을 거쳐 다음 단 클럭에 넣는다. 출력은 Q[3..0]이다.
 
@@ -241,11 +249,11 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 
 시뮬레이션 파일은 두 장이다. `_0`은 S=0 상향 동작, `_1`은 S=1 하향 동작을 보여 준다. S를 도중에 바꾸면 멀티플렉서 출력이 변하면서 클럭 에지가 생겨 값이 튈 수 있으므로, S는 동작 전에 정해 두는 것이 좋다.
 
-### modulo-m 비동기 카운터 (`4_Modulo_m_Async_Counter_26`, zip)
+### modulo-m 비동기 카운터 (`05_Ripple_Ten_Counter_28`, RippleUpDown.bdf)
 
-![modulo-m 리플 카운터](<Lec10_Async_Counters/4_Modulo_m_Async_Counter_26/4_3_4_modulom_ripple_counter_schematic.png>)
+![modulo-m 리플 카운터](<Lec10_Async_Counters/05_Ripple_Ten_Counter_28/4_3_4_modulom_ripple_counter_schematic.png>)
 
-![modulo-m 리플 카운터 시뮬레이션](<Lec10_Async_Counters/4_Modulo_m_Async_Counter_26/4_3_4_modulom_ripple_counter_vwf_simulation.png>)
+![modulo-m 리플 카운터 시뮬레이션](<Lec10_Async_Counters/05_Ripple_Ten_Counter_28/4_3_4_modulom_ripple_counter_vwf_simulation.png>)
 
 회로: 4비트 리플 상향 카운터(JKFF 4개 + NOT)에 NAND2 하나를 더했다. NAND2 입력은 Q[1]과 Q[3], 출력은 4개 FF의 CLRN에 공통으로 물린다.
 
@@ -253,34 +261,23 @@ Quartus의 JKFF 기본소자는 상승 에지 트리거이므로, 예제들은 �
 
 시뮬레이션에서 볼 점: 약 20.5 µs에 Q1에 짧은 스파이크(글리치)가 보인다. 1010 상태가 아주 짧게 나타났다가 클리어되기 때문이며, 비동기 리셋 방식의 특징이다.
 
-### 0~9 카운터, 74112 사용 (`0_to_9_Counter_29`, eightcounter.bdf)
-
-![0~9 카운터](<Lec10_Async_Counters/0_to_9_Counter_29/eightcounter_schematic.png>)
-
-회로는 세 부분으로 나뉜다.
-1. 클럭 분주: `Mod50MHz.vhd`는 n_cp 하강 에지마다 q를 0~49,999,999로 세는 카운터다. 보드의 CP_50MHz를 넣고 비트 q[25]를 클럭으로 쓰면 주기 1초(약 1 Hz)의 느린 클럭이 나와, LED로 숫자가 바뀌는 것을 눈으로 볼 수 있다. n_rd는 VCC다.
-2. 카운터: 74112(하강 에지 JK FF) 4개의 1번 FF만 쓴다. 1PRN·1J·1K는 VCC, 첫 단 1CLK은 q[25], 다음 단 1CLK은 앞 단 1Q다. 출력은 Qa_LSB, Qb, Qc, Qd_MSB다.
-3. 리셋: 7400(NAND) 5개를 직렬로 잇는다. 첫 NAND(inst11)가 Qb·Qd를 받고, 나머지 4개는 입력을 묶어 인버터로 쓴다. 최종 출력은 NAND(Qb, Qd)와 같은 논리이고, 4개 FF의 1CLRN에 들어간다.
-
-동작: 74112는 하강 에지 FF이므로 NOT 없이 Q를 다음 단 클럭에 이어도 상향 카운터가 된다. 1010(10)이 되면 Qd=Qb=1이라 클리어되어 0~9를 반복한다. 인버터 4단은 논리를 바꾸지 않고 리셋 신호에 지연을 더해, 모든 FF가 확실히 지워질 만큼 리셋 펄스를 길게 하는 역할로 볼 수 있다.
-
 ---
 
 ## Lec11_Sync_Sequential_Circuits
 
 | 폴더 | 내용 | Quartus_schematics 폴더 |
 |---|---|---|
-| `Quartus_II_and_DE2_Board_10` | 순차회로 해석(DFF 2개) | `08_StateMachine/seq_analysis_dff` |
-| `Example1_Quartus_II_14` | Example 1/2 (74112, SetN·Cp·A) | `08_StateMachine/seq_analysis_jk_74112` |
-| `Example1_Quartus_II_15` | 같은 회로의 JKFF 기본소자판 | `08_StateMachine/seq_analysis_jk_jkff` |
-| `7_Logic_Circuit_Implementation_60` | J-K FF 동기 순차회로 설계(x, A, B) | `08_StateMachine/seq_design_jkff` |
-| `Example_9_4_Gray_Code_Counter_120` | 74138+JKFF 그레이 코드 카운터 | `08_StateMachine/gray_counter_74138_or_design` |
+| `01_Example2_10` | 순차회로 해석(DFF 2개) | `08_StateMachine/seq_analysis_dff` |
+| `02_Example1_14` | Example 1/2 (74112, SetN·Cp·A) | `08_StateMachine/seq_analysis_jk_74112` |
+| `03_Example1_15` | 같은 회로의 JKFF 기본소자판 | `08_StateMachine/seq_analysis_jk_jkff` |
+| `04_Example3_59` | J-K FF 동기 순차회로 설계(x, A, B) | `08_StateMachine/seq_design_jkff` |
+| `05_Example_9_4_Gray_Code_Counter_119` | 74138+JKFF 그레이 코드 카운터 | `08_StateMachine/gray_counter_74138_or_design` |
 
 순서회로 해석은 '회로도 → FF 입력식 → 상태표 → 상태도', 설계는 그 반대 순서다. 아래 예제들은 회로도에서 입력식을 읽고, 그 식으로 상태 변화를 예측한 뒤 시뮬레이션으로 확인하는 흐름으로 보면 된다. JK FF의 다음 상태는 Q⁺ = J·Q′ + K′·Q, D FF는 Q⁺ = D다.
 
-### 순차회로 해석, DFF 2개 (`Quartus_II_and_DE2_Board_10`, Seq_Analysis1.bdf)
+### 순차회로 해석, DFF 2개 (`01_Example2_10`, Seq_Analysis1.bdf)
 
-![순차회로 해석 DFF](<Lec11_Sync_Sequential_Circuits/Quartus_II_and_DE2_Board_10/Seq_Analysis1_schematic.png>)
+![순차회로 해석 DFF](<Lec11_Sync_Sequential_Circuits/01_Example2_10/Seq_Analysis1_schematic.png>)
 
 Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 컴파일 보고서(.rpt)와 핀 파일(.pin)까지 들어 있다.
 
@@ -288,11 +285,11 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 동작: D=/Q인 DFF는 클럭마다 반전하는 2분주기다. Q1은 Clock 하강 에지, Q2는 상승 에지에서 반전하므로, 둘 다 Clock의 1/2 주파수이면서 서로 반 클럭(90°)씩 어긋난 파형이 된다. 상승·하강 에지 트리거의 차이를 파형으로 비교하기 좋은 회로다.
 
-### Example 1, 74112 버전 (`Example1_Quartus_II_14`, Seq_exam.bdf)
+### Example 1, 74112 버전 (`02_Example1_14`, Seq_exam.bdf)
 
-![Example 1 74112](<Lec11_Sync_Sequential_Circuits/Example1_Quartus_II_14/5_sequential_circuit_analysis_schematic.png>)
+![Example 1 74112](<Lec11_Sync_Sequential_Circuits/02_Example1_14/5_sequential_circuit_analysis_schematic.png>)
 
-![Example 1 74112 시뮬레이션](<Lec11_Sync_Sequential_Circuits/Example1_Quartus_II_14/5_sequential_circuit_analysis_vwf_simulation.png>)
+![Example 1 74112 시뮬레이션](<Lec11_Sync_Sequential_Circuits/02_Example1_14/5_sequential_circuit_analysis_vwf_simulation.png>)
 
 회로: 74112 두 개의 1번 FF와 AND2 2개를 쓴다.
 
@@ -309,17 +306,17 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 시뮬레이션: SetN=0으로 Q0=Q1=1에서 시작한다. 약 3 µs에 A=1이 되면 J1=1이 되고, 약 6 µs에 Q0가 1→0으로 떨어지는 순간 Q1=0이 된 뒤 계속 0을 유지한다. J1·K1을 출력 핀으로 내보내 입력식을 파형으로 직접 확인할 수 있다.
 
-### Example 1, JKFF 기본소자 버전 (`Example1_Quartus_II_15`, Example1.bdf)
+### Example 1, JKFF 기본소자 버전 (`03_Example1_15`, Example1.bdf)
 
-![Example 1 JKFF](<Lec11_Sync_Sequential_Circuits/Example1_Quartus_II_15/Example1_schematic.png>)
+![Example 1 JKFF](<Lec11_Sync_Sequential_Circuits/03_Example1_15/Example1_schematic.png>)
 
 같은 회로를 74112 대신 JKFF 기본소자로 다시 그렸다. JKFF는 상승 에지 트리거이므로 클럭 앞에 NOT(inst1: Cp, inst3: Q0)을 넣어 하강 에지 동작을 맞추었다. 입력식(J1 = A·Q1, K1 = A·Q0)과 SetN→PRN 연결은 74112 버전과 같아, 시뮬레이션 결과도 같아야 한다. 두 버전을 비교하면 74 시리즈 매크로와 기본소자의 에지 극성 차이를 익힐 수 있다.
 
-### J-K FF 동기 순차회로 설계 (`7_Logic_Circuit_Implementation_60`, Design_Sequential_Circuit.zip)
+### J-K FF 동기 순차회로 설계 (`04_Example3_59`, Design_Sequential_Circuit.bdf)
 
-![J-K FF 순차회로 설계](<Lec11_Sync_Sequential_Circuits/7_Logic_Circuit_Implementation_60/6_sequential_circuit_design_schematic.png>)
+![J-K FF 순차회로 설계](<Lec11_Sync_Sequential_Circuits/04_Example3_59/6_sequential_circuit_design_schematic.png>)
 
-![J-K FF 순차회로 설계 시뮬레이션](<Lec11_Sync_Sequential_Circuits/7_Logic_Circuit_Implementation_60/6_sequential_circuit_design_vwf_simulation.JPG>)
+![J-K FF 순차회로 설계 시뮬레이션](<Lec11_Sync_Sequential_Circuits/04_Example3_59/6_sequential_circuit_design_vwf_simulation.JPG>)
 
 회로: JKFF 2개(A, B)가 Cp 상승 에지를 공통으로 받는 동기식 회로다. 입력은 x, ClrN은 두 CLRN에 공통이다. FF 입력식은 회로도에서 다음과 같이 읽힌다.
 - J_A = x′·B (NOT inst4 + AND inst2), K_A = x·B (AND inst3)
@@ -338,9 +335,9 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 시뮬레이션: Cp 상승 에지마다 그 순간의 x로 위 표를 따라가면 A·B 파형을 그대로 재현할 수 있다. ClrN=0으로 00에서 시작하므로, x=1이 처음 들어온 뒤의 에지에서 B가 먼저 1이 되는 것(00→01)부터 확인하면 된다.
 
-### 74138 + JKFF 그레이 코드 카운터 (`Example_9_4_Gray_Code_Counter_120`, seq_decoder.bdf)
+### 74138 + JKFF 그레이 코드 카운터 (`05_Example_9_4_Gray_Code_Counter_119`, seq_decoder.bdf)
 
-![그레이 코드 카운터](<Lec11_Sync_Sequential_Circuits/Example_9_4_Gray_Code_Counter_120/seq_decoder_schematic.png>)
+![그레이 코드 카운터](<Lec11_Sync_Sequential_Circuits/05_Example_9_4_Gray_Code_Counter_119/seq_decoder_schematic.png>)
 
 회로: 현재 상태 q[2..0]을 74138(3×8 디코더)의 C·B·A에 넣고(G1=VCC, G2AN·G2BN=GND로 항상 동작), 액티브 로우 출력 Y0N~Y7N을 NOT 8개로 뒤집어 최소항 m0~m7을 만든다. 각 JKFF의 J·K는 이 최소항(또는 두 최소항의 OR)이다. clk는 세 FF에 공통이다.
 
@@ -360,45 +357,45 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 ---
 
-## No_Slide_Match
+## Lec12_Counters
 
-동기식 카운터 예제로, 강의08~11 슬라이드에 대응하는 페이지가 없다.
+강의12 「동기식 카운터」 예제다. 슬라이드에는 Quartus 화면 대신 교재 회로도가 실려 있어, 같은 회로가 나오는 페이지 번호를 붙였다.
 
 | 폴더 | Quartus_schematics 폴더 |
 |---|---|
-| `6_1_2bit_counter` | `07_Counter/sync_counter_2bit_jk` |
-| `6_2_3bit_counter` | `07_Counter/sync_counter_3bit_jk` |
-| `4bits_Counter` | `07_Counter/sync_counter_4bit_jk` |
-| `6_4_syn_bcd_counter` | `07_Counter/sync_counter_bcd_jk` |
-| `6_5_syn_3bit_updown_counter` | `07_Counter/sync_counter_3bit_updown_jk` |
+| `6_1_2bit_counter_5` | `07_Counter/sync_counter_2bit_jk` |
+| `6_2_3bit_counter_12` | `07_Counter/sync_counter_3bit_jk` |
+| `4bits_Counter_24` | `07_Counter/sync_counter_4bit_jk` |
+| `6_4_syn_bcd_counter_45` | `07_Counter/sync_counter_bcd_jk` |
+| `6_5_syn_3bit_updown_counter_49` | `07_Counter/sync_counter_3bit_updown_jk` |
 
 모두 JKFF(상승 에지, PRN=VCC)가 Cp를 공통으로 받고 ClrN이 모든 CLRN에 들어간다. 각 FF를 J=K로 묶어 T FF처럼 쓰고, '아래 비트가 모두 1일 때 토글'하도록 AND로 토글 조건을 만든다. 모든 FF가 동시에 바뀌므로 리플 카운터와 달리 출력이 단계적으로 흐트러지지 않는다.
 
 | 예제 | 토글 조건 (J = K) | 순서 |
 |---|---|---|
-| `6_1_2bit_counter` | Qa: 1, Qb: Qa | 0 → 3 반복 (MOD-4) |
-| `6_2_3bit_counter` | Qa: 1, Qb: Qa, Qc: Qa·Qb | 0 → 7 반복 (MOD-8) |
-| `4bits_Counter` | Qa: 1, Qb: Qa, Qc: Qa·Qb, Qd: Qa·Qb·Qc | 0 → 15 반복 (MOD-16) |
+| `6_1_2bit_counter_5` | Qa: 1, Qb: Qa | 0 → 3 반복 (MOD-4) |
+| `6_2_3bit_counter_12` | Qa: 1, Qb: Qa, Qc: Qa·Qb | 0 → 7 반복 (MOD-8) |
+| `4bits_Counter_24` | Qa: 1, Qb: Qa, Qc: Qa·Qb, Qd: Qa·Qb·Qc | 0 → 15 반복 (MOD-16) |
 
-![2비트 동기 카운터](<No_Slide_Match/6_1_2bit_counter/6_1_2bit_counter_schematic.png>)
+![2비트 동기 카운터](<Lec12_Counters/6_1_2bit_counter_5/6_1_2bit_counter_schematic.png>)
 
-![2비트 동기 카운터 시뮬레이션](<No_Slide_Match/6_1_2bit_counter/6_1_2bit_counter_vwf_simulation.png>)
+![2비트 동기 카운터 시뮬레이션](<Lec12_Counters/6_1_2bit_counter_5/6_1_2bit_counter_vwf_simulation.png>)
 
-![3비트 동기 카운터](<No_Slide_Match/6_2_3bit_counter/6_2_3bit_counter_schematic.png>)
+![3비트 동기 카운터](<Lec12_Counters/6_2_3bit_counter_12/6_2_3bit_counter_schematic.png>)
 
-![3비트 동기 카운터 시뮬레이션](<No_Slide_Match/6_2_3bit_counter/6_2_3bit_counter_vwf_simulation.png>)
+![3비트 동기 카운터 시뮬레이션](<Lec12_Counters/6_2_3bit_counter_12/6_2_3bit_counter_vwf_simulation.png>)
 
-![4비트 동기 카운터](<No_Slide_Match/4bits_Counter/4bits_counter_schematic.png>)
+![4비트 동기 카운터](<Lec12_Counters/4bits_Counter_24/4bits_counter_schematic.png>)
 
-![4비트 동기 카운터 시뮬레이션](<No_Slide_Match/4bits_Counter/4bits_counter_SimulationCaptured.JPG>)
+![4비트 동기 카운터 시뮬레이션](<Lec12_Counters/4bits_Counter_24/4bits_counter_SimulationCaptured.JPG>)
 
 4비트 카운터는 Qa·Qb(inst5) 출력을 다시 Qc와 AND(inst9)해 쓰는 직렬 캐리 구조다. 비트 수가 늘어도 게이트는 AND2 하나씩만 늘어난다.
 
-### 동기식 BCD 카운터 (`6_4_syn_bcd_counter`, BCD_counter.zip)
+### 동기식 BCD 카운터 (`6_4_syn_bcd_counter_45`, BCD_Counter/BCD_counter.zip)
 
-![동기식 BCD 카운터](<No_Slide_Match/6_4_syn_bcd_counter/6_4_syn_bcd_counter_schematic.png>)
+![동기식 BCD 카운터](<Lec12_Counters/6_4_syn_bcd_counter_45/6_4_syn_bcd_counter_schematic.png>)
 
-![동기식 BCD 카운터 시뮬레이션](<No_Slide_Match/6_4_syn_bcd_counter/6_4_syn_bcd_counter_vwf_simulation.png>)
+![동기식 BCD 카운터 시뮬레이션](<Lec12_Counters/6_4_syn_bcd_counter_45/6_4_syn_bcd_counter_vwf_simulation.png>)
 
 회로: 4비트 동기 카운터에 9 다음 0으로 돌아가는 조건을 더했다.
 
@@ -411,11 +408,11 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 
 동작: 0~7에서는 일반 상향 카운터와 같고, 0111→1000에서 Qd가 1이 된다. 1001(9)에서는 Qd=1이라 Qb가 토글하지 않고, Qa=1이라 Qd는 리셋(K=1)되며 Qa도 0이 되어 0000으로 돌아간다. 캐리 출력 C = Qa·Qd(AND inst12)는 9일 때만 1이어서 다음 자리 카운터를 올리는 데 쓴다. modulo-m 리플 카운터와 달리 비동기 클리어를 쓰지 않아 1010 글리치가 생기지 않는다.
 
-### 동기식 3비트 상향/하향 카운터 (`6_5_syn_3bit_updown_counter`, 3bits_updown_counter.zip)
+### 동기식 3비트 상향/하향 카운터 (`6_5_syn_3bit_updown_counter_49`, 3bits_UpDown_Counter/3bits_updown_counter.zip)
 
-![동기식 3비트 상향/하향 카운터](<No_Slide_Match/6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_schematic.png>)
+![동기식 3비트 상향/하향 카운터](<Lec12_Counters/6_5_syn_3bit_updown_counter_49/6_5_syn_3bit_updown_counter_schematic.png>)
 
-![동기식 3비트 상향/하향 카운터 시뮬레이션](<No_Slide_Match/6_5_syn_3bit_updown_counter/6_5_syn_3bit_updown_counter_vwf_simulation.png>)
+![동기식 3비트 상향/하향 카운터 시뮬레이션](<Lec12_Counters/6_5_syn_3bit_updown_counter_49/6_5_syn_3bit_updown_counter_vwf_simulation.png>)
 
 회로: 방향 입력 X에 따라 토글 조건을 두 가지로 만들고 OR로 합쳤다.
 - Qa: J = K = 1
@@ -432,6 +429,6 @@ Quartus 사용법과 DE2 보드 다운로드를 설명할 때 쓰는 예제로, 
 - **래치와 플립플롭**: 강의08의 SR·D 회로는 CP=1 동안 입력을 따라가는 게이트형 래치다. 에지에서만 바뀌는 플립플롭과 파형을 비교해 보자.
 - **초기화**: 리셋·프리셋 입력이 없거나 넣지 않으면 시뮬레이션 출력이 X로 나온다. .vwf를 만들 때 처음에 ClrN(또는 SetN, St)을 잠깐 0으로 두는 것이 좋다.
 - **비동기 리셋의 글리치**: modulo-m·0~9 리플 카운터는 금지 상태(1010)가 아주 짧게 나타났다가 지워진다. Timing 시뮬레이션에서 보이는 스파이크는 이 때문이며, 동기식 BCD 카운터는 이 문제가 없다.
-- **비동기 방식의 한계**: 리플 카운터는 단마다 지연이 쌓여 상위 비트가 늦게 바뀌고, 상하향 전환 시 가짜 클럭 에지가 생길 수 있다. 같은 기능의 동기식 예제(No_Slide_Match 폴더)와 비교하면 차이가 분명하다.
+- **비동기 방식의 한계**: 리플 카운터는 단마다 지연이 쌓여 상위 비트가 늦게 바뀌고, 상하향 전환 시 가짜 클럭 에지가 생길 수 있다. 같은 기능의 동기식 예제(Lec12_Counters 폴더)와 비교하면 차이가 분명하다.
 - **보드 실습**: 0~9 카운터처럼 50 MHz 클럭을 바로 쓰면 LED 변화가 너무 빨라 보이지 않는다. Mod50MHz 같은 분주기로 1 Hz 안팎으로 낮춰 쓴다.
 - **zip 프로젝트**: 압축을 푼 뒤 .qpf를 열고, 컴파일 후 .vwf로 시뮬레이션한다. db·simulation 폴더는 다시 만들어진다.
