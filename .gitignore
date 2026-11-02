@@ -108,6 +108,16 @@ work/
 *_report.html
 *_dump.txt
 *.sld
+*.sof
+*.pof
+*.dpf
+*.eqn
+*.cmp
+*.pplq.rdb
+*_ie_info.json
+undo_redo.txt
+serv_req_info.txt
+sopc_builder_log.txt
 
 # ===== Simulink =====
 hdlsrc/
@@ -149,7 +159,6 @@ Wokwi/
 PDF/
 
 # ===== 2026-10-01 정리: 자동생성 파일 추가 =====
-# (*.sof, *.pof 는 학생 배포용으로 의도적으로 추적함)
 # Quartus (추가)
 *.qmsg
 *.qarlog

@@ -21,7 +21,7 @@ This folder contains digital logic circuit examples designed using Intel (Altera
 | **10_DigitalClock** | 디지털 시계: 기본 시계(`clock_basic`), 시각 설정 시계(`clock_set_7490`/`_7492`) |
 | **11_VHDL** | VHDL 예제: 기본 게이트, 전가산기, 4비트 가산기, BCD-7세그먼트 디코더, 카운터 4종, 120 Hz 분주기, 7세그먼트 표시, 디지털 시계 블록, UART 송수신 |
 | **13_SoC_NIOS_DE1** | Nios II 실습(HelloNios·PIO·인터럽트·7세그먼트), HPS(ARM) 덧셈기, DE1-SoC 골든 톱 |
-| **14_보충** | 핵심 예제와 겹치는 변형·보드 입문 예제. 안의 폴더 구조는 `00_Basic` … `07_Counter`와 같다 |
+| **14_Etc** | 핵심 예제와 겹치는 변형·보드 입문 예제. 안의 폴더 구조는 `00_Basic` … `07_Counter`와 같다 |
 
 폴더 이름은 `주제_규모_구현_변형` 형식의 영문 소문자이고, 쓰인 74xx 부품 번호를 맨 뒤에 붙였다(예: `shiftreg_sipo_74164`, `sync_counter_4bit_jk`).
 
